@@ -5,7 +5,7 @@
 A brief description of project.
 
 # Installation
-Clone the repository: git clone https://github.com/your-username/your-project.git
+Clone the repository: git clone https://github.com/Alexandra2888/PawSitive-Care-Vet
 Navigate to the project directory: cd your-project
 Install dependencies: npm install
 
