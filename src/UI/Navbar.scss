@@ -38,6 +38,11 @@ a {
     padding: 0.2rem 0.6rem;
 }
 
+  .header li a:hover {
+        color: #ff8c00;
+    }
+
+
 .header .logo {
     display: block;
     float: left;
@@ -147,11 +152,6 @@ a {
         padding: 20px 30px;
     }
 
-    @media (hover: hover) {
-        .button:hover {
-            background-color: #ff8c00;
-        }
-    }
 
     .header .menu {
         clear: none;
