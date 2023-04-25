@@ -1,42 +1,33 @@
-import { useState } from 'react'
-import {Link, NavLink} from 'react-router-dom'
-import Logo from '../assets/pawsitive.png'
-import {links} from '../data'
-import {GoThreeBars} from 'react-icons/go'
-import {MdOutlineClose} from 'react-icons/md'
-import './Navbar.scss';
+import "./Navbar.scss";
+import { Link } from "react-router-dom";
 
-
-
-const Navbar = () => {
-    const [isNavShowing, setIsNavShowing] = useState(false);
-
-
+function Navbar() {
   return (
     <nav>
-        <div className="container nav__container">
-            <Link to="/" className='logo' onClick={() => setIsNavShowing(false)}>
-                <img src={Logo} alt="Nav Logo" />
+      <div className="container">
+        <a href="index.html" className="nav__logo">
+          <h3>PawSitive Vet Care</h3>
+        </a>
+
+        <ul id="nav__items">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/services">Services</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="appointment" className="btn">
+              Make Appointment
             </Link>
-            <ul className={`nav__links ${isNavShowing ? 'show__nav' : 'hide__Nav'}`}>
-                {
-                    links.map(({name, path}, index) => {
-                        return (
-                            <li key={index}>
-                                <NavLink to={path} className={({isActive}) => isActive ? 'active-nav' : ''}  onClick={() => setIsNavShowing(prev => !prev)}>{name}</NavLink>
-                            </li>
-                        )
-                    })
-                }
-            </ul>
-            <button className="nav__toggle-btn" onClick={() => setIsNavShowing(prev => !prev)}>
-                {
-                    isNavShowing ? <MdOutlineClose/> : <GoThreeBars/>
-                }
-            </button>
-        </div>
+          </li>
+        </ul>
+      </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

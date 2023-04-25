@@ -1,9 +1,9 @@
-import {Link} from 'react-router-dom'
-import Logo from '../assets/pawsitive.png'
-import { FaLinkedin } from 'react-icons/fa'
-import { FaFacebookF } from 'react-icons/fa'
-import { AiOutlineTwitter } from 'react-icons/ai'
-import { AiFillInstagram } from 'react-icons/ai'
+// import {Link} from 'react-router-dom'
+// import Logo from '../assets/pawsitive.png'
+// import { FaLinkedin } from 'react-icons/fa'
+// import { FaFacebookF } from 'react-icons/fa'
+// import { AiOutlineTwitter } from 'react-icons/ai'
+// import { AiFillInstagram } from 'react-icons/ai'
 
 
 
@@ -11,7 +11,7 @@ import { AiFillInstagram } from 'react-icons/ai'
 const Footer = () => {
     return (
       <footer>
-        <div className="container footer__container">
+        {/* <div className="container footer__container">
           <article>
             <Link to="/" className="logo">
               <img src={Logo} alt="Footer Logo" />
@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
         <div className="footer__copyright">
           <small>2023 &copy; All Rights Reserved</small>
-        </div>
+        </div> */}
       </footer>
     );
 }
