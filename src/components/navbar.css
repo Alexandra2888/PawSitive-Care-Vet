@@ -1,0 +1,211 @@
+nav {
+    height: 5rem;
+    width: 100vw;
+    background: hsl(0, 0%, 100%);
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+/* only shows on medium and small screens */
+.nav__toggle-btn {
+    display: none;
+}
+
+.nav__container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo {
+    width: 7rem;
+    display: block;
+}
+
+.nav__links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 3.5rem;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+}
+
+.nav__links li {
+    height: 100%;
+}
+
+.nav__links a {
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: black;
+}
+
+.nav__links a:hover {
+    color: hsl(29, 60%, 55%);
+}
+
+.active-nav {
+    position: relative;
+}
+
+.active-nav::after {
+    content: "";
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: hsl(29, 60%, 55%);
+    position: absolute;
+    left: calc(50% - 0.6rem);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    bottom: -0.5rem;
+}
+
+/* MEDIA QUERIES (medium and small screens) */
+@media screen and (max-width:600px) {
+    .nav__toggle-btn {
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .nav__toggle-btn svg {
+        color: #d28b49;
+    }
+
+    .nav__links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        gap: 0;
+        -webkit-perspective: 400px;
+        perspective: 400px;
+    }
+
+    .active-nav,
+    .active-nav::after {
+        display: none;
+    }
+
+    .nav__links li {
+        height: 4rem;
+        width: 100%;
+        -webkit-box-shadow: -2rem 2rem 5rem rgba(0, 0, 0, 0.5);
+        box-shadow: -2rem 2rem 5rem rgba(0, 0, 0, 0.5);
+        -webkit-animation: navAnimation 600ms ease forwards;
+        animation: navAnimation 600ms ease forwards;
+        -webkit-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+        opacity: 0;
+        -webkit-transform-origin: top;
+        -ms-transform-origin: top;
+        transform-origin: top;
+    }
+
+     .nav__links li a:hover{
+        color: white;
+     }
+
+    .nav__links li:nth-child(2) {
+        -webkit-animation-delay: 200ms;
+        animation-delay: 200ms;
+    }
+
+    .nav__links li:nth-child(3) {
+        -webkit-animation-delay: 400ms;
+        animation-delay: 400ms;
+    }
+
+    .nav__links li:nth-child(4) {
+        -webkit-animation-delay: 600ms;
+        animation-delay: 600ms;
+    }
+
+    .nav__links li:nth-child(5) {
+        -webkit-animation-delay: 800ms;
+        animation-delay: 800ms;
+    }
+
+    .nav__links li:nth-child(6) {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+
+    .nav__links li:nth-child(7) {
+        -webkit-animation-delay: 1.2s;
+        animation-delay: 1.2s;
+    }
+
+    @-webkit-keyframes navAnimation {
+        to {
+            -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes navAnimation {
+        to {
+            -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+            opacity: 1;
+        }
+    }
+
+    .nav__links li a {
+        background-color: var(--color-primary);
+        height: 100%;
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 1rem 5rem 1rem 3rem;
+    }
+
+    .show__nav {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .hide__nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+}
