@@ -2,7 +2,6 @@
 
 # You can see it live here: https://pawsitive-care-vet.netlify.app/
 
-A brief description of project.
 
 # Installation
 Clone the repository: git clone https://github.com/Alexandra2888/PawSitive-Care-Vet
