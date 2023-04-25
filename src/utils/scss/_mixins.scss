@@ -1,20 +1,26 @@
 @mixin button($textColor: $white-color, $backgroundColor: $secondary-color) {
   display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0.75rem 1rem;
   border-radius: 0.4rem;
   background: $backgroundColor;
   color: $textColor;
   cursor: pointer;
+  -webkit-transition: all 400ms ease;
+  -o-transition: all 400ms ease;
   transition: all 400ms ease;
 
   &:hover {
     background: lighten($backgroundColor, 8%);
-    box-shadow: 0 1rem 1.6rem rgba($black-color, 0.15);
+    -webkit-box-shadow: 0 1rem 1.6rem rgba($black-color, 0.15);
+            box-shadow: 0 1rem 1.6rem rgba($black-color, 0.15);
   }
 }
 
 @mixin gradientBackground {
+  background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
   background: linear-gradient(135deg, $primary-color, $primary-color-variant);
   color: $white-color;
 
