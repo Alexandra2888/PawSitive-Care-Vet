@@ -4,7 +4,7 @@ import Logo from '../assets/pawsitive.png'
 import {links} from '../data'
 import {GoThreeBars} from 'react-icons/go'
 import {MdOutlineClose} from 'react-icons/md'
-import './navbar.css';
+import './Navbar.scss';
 
 
 
