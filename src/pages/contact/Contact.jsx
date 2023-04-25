@@ -1,4 +1,4 @@
-import Header from '../../components/Header'
+// import Header from '../../components/Header'
 // import HeaderImage from '../../assets/pawsitive.png'
 // import {MdEmail} from 'react-icons/md'
 // import {BsMessenger} from 'react-icons/bs'
@@ -8,9 +8,9 @@ import './contact.css'
 const Contact = () => {
   return (
     <>
-    <Header title="Get In Touch">
+    {/* <Header title="Get In Touch">
     Fruga itaque ducimus, ad amet praesentium suscipit sit, assumenda nihil officia totam, animi culpa nobis nemo natus doloremque?
-    </Header>
+    </Header> */}
     <section className="contact">
       <div className="container contact__container">
         {/* <div className="contact__wrapper">

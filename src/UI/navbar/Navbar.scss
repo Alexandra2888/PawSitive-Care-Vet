@@ -1,0 +1,164 @@
+@import '../../utils/scss/config';
+@import '../../utils/scss/mixins';
+@import '../../utils/scss/general';
+
+nav {
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  z-index: 10;
+  top:0;
+  display: grid;
+  place-items: center;
+  @include gradientBackground;
+  box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
+
+  &.window-scroll {
+    background: $white-color;
+    .container {
+      button {
+        color: $black-color;
+      }
+
+      a {
+        color: $black-color;
+
+        & > h3 {
+          color: $black-color;
+        }
+
+        &.btn {
+          color: $white-color;
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    button {
+      display: none;
+    }
+
+    a {
+      color: $white-color;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+
+    
+
+    .nav__logo h3 {
+      color: $white-color;
+    }
+  }
+}
+
+.btn {
+    color: var(--color-gray-100);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0.9rem 2rem;
+    background: var(--color-primary);
+    border-radius: 1.5rem;
+    -webkit-transition: var(--transition);
+    -o-transition: var(--transition);
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--color-secondary);
+    color: var(--color-gray-600);
+}
+
+.btn.lg {
+    padding: 1.2rem 3rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+}
+
+.btn.sm {
+    padding: 0.4rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+.btn.sm:hover {
+    background: var(--color-gray-100);
+}
+
+
+section {
+    margin-top: 10rem;
+}
+
+.section__head {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 1rem;
+}
+
+.section__head span {
+    background: var(--color-gray-500);
+    padding: 0.8rem;
+    border-radius: 1rem;
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+}
+
+
+
+
+
+/* MEDIA QUERIES (medium screens) */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: var(--container-width-md);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    section {
+        margin-top: 8rem;
+    }
+
+}
+
+
+li:nth-child(2) {
+      display: none;
+    }
+
+    li:nth-child(4) {
+      display: none;
+    }
+
+    @media screen and (min-width:1024px) {
+      li:nth-child(2) {
+      display: flex;
+    }
+
+    li:nth-child(4) {
+      display: flex;
+    }
+    }
