@@ -10,7 +10,10 @@ body {
   line-height: 1.5;
   color: $dark-color;
   background: rgba($primary-color-variant, 0.1);
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .container {
