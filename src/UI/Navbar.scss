@@ -1,11 +1,13 @@
-@import '../../utils/scss/mixins';
-@import '../../utils/scss/config';
+@import '../utils/scss/config';
+@import '../utils/scss/mixins';
+@import '../utils/scss/general';
 
 nav {
   width: 100vw;
   height: 5rem;
   position: fixed;
   z-index: 10;
+  top:0;
   display: grid;
   place-items: center;
   @include gradientBackground;
