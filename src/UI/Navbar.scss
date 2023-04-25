@@ -8,10 +8,12 @@ nav {
   position: fixed;
   z-index: 10;
   top:0;
+  display: -ms-grid;
   display: grid;
   place-items: center;
   @include gradientBackground;
-  box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
+  -webkit-box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
+          box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
 
   &.window-scroll {
     background: $white-color;
@@ -35,14 +37,24 @@ nav {
   }
 
   .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       gap: 3rem;
-      align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
     }
 
     button {
@@ -155,10 +167,14 @@ li:nth-child(2) {
 
     @media screen and (min-width:1024px) {
       li:nth-child(2) {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
     }
 
     li:nth-child(4) {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
     }
     }

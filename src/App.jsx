@@ -5,7 +5,7 @@ import Contact from "./pages/Contact";
 
 import NotFound from "./pages/notFound/NotFound";
 import Navbar from "./UI/Navbar";
-import Footer from "./components/Footer";
+import Footer from "./UI/footer/Footer";
 
 const App = () => {
   return (
