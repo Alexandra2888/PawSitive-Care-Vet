@@ -1,33 +1,42 @@
-import { Link } from "react-router-dom";
-import { links } from "../utils/constants";
-import "./Navbar.scss";
+import { useState } from 'react'
+import {Link, NavLink} from 'react-router-dom'
+import Logo from '../assets/pawsitive.png'
+import {links} from '../data'
+import {GoThreeBars} from 'react-icons/go'
+import {MdOutlineClose} from 'react-icons/md'
+import './Navbar.scss';
+
+
 
 const Navbar = () => {
-  return (
-    <nav className="header">
-      <img
-        src="src/assets/pawsitive-care.png"
-        alt="pawsitive-care"
-        className="logo"
-        width="200px"
-        height="70px"
-      />
-      <input className="menu-btn" type="checkbox" id="menu-btn" />
-      <label className="menu-icon" htmlFor="menu-btn">
-        <span className="navicon"></span>
-      </label>
-      <ul className="menu">
-        {links.map((link) => {
-          const { id, text, url } = link;
-          return (
-            <li key={id}>
-              <Link to={url}>{text}</Link>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
-};
+    const [isNavShowing, setIsNavShowing] = useState(false);
 
-export default Navbar;
+
+  return (
+    <nav>
+        <div className="container nav__container">
+            <Link to="/" className='logo' onClick={() => setIsNavShowing(false)}>
+                <img src={Logo} alt="Nav Logo" />
+            </Link>
+            <ul className={`nav__links ${isNavShowing ? 'show__nav' : 'hide__Nav'}`}>
+                {
+                    links.map(({name, path}, index) => {
+                        return (
+                            <li key={index}>
+                                <NavLink to={path} className={({isActive}) => isActive ? 'active-nav' : ''}  onClick={() => setIsNavShowing(prev => !prev)}>{name}</NavLink>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+            <button className="nav__toggle-btn" onClick={() => setIsNavShowing(prev => !prev)}>
+                {
+                    isNavShowing ? <MdOutlineClose/> : <GoThreeBars/>
+                }
+            </button>
+        </div>
+    </nav>
+  )
+}
+
+export default Navbar

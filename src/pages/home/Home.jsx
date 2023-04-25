@@ -1,12 +1,6 @@
-import Banner from '../../components/Banner';
-import './Home.scss';
-
+import "./home.css";
 const Home = () => {
-    return (
-      <section>
-        <Banner />
-      </section>
-    );
-}
+  return <></>;
+};
 
 export default Home;
