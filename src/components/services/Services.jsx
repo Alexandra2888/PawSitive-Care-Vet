@@ -6,7 +6,7 @@ const Services = () => {
     <section className="section">
       <div className="container">
         <div className="section__image">
-          <img src="src/assets/services.png" alt="Services Image" />
+          <img src="src/assets/services.png" alt="Services Image" className="img" />
         </div>
         <div className="section__content">
           <h1>Our services</h1>
