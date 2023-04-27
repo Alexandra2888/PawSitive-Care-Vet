@@ -40,14 +40,6 @@ const Services = () => {
               <GiCheckMark className="icon" />
               Internal Medicine
             </li>
-            <li>
-              <GiCheckMark className="icon" />
-              Orthopedics and Traumatology
-            </li>
-            <li>
-              <GiCheckMark className="icon" />
-              Simple & Doppler ultrasound
-            </li>
           </ul>
         </div>
       </div>
