@@ -9,7 +9,7 @@ const Services = () => {
           <img src="src/assets/services.png" alt="Services Image" />
         </div>
         <div className="section__content">
-          <h1>Our services:</h1>
+          <h1>Our services</h1>
           <p>Making a difference in the lives of pets and their owners.</p>
           <ul>
             <li>
