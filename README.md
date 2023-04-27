@@ -14,7 +14,7 @@ Install dependencies: npm install
 To start the development server, run:
 
 npm run dev
-This will start the application in development mode on http://localhost:3000.
+This will start the application in development mode on http://localhost:5173.
 
 # To build the application for production, run:
 
