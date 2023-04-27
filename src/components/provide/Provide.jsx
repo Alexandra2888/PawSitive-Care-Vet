@@ -3,7 +3,7 @@ import './Provide.scss'
 const Provide = () => {
     return (
       <section id="provide">
-        <h2>We provide 24h services</h2>
+        <h2>We provide 24h of care</h2>
         <p>
           helping your pet live their best life.
         </p>
