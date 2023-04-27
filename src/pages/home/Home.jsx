@@ -2,7 +2,8 @@ import Banner from "../../components/banner/Banner";
 import Provide from '../../components/provide/Provide';
 import Services from '../../components/services/Services';
 import Specialists from '../../components/specialists/Specialists';
-import "./home.css";
+import Testimonials from '../../components/testimonials/Testimonials';
+import "./Home.scss";
 const Home = () => {
   return (
     <>
@@ -10,6 +11,7 @@ const Home = () => {
       <Provide />
       <Services />
       <Specialists />
+      <Testimonials />
     </>
   )
 };
