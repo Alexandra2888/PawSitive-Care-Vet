@@ -1,27 +1,34 @@
-// import Header from '../../components/Header'
-// import HeaderImage from '../../assets/pawsitive.png'
-// import {MdEmail} from 'react-icons/md'
-// import {BsMessenger} from 'react-icons/bs'
-// import {IoLogoWhatsapp} from 'react-icons/io'
-import './contact.css'
+import Map from "../../components/map/Map";
+import "./Contact.scss";
 
 const Contact = () => {
   return (
-    <>
-    {/* <Header title="Get In Touch">
-    Fruga itaque ducimus, ad amet praesentium suscipit sit, assumenda nihil officia totam, animi culpa nobis nemo natus doloremque?
-    </Header> */}
-    <section className="contact">
-      <div className="container contact__container">
-        {/* <div className="contact__wrapper">
-          <a href="mailto:support@egattor.com" target="_blank" rel="noreferrer noopener"><MdEmail/></a>
-          <a href="http://m.me/ernest_achiever" target="_blank" rel="noreferrer noopener"><BsMessenger/></a>
-          <a href="https://wa.me/+123456789" target="_blank" rel="noreferrer noopener"><IoLogoWhatsapp/></a>
-        </div> */}
+    <section className="section">
+      <div className="container">
+        <div className="section__content">
+          <h1>PawSitive Vet Care</h1>
+          <p>Partnering with you for your pet&apos;s health.</p>
+          <div>
+            <i className="bx bxs-phone"></i>
+            <small>+2335555555</small>
+          </div>
+          <div>
+            <i className="bx bx-mail-send"></i>
+            <small>support@pawsitive-vet.com</small>
+          </div>
+          <div>
+            <i className="bx bx-home"></i>
+            <small>
+              1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+            </small>
+          </div>
+        </div>
+        <div>
+          <Map />
+        </div>
       </div>
     </section>
-    </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

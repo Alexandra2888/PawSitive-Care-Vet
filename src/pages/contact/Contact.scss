@@ -1,0 +1,29 @@
+@import "../../utils/scss/config";
+@import "../../utils/scss/mixins";
+@import "../../utils/scss/general";
+
+section {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+  
+    .section__content {
+      h1 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        letter-spacing: -3px;
+        font-weight: 300;
+      }
+
+      p {
+        margin: 1rem 0 2rem;
+        color: $light-color;
+        font-size: 1.1rem;
+      }
+    }
+}
+
+i {
+  margin-right: 5px;
+}
