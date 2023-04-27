@@ -18,10 +18,6 @@ const Services = () => {
             </li>
             <li>
               <GiCheckMark className="icon" />
-              Parasitic Diseases and Prevention
-            </li>
-            <li>
-              <GiCheckMark className="icon" />
               Cardiology
             </li>
             <li>
@@ -47,10 +43,6 @@ const Services = () => {
             <li>
               <GiCheckMark className="icon" />
               Orthopedics and Traumatology
-            </li>
-            <li>
-              <GiCheckMark className="icon" />
-              Hematological analysis
             </li>
             <li>
               <GiCheckMark className="icon" />
