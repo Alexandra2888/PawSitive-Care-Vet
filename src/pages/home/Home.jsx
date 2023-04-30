@@ -4,6 +4,7 @@ import Services from "../../components/services/Services";
 import Specialists from "../../components/specialists/Specialists";
 import Testimonials from "../../components/testimonials/Testimonials";
 import Contact from "../contact/Contact";
+import Faq from '../../components/faq/Faq';
 import "./Home.scss";
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <Specialists />
       <Testimonials />
       <Contact />
+      <Faq />
     </>
   );
 };
