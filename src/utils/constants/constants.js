@@ -5,3 +5,6 @@ export const links = [
   { id: 3, href: '#contact', text: 'Contact' },
 
 ];
+
+export const para =
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
