@@ -12,7 +12,6 @@
     margin-top: -1rem;
 
     .container {
-        margin-top: 3rem;
         display: grid;
         grid-template-columns: 46% 46%;
         gap: 8%;
@@ -27,6 +26,10 @@
                 font-weight: 300;
                 padding: 20px 20px 20px 0;
             }
+        }
+
+        .section__image {
+            margin-top: 8rem;
         }
     }
 }
@@ -64,4 +67,8 @@
 
 .btn {
    margin:auto;
+}
+
+h2 {
+    margin-bottom: 20px;
 }

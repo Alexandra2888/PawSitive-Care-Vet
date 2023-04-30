@@ -10,7 +10,8 @@ const NotFound = () => {
         </div>
 
         <div className="section__content">
-          <h1 className="title">This is not the page you are looking for!</h1>
+          <h1>404</h1>
+          <h2 className="title">This is not the page you are looking for!</h2>
           <Link to="/" className="btn">
             Go Back Home
           </Link>
