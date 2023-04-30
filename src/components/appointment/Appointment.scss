@@ -1,0 +1,20 @@
+@import "../../utils/scss/config";
+@import "../../utils/scss/mixins";
+@import "../../utils/scss/general";
+
+
+.section__appointment {
+background: none;
+}
+
+.title__appointment {
+    color: black !important;
+}
+
+.para__appointment {
+    color: black !important;
+}
+
+.small {
+    margin-bottom: .5rem;
+}
