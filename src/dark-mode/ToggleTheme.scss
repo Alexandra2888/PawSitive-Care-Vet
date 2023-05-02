@@ -1,0 +1,30 @@
+
+.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+
+
+.toggle-container {
+  padding: .5rem 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: end;
+}
+
+.dark-toggle {
+  background: transparent;
+  border-color: transparent;
+  width: 5rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+
+.toggle-icon {
+  font-size: 2rem;
+  color: var(--textColor);
+}
