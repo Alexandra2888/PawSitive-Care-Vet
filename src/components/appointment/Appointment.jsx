@@ -2,15 +2,14 @@ import './Appointment.scss';
 
 const Appointment = () => {
     return (
-      <section className="section section__appointment">
+      <section className="section">
         <div className="container">
           <div className="section__content">
-            <h1 className="title__appointment">Do you have an emergency?</h1>
-            <p className="para__appointment">Call our top specialists.</p>
-            <div className='small'>
-              <i className="bx bxs-phone para__appointment"></i>
-              <small className="para__appointment">+2335555555</small>
-            </div>
+            <h1>Do you have an emergency?</h1>
+            <p>
+              Call our top specialists
+              <i className="bx bxs-phone">+2335555555</i>
+            </p>
             <a href="#appointment" className="btn">
               Make Appointment
             </a>
