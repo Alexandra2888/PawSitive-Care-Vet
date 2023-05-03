@@ -9,7 +9,14 @@ const Specialists = () => {
         <div className="container">
           <article>
             <div className="specialist__image">
-              <img src="src/assets/specialist1.jpg" alt="Specialist One" />
+              <figure aria-label="specialist 1">
+                <figcaption>
+                  <img
+                    src="../../../public/assets/specialist1.jpg"
+                    alt="Specialist One"
+                  />
+                </figcaption>
+              </figure>
             </div>
             <div className="specialist__details">
               <h4>Dr. John Doe</h4>
@@ -17,32 +24,39 @@ const Specialists = () => {
             </div>
             <div className="specialist__socials">
               <a href="https://linkedin.com">
-                <i className="bx bxl-linkedin"></i>
+                <i className="bx bxl-linkedin" aria-label="linkedin"></i>
               </a>
               <a href="https://twitter.com">
-                <i className="bx bxl-twitter"></i>
+                <i className="bx bxl-twitter" aria-label="twitter"></i>
               </a>
               <a href="https://facebook.com">
-                <i className="bx bxl-facebook"></i>
+                <i className="bx bxl-facebook" aria-label="facebook"></i>
               </a>
               <a href="https://instagram.com">
-                <i className="bx bxl-instagram"></i>
+                <i className="bx bxl-instagram" aria-label="instagram"></i>
               </a>
             </div>
             <a
               href="https://api.whatsapp.com/send?phone=+233557097546"
               className="specialist__whatsapp"
             >
-              <i className="bx bxl-whatsapp"></i>
+              <i className="bx bxl-whatsapp" aria-label="whatsup"></i>
             </a>
           </article>
 
           <article>
             <div className="specialist__image">
-              <img src="src/assets/specialist2.jpg" alt="Specialist Two" />
+              <figure aria-label="specialist 2">
+                <figcaption>
+                  <img
+                    src="../../../public/assets/specialist2.jpg"
+                    alt="Specialist Two"
+                  />
+                </figcaption>
+              </figure>
             </div>
             <div className="specialist__details">
-              <h4>Dr. Carmen Makafui</h4>
+              <h4 className="">Dr. Carmen Makafui</h4>
               <small>Anaesthetic Specialist</small>
             </div>
             <div className="specialist__socials">
@@ -69,7 +83,14 @@ const Specialists = () => {
 
           <article>
             <div className="specialist__image">
-              <img src="src/assets/specialist3.jpg" alt="Specialist Three" />
+              <figure aria-label="specialist 3">
+                <figcaption>
+                  <img
+                    src="../../../public/assets/specialist3.jpg"
+                    alt="Specialist Three"
+                  />
+                </figcaption>
+              </figure>
             </div>
             <div className="specialist__details">
               <h4>Dr. Liza Apeledo</h4>
@@ -99,7 +120,14 @@ const Specialists = () => {
 
           <article>
             <div className="specialist__image">
-              <img src="src/assets/specialist4.jpg" alt="Specialist Four" />
+              <figure aria-label="specialist 4">
+                <figcaption>
+                  <img
+                    src="../../../public/assets/specialist4.jpg"
+                    alt="Specialist Four"
+                  />
+                </figcaption>
+              </figure>
             </div>
             <div className="specialist__details">
               <h4>Dr. Abigail Brownie</h4>

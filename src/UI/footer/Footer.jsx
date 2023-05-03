@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer>
-      <div className="container">
+      <div className="container" aria-label="Social Links">
         <article>
-          <a href="#" className="footer__logo">
+          <a href="#" className="footer__logo" aria-label="logo">
             <h3>PawSitive Vet Care</h3>
           </a>
           <p>Caring for your furry family members like they are our own</p>
           <div>
-            <i className="bx bxs-phone"></i>
+            <i className="bx bxs-phone" aria-label="phone"></i>
             <small>+2335555555</small>
           </div>
           <div>
-            <i className="bx bx-mail-send"></i>
+            <i className="bx bx-mail-send" aria-label="email"></i>
             <small>support@pawsitive-vet.com</small>
           </div>
         </article>
@@ -45,18 +45,18 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <p>Press</p>
           <p>FAQs</p>
-          <div className="footer__socials">
+          <div className="footer__socials" aria-label="social-lionks">
             <a href="#">
-              <i className="bx bxl-linkedin"></i>
+              <i className="bx bxl-linkedin" aria-label="linkedin"></i>
             </a>
             <a href="#">
-              <i className="bx bxl-twitter"></i>
+              <i className="bx bxl-twitter" aria-label="twitter"></i>
             </a>
             <a href="#">
-              <i className="bx bxl-facebook"></i>
+              <i className="bx bxl-facebook" aria-label="facebook"></i>
             </a>
             <a href="#">
-              <i className="bx bxl-instagram"></i>
+              <i className="bx bxl-instagram" aria-label="instagram"></i>
             </a>
           </div>
         </article>

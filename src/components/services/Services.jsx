@@ -3,10 +3,10 @@ import { GiCheckMark } from "react-icons/gi";
 
 const Services = () => {
   return (
-    <section className="section">
+    <section id="services">
       <div className="container">
         <div className="section__image">
-          <img src="src/assets/services.png" alt="Services Image" className="img" />
+          <img src="../../../public/assets/services.png" alt="Services Image" className="img" />
         </div>
         <div className="section__content">
           <h1>Our services</h1>

@@ -1,6 +1,5 @@
 @import '../scss/config';
 @import './mixins';
-
 html {
   scroll-behavior: smooth;
 }
@@ -76,10 +75,4 @@ section {
       width: $container-md;
     }
   }
-}
-
-
-.dark-mode {
-  background-color: #000000;
-  color: #ffffff;
 }

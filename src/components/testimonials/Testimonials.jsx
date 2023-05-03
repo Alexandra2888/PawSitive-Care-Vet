@@ -29,7 +29,14 @@ const Testimonials = () => {
               </p>
               <div className="patient">
                 <div className="avatar">
-                  <img src="src/assets/avatar1.jpg" alt="Patient One" />
+                  <figure aria-label="patient 1">
+                    <figcaption>
+                      <img
+                        src="../../../public/assets/avatar1.jpg"
+                        alt="Patient One"
+                      />
+                    </figcaption>
+                  </figure>
                 </div>
                 <div className="patient__details">
                   <h5>Nana Ama McBrown</h5>
@@ -47,7 +54,14 @@ const Testimonials = () => {
               </p>
               <div className="patient">
                 <div className="avatar">
-                  <img src="src/assets/avatar2.jpg" alt="Patient Two" />
+                  <figure aria-label="patient 2">
+                    <figcaption>
+                      <img
+                        src="../../../public/assets/avatar2.jpg"
+                        alt="Patient Two"
+                      />
+                    </figcaption>
+                  </figure>
                 </div>
                 <div className="patient__details">
                   <h5>John Dumelo</h5>
@@ -65,7 +79,14 @@ const Testimonials = () => {
               </p>
               <div className="patient">
                 <div className="avatar">
-                  <img src="src/assets/avatar3.jpg" alt="Patient Three" />
+                  <figure aria-label="patient 3">
+                    <figcaption>
+                      <img
+                        src="../../../public/assets/avatar3.jpg"
+                        alt="Patient Three"
+                      />
+                    </figcaption>
+                  </figure>
                 </div>
                 <div className="patient__details">
                   <h5>Edem Quist</h5>
@@ -83,7 +104,14 @@ const Testimonials = () => {
               </p>
               <div className="patient">
                 <div className="avatar">
-                  <img src="src/assets/avatar4.jpg" alt="Patient Four" />
+                  <figure aria-label="patient 4">
+                    <figcaption>
+                      <img
+                        src="../../../public/assets/avatar4.jpg"
+                        alt="Patient Four"
+                      />
+                    </figcaption>
+                  </figure>
                 </div>
                 <div className="patient__details">
                   <h5>Chantel Nontokozo</h5>
@@ -101,7 +129,14 @@ const Testimonials = () => {
               </p>
               <div className="patient">
                 <div className="avatar">
-                  <img src="src/assets/avatar5.jpg" alt="Patient Five" />
+                  <figure aria-label="patient 5">
+                    <figcaption>
+                      <img
+                        src="../../../public/assets/avatar5.jpg"
+                        alt="Patient Five"
+                      />
+                    </figcaption>
+                  </figure>
                 </div>
                 <div className="patient__details">
                   <h5>Jackie Appiah</h5>
@@ -119,7 +154,14 @@ const Testimonials = () => {
               </p>
               <div className="patient">
                 <div className="avatar">
-                  <img src="src/assets/avatar6.jpg" alt="Patient Six" />
+                  <figure aria-label="patient 6">
+                    <figcaption>
+                      <img
+                        src="../../../public/assets/avatar6.jpg"
+                        alt="Patient Six"
+                      />
+                    </figcaption>
+                  </figure>
                 </div>
                 <div className="patient__details">
                   <h5>Diana Ayi</h5>
@@ -137,7 +179,10 @@ const Testimonials = () => {
               </p>
               <div className="patient">
                 <div className="avatar">
-                  <img src="src/assets/avatar7.jpg" alt="Patient Seven" />
+                  <img
+                    src="../../../public/assets/avatar7.jpg"
+                    alt="Patient Seven"
+                  />
                 </div>
                 <div className="patient__details">
                   <h5>John Doe</h5>
