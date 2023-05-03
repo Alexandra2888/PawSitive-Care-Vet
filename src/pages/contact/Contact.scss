@@ -3,6 +3,7 @@
 @import "../../utils/scss/general";
 
 section {
+  display: -ms-grid;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -27,4 +28,3 @@ section {
 i {
   margin-right: 5px;
 }
-

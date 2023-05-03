@@ -22,7 +22,7 @@ function Navbar() {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/appointment" className="btn-app">
+            <Link to="/appointment" className="btn">
               Make Appointment
             </Link>
           </li>
