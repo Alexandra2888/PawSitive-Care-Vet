@@ -12,7 +12,7 @@ const Specialists = () => {
               <figure aria-label="specialist 1">
                 <figcaption>
                   <img
-                    src="../../../public/assets/specialist1.jpg"
+                    src="/assets/specialist1.jpg"
                     alt="Specialist One"
                   />
                 </figcaption>
@@ -49,7 +49,7 @@ const Specialists = () => {
               <figure aria-label="specialist 2">
                 <figcaption>
                   <img
-                    src="../../../public/assets/specialist2.jpg"
+                    src="/assets/specialist2.jpg"
                     alt="Specialist Two"
                   />
                 </figcaption>
@@ -86,7 +86,7 @@ const Specialists = () => {
               <figure aria-label="specialist 3">
                 <figcaption>
                   <img
-                    src="../../../public/assets/specialist3.jpg"
+                    src="/assets/specialist3.jpg"
                     alt="Specialist Three"
                   />
                 </figcaption>
@@ -123,7 +123,7 @@ const Specialists = () => {
               <figure aria-label="specialist 4">
                 <figcaption>
                   <img
-                    src="../../../public/assets/specialist4.jpg"
+                    src="/assets/specialist4.jpg"
                     alt="Specialist Four"
                   />
                 </figcaption>

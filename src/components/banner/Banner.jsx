@@ -16,7 +16,7 @@ const Banner = () => {
           <div className="header__image">
             <figure>
               <figcaption aria-label="banner">
-                <img src="../../../public/assets/banner.png" alt="banner" />
+                <img src="/assets/banner.png" alt="banner" />
               </figcaption>
             </figure>
           </div>

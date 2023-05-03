@@ -6,7 +6,7 @@ const NotFound = () => {
     <section className="section__container">
       <div className="container">
         <div className="section__image">
-          <img src="../../../public/assets/not-found.png" alt="Not found Image" />
+          <img src="/assets/not-found.png" alt="Not found Image" />
         </div>
 
         <div className="section__content">
