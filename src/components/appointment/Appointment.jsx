@@ -21,7 +21,7 @@ const Appointment = () => {
           <div className="section__image">
             <figure>
               <figcaption aria-label="appointment">
-                <img src="../../../public/assets/appointment.jpg" alt="appointment" />
+                <img src="/assets/appointment.jpg" alt="appointment" />
               </figcaption>
             </figure>
           </div>
