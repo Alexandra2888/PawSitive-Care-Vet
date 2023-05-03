@@ -32,7 +32,7 @@ const Testimonials = () => {
                   <figure aria-label="patient 1">
                     <figcaption>
                       <img
-                        src="../../../public/assets/avatar1.jpg"
+                        src="/assets/avatar1.jpg"
                         alt="Patient One"
                       />
                     </figcaption>
@@ -57,7 +57,7 @@ const Testimonials = () => {
                   <figure aria-label="patient 2">
                     <figcaption>
                       <img
-                        src="../../../public/assets/avatar2.jpg"
+                        src="/assets/avatar2.jpg"
                         alt="Patient Two"
                       />
                     </figcaption>
@@ -82,7 +82,7 @@ const Testimonials = () => {
                   <figure aria-label="patient 3">
                     <figcaption>
                       <img
-                        src="../../../public/assets/avatar3.jpg"
+                        src="/assets/avatar3.jpg"
                         alt="Patient Three"
                       />
                     </figcaption>
@@ -107,7 +107,7 @@ const Testimonials = () => {
                   <figure aria-label="patient 4">
                     <figcaption>
                       <img
-                        src="../../../public/assets/avatar4.jpg"
+                        src="/assets/avatar4.jpg"
                         alt="Patient Four"
                       />
                     </figcaption>
@@ -132,7 +132,7 @@ const Testimonials = () => {
                   <figure aria-label="patient 5">
                     <figcaption>
                       <img
-                        src="../../../public/assets/avatar5.jpg"
+                        src="/assets/avatar5.jpg"
                         alt="Patient Five"
                       />
                     </figcaption>
@@ -157,7 +157,7 @@ const Testimonials = () => {
                   <figure aria-label="patient 6">
                     <figcaption>
                       <img
-                        src="../../../public/assets/avatar6.jpg"
+                        src="/assets/avatar6.jpg"
                         alt="Patient Six"
                       />
                     </figcaption>
@@ -180,7 +180,7 @@ const Testimonials = () => {
               <div className="patient">
                 <div className="avatar">
                   <img
-                    src="../../../public/assets/avatar7.jpg"
+                    src="/assets/avatar7.jpg"
                     alt="Patient Seven"
                   />
                 </div>
