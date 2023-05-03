@@ -31,4 +31,37 @@
 .toggle-icon {
   font-size: 2rem;
   color: var(--textColor);
+}.dark-theme {
+  background-color: black;
+  color: white;
+}
+
+
+
+.toggle-container {
+  padding: .5rem 0;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.dark-toggle {
+  background: transparent;
+  border-color: transparent;
+  width: 5rem;
+  height: 2rem;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+
+.toggle-icon {
+  font-size: 2rem;
+  color: var(--textColor);
 }

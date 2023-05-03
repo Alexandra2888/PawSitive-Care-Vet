@@ -10,7 +10,7 @@ const Faq = () => {
   const [readMore3, setReadMore3] = useState(false);
 
   return (
-    <section className="section">
+    <section id="faq">
       <div className="container">
         <div className="section__image">
           <img src="src/assets/faq.png" alt="Faq Image" />

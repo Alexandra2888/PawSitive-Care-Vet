@@ -17,23 +17,23 @@ const Specialists = () => {
             </div>
             <div className="specialist__socials">
               <a href="https://linkedin.com">
-                <i className="bx bxl-linkedin"></i>
+                <i className="bx bxl-linkedin" aria-label="linkedin"></i>
               </a>
               <a href="https://twitter.com">
-                <i className="bx bxl-twitter"></i>
+                <i className="bx bxl-twitter" aria-label="twitter"></i>
               </a>
               <a href="https://facebook.com">
-                <i className="bx bxl-facebook"></i>
+                <i className="bx bxl-facebook" aria-label="facebook"></i>
               </a>
               <a href="https://instagram.com">
-                <i className="bx bxl-instagram"></i>
+                <i className="bx bxl-instagram" aria-label="instagram"></i>
               </a>
             </div>
             <a
               href="https://api.whatsapp.com/send?phone=+233557097546"
               className="specialist__whatsapp"
             >
-              <i className="bx bxl-whatsapp"></i>
+              <i className="bx bxl-whatsapp" aria-label="whatsup"></i>
             </a>
           </article>
 
@@ -42,7 +42,7 @@ const Specialists = () => {
               <img src="src/assets/specialist2.jpg" alt="Specialist Two" />
             </div>
             <div className="specialist__details">
-              <h4>Dr. Carmen Makafui</h4>
+              <h4 className="">Dr. Carmen Makafui</h4>
               <small>Anaesthetic Specialist</small>
             </div>
             <div className="specialist__socials">

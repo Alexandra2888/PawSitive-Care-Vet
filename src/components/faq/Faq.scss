@@ -3,29 +3,8 @@
 @import "../../utils/scss/mixins";
 @import "../../utils/scss/general";
 
-.icon {
-    margin-left: 10px;
-}
 
-
-
-@mixin gradientBackground {
-  background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
-  background: linear-gradient(135deg, $primary-color, $primary-color-variant);
-  color: $white-color;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: $white-color;
-  }
-}
-
-
-
-.section {
+#faq {
   @include gradientBackground;
   height: 100vh;
   display: -ms-grid;
@@ -66,7 +45,7 @@
 
 /* ======================== MEDIA QUERIES (MEDIUM DEVICES) ====================== */
 @media screen and (max-width: 1024px) {
-  header {
+  #faq {
     height: 60vh;
 
     .container {
@@ -83,7 +62,7 @@
 
 /* ======================== MEDIA QUERIES (SMALL DEVICES) ====================== */
 @media screen and (max-width: 600px) {
-  section {
+  #faq {
     height: 100vh;
 
     .container {
@@ -93,4 +72,17 @@
       margin-top: 0;
     }
   }
+
+  .section__content {
+    margin-top: -1.5rem;
+  }
 }
+
+
+.icon {
+    margin-left: 10px;
+}
+
+
+
+

@@ -2,19 +2,26 @@
 @import "../../utils/scss/mixins";
 @import "../../utils/scss/general";
 
-section {
+#section {
+   @include gradientBackground;
   display: -ms-grid;
   display: grid;
   place-items: center;
   overflow: hidden;
 
-  
+
     .section__content {
+      display: grid;
+      place-items: center center;
+      margin-bottom: 1rem;
+      
+
     h1 {
         font-size: 3.5rem;
         line-height: 1.1;
         letter-spacing: -3px;
         font-weight: 300;
+        margin-top: 2rem !important;
       }
 
       p {
@@ -28,3 +35,7 @@ section {
 i {
   margin-right: 5px;
 }
+
+
+
+

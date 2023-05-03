@@ -2,7 +2,7 @@
 @import "../../utils/scss/mixins";
 @import "../../utils/scss/general";
 
-.section {
+#appointment {
     height: 100vh;
     display: -ms-grid;
     display: grid;
@@ -17,11 +17,11 @@
         grid-template-columns: 46% 46%;
         gap: 8%;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
 
         .section__content {
             h1 {
@@ -42,7 +42,7 @@
 
 /* ======================== MEDIA QUERIES (MEDIUM DEVICES) ====================== */
 @media screen and (max-width: 1024px) {
-    header {
+    #appointment {
         height: 60vh;
 
         .container {
@@ -59,7 +59,7 @@
 
 /* ======================== MEDIA QUERIES (SMALL DEVICES) ====================== */
 @media screen and (max-width: 600px) {
-    section {
+    #appointment {
         height: 100vh;
 
         .container {
@@ -71,7 +71,11 @@
     }
 }
 
-i {
-    margin-left: 10px;
-    padding: 10px;
+a {
+    list-style: none;
+    color: white;
+}
+
+.btn {
+        margin-top: 1rem !important;
 }
