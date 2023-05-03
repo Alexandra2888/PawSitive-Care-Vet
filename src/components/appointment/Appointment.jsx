@@ -1,22 +1,29 @@
+import { Link } from 'react-router-dom';
 import './Appointment.scss';
 
 const Appointment = () => {
     return (
-      <section className="section section__appointment">
+      <section id="appointment">
         <div className="container">
           <div className="section__content">
-            <h1 className="title__appointment">Do you have an emergency?</h1>
-            <p className="para__appointment">Call our top specialists.</p>
-            <div className='small'>
-              <i className="bx bxs-phone para__appointment"></i>
-              <small className="para__appointment">+2335555555</small>
-            </div>
-            <a href="#appointment" className="btn">
-              Make Appointment
+            <h1>Do you have an emergency?</h1>
+            <p>Call our top specialists </p>
+            <i className="bx bxs-phone" aria-hidden="true"></i>
+            <a href="tel:+2335555555" aria-label="Call now">
+              +2335555555
             </a>
+            <div>
+              <Link to="#appointment" className="btn">
+                Make Appointment
+              </Link>
+            </div>
           </div>
           <div className="section__image">
-            <img src="src/assets/appointment.jpg" alt="Appointment Image" />
+            <figure>
+              <figcaption aria-label="appointment">
+                <img src="/assets/appointment.jpg" alt="appointment" />
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>

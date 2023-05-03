@@ -1,13 +1,15 @@
 import "./Navbar.scss";
 import { Link } from "react-router-dom";
+import ToggleTheme from '../../dark-mode/ToggleTheme';
+
 
 function Navbar() {
   return (
     <nav>
       <div className="container">
-        <a href="index.html" className="nav__logo">
-          <h3>PawSitive Vet Care</h3>
-        </a>
+        <Link to="/" className="nav__logo">
+          <h3>PawSitive Vet Care</h3> 
+        </Link>
 
         <ul id="nav__items">
           <li>
@@ -20,9 +22,12 @@ function Navbar() {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="appointment" className="btn">
+            <Link to="/appointment" className="btn">
               Make Appointment
             </Link>
+          </li>
+          <li>
+            <ToggleTheme />
           </li>
         </ul>
       </div>

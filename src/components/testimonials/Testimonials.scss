@@ -2,6 +2,22 @@
 @import "../../utils/scss/mixins";
 @import "../../utils/scss/general";
 
+@mixin gradientBackground {
+  background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
+  background: linear-gradient(135deg, $primary-color, $primary-color-variant);
+  color: $white-color;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $white-color;
+  }
+}
+
+
+
 .swiper {
   width: $container-lg;
 
@@ -21,8 +37,12 @@
       }
 
       .patient {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         gap: 1rem;
 
         .avatar {

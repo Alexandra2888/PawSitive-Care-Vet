@@ -2,10 +2,27 @@
 @import '../../utils/scss/mixins';
 @import '../../utils/scss/general';
 
+
+@mixin gradientBackground {
+  background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
+  background: linear-gradient(135deg, $primary-color, $primary-color-variant);
+  color: $white-color;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $white-color;
+  }
+}
+
+
+
 nav {
   width: 100vw;
   height: 5rem;
-  position: fixed;
+  position: sticky;
   z-index: 10;
   top:0;
   display: -ms-grid;
@@ -57,7 +74,7 @@ nav {
               align-items: center;
     }
 
-    button {
+    .button-app {
       display: none;
     }
 
@@ -157,7 +174,7 @@ section {
 }
 
 
-li:nth-child(2) {
+li:nth-child(5) {
       display: none;
     }
 
