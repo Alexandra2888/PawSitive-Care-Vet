@@ -9,7 +9,7 @@ const Provide = () => {
         </p>
         <div className="container">
           <article>
-            <i className="bx bx-book-content"></i>
+            <i className="bx bx-book-content" aria-label='booking'></i>
             <div>
               <h4>Online Booking</h4>
               <small>
@@ -20,7 +20,7 @@ const Provide = () => {
             </div>
           </article>
           <article>
-            <i className="bx bx-trophy"></i>
+            <i className="bx bx-trophy" aria-label='doctors'></i>
             <div>
               <h4>Qualified Doctors</h4>
               <small>
@@ -31,7 +31,7 @@ const Provide = () => {
             </div>
           </article>
           <article>
-            <i className="bx bx-support"></i>
+            <i className="bx bx-support" aria-label='support'></i>
             <div>
               <h4>Private Support</h4>
               <small>
@@ -42,7 +42,7 @@ const Provide = () => {
             </div>
           </article>
           <article>
-            <i className="bx bx-donate-heart"></i>
+            <i className="bx bx-donate-heart" aria-label='care'></i>
             <div>
               <h4>Well Cared</h4>
               <small>
@@ -53,7 +53,7 @@ const Provide = () => {
             </div>
           </article>
           <article>
-            <i className="bx bx-first-aid"></i>
+            <i className="bx bx-first-aid" aria-label='aid'></i>
             <div>
               <h4>Need Emergency</h4>
               <small>
@@ -64,7 +64,7 @@ const Provide = () => {
             </div>
           </article>
           <article>
-            <i className="bx bxl-meta"></i>
+            <i className="bx bxl-meta" aria-label='services'></i>
             <div>
               <h4>24 Hour Service</h4>
               <small>

@@ -9,15 +9,15 @@ const Contact = () => {
           <h1>PawSitive Vet Care</h1>
           <p>Partnering with you for your pet&apos;s health.</p>
           <div>
-            <i className="bx bxs-phone"></i>
+            <i className="bx bxs-phone" aria-label="phone"></i>
             <small>+2335555555</small>
           </div>
           <div>
-            <i className="bx bx-mail-send"></i>
+            <i className="bx bx-mail-send" aria-label="email"></i>
             <small>support@pawsitive-vet.com</small>
           </div>
           <div>
-            <i className="bx bx-home"></i>
+            <i className="bx bx-home" aria-label="address"></i>
             <small>
               1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
             </small>
