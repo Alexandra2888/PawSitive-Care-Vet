@@ -9,7 +9,14 @@ const Specialists = () => {
         <div className="container">
           <article>
             <div className="specialist__image">
-              <img src="src/assets/specialist1.jpg" alt="Specialist One" />
+              <figure aria-label="specialist 1">
+                <figcaption>
+                  <img
+                    src="../../../public/assets/specialist1.jpg"
+                    alt="Specialist One"
+                  />
+                </figcaption>
+              </figure>
             </div>
             <div className="specialist__details">
               <h4>Dr. John Doe</h4>
@@ -39,7 +46,14 @@ const Specialists = () => {
 
           <article>
             <div className="specialist__image">
-              <img src="src/assets/specialist2.jpg" alt="Specialist Two" />
+              <figure aria-label="specialist 2">
+                <figcaption>
+                  <img
+                    src="../../../public/assets/specialist2.jpg"
+                    alt="Specialist Two"
+                  />
+                </figcaption>
+              </figure>
             </div>
             <div className="specialist__details">
               <h4 className="">Dr. Carmen Makafui</h4>
@@ -69,7 +83,14 @@ const Specialists = () => {
 
           <article>
             <div className="specialist__image">
-              <img src="src/assets/specialist3.jpg" alt="Specialist Three" />
+              <figure aria-label="specialist 3">
+                <figcaption>
+                  <img
+                    src="../../../public/assets/specialist3.jpg"
+                    alt="Specialist Three"
+                  />
+                </figcaption>
+              </figure>
             </div>
             <div className="specialist__details">
               <h4>Dr. Liza Apeledo</h4>
@@ -99,7 +120,14 @@ const Specialists = () => {
 
           <article>
             <div className="specialist__image">
-              <img src="src/assets/specialist4.jpg" alt="Specialist Four" />
+              <figure aria-label="specialist 4">
+                <figcaption>
+                  <img
+                    src="../../../public/assets/specialist4.jpg"
+                    alt="Specialist Four"
+                  />
+                </figcaption>
+              </figure>
             </div>
             <div className="specialist__details">
               <h4>Dr. Abigail Brownie</h4>

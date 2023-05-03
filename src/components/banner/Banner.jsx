@@ -14,7 +14,11 @@ const Banner = () => {
             </a>
           </div>
           <div className="header__image">
-            <img src="src/assets/banner.png" alt="Header Image" />
+            <figure>
+              <figcaption aria-label="banner">
+                <img src="../../../public/assets/banner.png" alt="banner" />
+              </figcaption>
+            </figure>
           </div>
         </div>
       </header>

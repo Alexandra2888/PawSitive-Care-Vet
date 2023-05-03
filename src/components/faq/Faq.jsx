@@ -13,7 +13,7 @@ const Faq = () => {
     <section id="faq">
       <div className="container">
         <div className="section__image">
-          <img src="src/assets/faq.png" alt="Faq Image" />
+          <img src="../../../public/assets/faq.png" alt="Faq Image" />
         </div>
         <div className="section__content">
           <h2>FAQ</h2>
