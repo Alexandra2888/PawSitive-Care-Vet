@@ -1,36 +1,19 @@
-@import '../../utils/scss/config';
-@import '../../utils/scss/mixins';
-@import '../../utils/scss/general';
-
-
-@mixin gradientBackground {
-  background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
-  background: linear-gradient(135deg, $primary-color, $primary-color-variant);
-  color: $white-color;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    color: $white-color;
-  }
-}
-
-
+@import "../../utils/scss/config";
+@import "../../utils/scss/mixins";
+@import "../../utils/scss/general";
 
 nav {
   width: 100vw;
   height: 5rem;
   position: sticky;
   z-index: 10;
-  top:0;
+  top: 0;
   display: -ms-grid;
   display: grid;
   place-items: center;
   @include gradientBackground;
   -webkit-box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
-          box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
+  box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
 
   &.window-scroll {
     background: $white-color;
@@ -58,11 +41,11 @@ nav {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 
     ul {
       display: -webkit-box;
@@ -70,12 +53,8 @@ nav {
       display: flex;
       gap: 3rem;
       -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-    }
-
-    .button-app {
-      display: none;
+      -ms-flex-align: center;
+      align-items: center;
     }
 
     a {
@@ -84,8 +63,6 @@ nav {
       font-size: 0.9rem;
     }
 
-    
-
     .nav__logo h3 {
       color: $white-color;
     }
@@ -93,105 +70,64 @@ nav {
 }
 
 .btn {
-    color: var(--color-gray-100);
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 0.9rem 2rem;
-    background: var(--color-primary);
-    border-radius: 1.5rem;
-    -webkit-transition: var(--transition);
-    -o-transition: var(--transition);
-    transition: var(--transition);
+  color: var(--color-gray-100);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.9rem 2rem;
+  background: var(--color-primary);
+  border-radius: 1.5rem;
+  -webkit-transition: var(--transition);
+  -o-transition: var(--transition);
+  transition: var(--transition);
 }
 
 .btn:hover {
-    background: var(--color-secondary);
-    color: var(--color-gray-600);
+  background: var(--color-secondary);
+  color: var(--color-gray-600);
 }
 
 .btn.lg {
-    padding: 1.2rem 3rem;
-    border-radius: 2rem;
-    font-size: 1.1rem;
+  padding: 1.2rem 3rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
 }
 
 .btn.sm {
-    padding: 0.4rem 1.2rem;
-    font-size: 0.9rem;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.9rem;
 }
 
 .btn.sm:hover {
-    background: var(--color-gray-100);
+  background: var(--color-gray-100);
 }
-
 
 section {
-    margin-top: 10rem;
+  margin-top: 10rem;
 }
-
-.section__head {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    gap: 1rem;
-}
-
-.section__head span {
-    background: var(--color-gray-500);
-    padding: 0.8rem;
-    border-radius: 1rem;
-    color: var(--color-secondary);
-    font-size: 1.5rem;
-}
-
-
-
-
 
 /* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 1024px) {
-    .container {
-        width: var(--container-width-md);
-    }
+  .container {
+    width: var(--container-width-md);
+  }
 
-    h1 {
-        font-size: 2rem;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    h2 {
-        font-size: 1.6rem;
-    }
+  h2 {
+    font-size: 1.6rem;
+  }
 
-    section {
-        margin-top: 8rem;
-    }
-
+  section {
+    margin-top: 8rem;
+  }
 }
 
-
-li:nth-child(5) {
-      display: none;
-    }
-
-    li:nth-child(4) {
-      display: none;
-    }
-
-    @media screen and (min-width:1024px) {
-      li:nth-child(2) {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-    }
-
-    li:nth-child(4) {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-    }
-    }
+@media screen and (max-width: 600px) {
+  li:nth-child(2) {
+    display: none;
+  }
+}
