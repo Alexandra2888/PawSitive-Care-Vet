@@ -1,30 +1,25 @@
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ToggleTheme from '../../dark-mode/ToggleTheme';
+
 
 
 function Navbar() {
   return (
     <nav>
       <div className="container">
-        <Link to="/" className="nav__logo">
+        <NavLink to="/" className="nav__logo">
           <h3>PawSitive Vet Care</h3> 
-        </Link>
+        </NavLink>
 
         <ul id="nav__items">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/services">Services</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/appointment" className="btn">
+            <NavLink to="/appointment" className="btn">
               Make Appointment
-            </Link>
+            </NavLink>
           </li>
           <li>
             <ToggleTheme />
