@@ -1,4 +1,8 @@
 import './Banner.scss';
+import Login from "../../forms/login/Login";
+import { Link } from "react-router-dom";
+
+
 
 const Banner = () => {
     return (
@@ -9,9 +13,9 @@ const Banner = () => {
               Complete Health Care Solutions For Every Pet
             </h1>
             <p>Because your pet&apos;s health is our top priority.</p>
-            <a href="#appointment" className="btn">
+            <Link to="/login" className="btn">
               Make Appointment
-            </a>
+            </Link>
           </div>
           <div className="header__image">
             <figure>
