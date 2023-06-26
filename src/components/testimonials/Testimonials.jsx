@@ -185,7 +185,7 @@ const Testimonials = () => {
                   />
                 </div>
                 <div className="patient__details">
-                  <h5>John Doe</h5>
+                  <h5>Johanna Doe</h5>
                   <small>Dog owner</small>
                 </div>
               </div>

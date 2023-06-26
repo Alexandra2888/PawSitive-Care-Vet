@@ -4,14 +4,12 @@
 
 header {
   @include gradientBackground;
-  height: 100vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
   overflow: hidden;
 
-  .container {
-    margin-top: 3rem;
+   .container {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 46% 8% 46%;
@@ -23,6 +21,8 @@ header {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+            text-align: center;
+
 
     .header__content {
       h1 {
@@ -30,22 +30,31 @@ header {
         line-height: 1.1;
         letter-spacing: -3px;
         font-weight: 300;
+        padding: 1em 1.5em;
+        color: $white-color;
       }
 
       p {
-        margin: 1rem 0 2rem;
+        padding: 1em 3em;
         color: $light-color;
         font-size: 1.1rem;
       }
     }
   }
-}
+ }
+
+
+ 
+ .btn {
+  display: flex !important;
+  justify-content: center !important;
+  margin-bottom: 1em !important;
+ }
+
 
 /* ======================== MEDIA QUERIES (MEDIUM DEVICES) ====================== */
 @media screen and (max-width: 1024px) {
   header {
-    height: 60vh;
-
     .container {
       gap: 1rem;
 
@@ -61,13 +70,10 @@ header {
 /* ======================== MEDIA QUERIES (SMALL DEVICES) ====================== */
 @media screen and (max-width: 600px) {
   header {
-    height: 100vh;
-
     .container {
       -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       text-align: center;
-      margin-top: 0;
     }
   }
 }
