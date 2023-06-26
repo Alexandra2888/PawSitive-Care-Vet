@@ -57,6 +57,10 @@ nav {
       align-items: center;
     }
 
+ul li:first-child {
+  padding-left: 1em;
+}
+
     a {
       color: $white-color;
       font-weight: 400;
@@ -103,9 +107,6 @@ nav {
   background: var(--color-gray-100);
 }
 
-section {
-  margin-top: 10rem;
-}
 
 /* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 1024px) {
@@ -120,13 +121,9 @@ section {
   h2 {
     font-size: 1.6rem;
   }
-
-  section {
-    margin-top: 8rem;
-  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   li:nth-child(2) {
     display: none;
   }

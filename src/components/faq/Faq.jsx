@@ -46,7 +46,7 @@ const Faq = () => {
                 className="icon"
                 onClick={() => setReadMore3(!readMore3)}
               />
-              <br></br>
+              <br/>
               {readMore3 ? para : `${para.substring(0, 0)}`}
             </li>
           </ul>
