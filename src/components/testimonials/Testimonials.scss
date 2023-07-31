@@ -2,14 +2,10 @@
 @import "../../utils/scss/mixins";
 @import "../../utils/scss/general";
 
-
-
-
 .swiper {
   width: $container-lg;
 
   .swiper-wrapper {
-    /* brings swiper pagination down */
     margin-bottom: 4rem;
 
     .swiper-slide {
@@ -17,7 +13,7 @@
       padding: 1.5rem 2rem;
       border-radius: 1rem;
       cursor: default;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
 
       &-para {
         margin-bottom: 1.5rem;
@@ -28,15 +24,21 @@
         display: -ms-flexbox;
         display: flex;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        justify-content: center;
+        align-items: center;
         gap: 1rem;
 
         .avatar {
-          width: 2.5rem;
+          width: 6.5rem;
           aspect-ratio: 1/1;
-          border-radius: 50%;
-          overflow: hidden;
+        }
+
+        &__details {
+          display: flex;
+          flex-direction: column;
+          align-content: center;
+          align-items:center;
         }
       }
     }

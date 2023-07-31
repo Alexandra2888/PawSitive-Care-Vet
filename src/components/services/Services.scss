@@ -4,11 +4,10 @@
 
 #services {
   @include gradientBackground;
-  height: 100vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
-  overflow: hidden;
+
 
   .services__container {
     display: -ms-grid;
@@ -17,15 +16,21 @@
     grid-template-columns: 46% 46%;
     gap: 8%;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    color: $white-color;
+
 
     .service__section{
     &-content {
       margin-top: -2rem;
+
+    .section__content {
+      min-height: fit-content;
+
 
       &-title {
         font-size: 3.5rem;
@@ -33,6 +38,7 @@
         letter-spacing: -3px;
         font-weight: 300;
       }
+
 
       &-para {
          margin: 1rem 0;
@@ -44,10 +50,18 @@
 }
 }
 
+img {
+  margin-top: 2em;
+}
+
+ul li {
+  text-align: left;
+  padding-left: 1em;
+}
+
 /* ======================== MEDIA QUERIES (MEDIUM DEVICES) ====================== */
 @media screen and (max-width: 1024px) {
   #services {
-    height: 60vh;
 
     .services__container {
       gap: 1rem;
@@ -64,7 +78,6 @@
 /* ======================== MEDIA QUERIES (SMALL DEVICES) ====================== */
 @media screen and (max-width: 600px) {
   #services {
-    height: 100vh;
 
     .services__container {
       -ms-grid-columns: 1fr;
@@ -76,7 +89,7 @@
 
     .service__section-title {
       margin-top: 20px;
-   }
+    }
   }
 }
 
