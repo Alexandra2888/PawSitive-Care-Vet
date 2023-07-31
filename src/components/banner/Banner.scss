@@ -4,7 +4,7 @@
 
 header {
   @include gradientBackground;
-  height: 100vh;
+  height: calc(100vh - 80px);
   display: -ms-grid;
   display: grid;
   place-items: center;
