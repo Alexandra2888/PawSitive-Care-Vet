@@ -1,6 +1,6 @@
-@import '../../utils/scss/config';
-@import '../../utils/scss/mixins';
-@import '../../utils/scss/general';
+@import "../../utils/scss/config";
+@import "../../utils/scss/mixins";
+@import "../../utils/scss/general";
 
 header {
   @include gradientBackground;
@@ -18,25 +18,29 @@ header {
     grid-template-columns: 46% 46%;
     gap: 8%;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 
     .header__content {
-      h1 {
+       &-title {
         font-size: 3.5rem;
         line-height: 1.1;
         letter-spacing: -3px;
         font-weight: 300;
       }
 
-      p {
+      &-para {
         margin: 1rem 0 2rem;
         color: $light-color;
         font-size: 1.1rem;
       }
+    }
+
+    &__image {
+     margin-bottom: 3rem;
     }
   }
 }

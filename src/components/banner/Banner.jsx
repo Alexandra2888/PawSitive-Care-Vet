@@ -5,10 +5,10 @@ const Banner = () => {
       <header role="banner" id="banner">
         <div className="container">
           <div className="header__content">
-            <h1 id="banner-heading">
+            <h1 id="banner__heading"  className="header__content-title">
               Complete Health Care Solutions For Every Pet
             </h1>
-            <p>Because your pet&apos;s health is our top priority.</p>
+            <p className='header__content-para'>Because your pet&apos;s health is our top priority.</p>
             <a href="#appointment" className="btn">
               Make Appointment
             </a>

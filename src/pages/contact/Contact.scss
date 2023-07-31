@@ -10,13 +10,13 @@
   overflow: hidden;
 
 
-    .section__content {
+    .contact__section-content {
       display: grid;
       place-items: center center;
       margin-bottom: 1rem;
       
 
-    h1 {
+    &-title {
         font-size: 3.5rem;
         line-height: 1.1;
         letter-spacing: -3px;
@@ -24,7 +24,7 @@
         margin-top: 2rem !important;
       }
 
-      p {
+      &-para {
         margin: 1rem 0 2rem;
         color: $light-color;
         font-size: 1.1rem;
