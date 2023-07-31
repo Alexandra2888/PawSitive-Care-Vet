@@ -4,13 +4,13 @@ import { GiCheckMark } from "react-icons/gi";
 const Services = () => {
   return (
     <section id="services">
-      <div className="container">
+      <div className="services__container">
         <div className="section__image">
           <img src="/assets/services.png" alt="Services Image" className="img" />
         </div>
-        <div className="section__content">
-          <h1>Our services</h1>
-          <p>Making a difference in the lives of pets and their owners.</p>
+        <div className="service__section-content">
+          <h1 className="service__section-title">Our services</h1>
+          <p className="service__section-para">Making a difference in the lives of pets and their owners.</p>
           <ul>
             <li>
               <GiCheckMark className="icon" />

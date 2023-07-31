@@ -22,7 +22,7 @@ const Testimonials = () => {
         <div className="swiper-wrapper">
           <SwiperSlide>
             <article className="swiper-slide">
-              <p>
+              <p className="swiper__slide-para">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
                 earum veritatis labore quisquam exercitationem quo, magnam quos?
                 Quia.

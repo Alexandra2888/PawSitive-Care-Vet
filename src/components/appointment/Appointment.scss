@@ -26,17 +26,11 @@
         justify-content: space-between;
 
         .section__content {
-            h1 {
+            &-title, &-description {
                 font-size: 3.5rem;
                 line-height: 1.1;
                 letter-spacing: -3px;
                 font-weight: 300;
-            }
-
-            p {
-                margin: 1rem 0 2rem;
-                color: $light-color;
-                font-size: 1.1rem;
             }
         }
     }

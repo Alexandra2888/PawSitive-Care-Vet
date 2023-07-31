@@ -6,8 +6,8 @@ const Appointment = () => {
       <section id="appointment">
         <div className="container">
           <div className="section__content">
-            <h1>Do you have an emergency?</h1>
-            <h1>Call our top specialists </h1>
+            <h1 className='section__content-title'>Do you have an emergency?</h1>
+            <h1 className='section__content-description'>Call our top specialists </h1>
             <div>
               <Link to="#appointment" className="btn">
                 Make Appointment

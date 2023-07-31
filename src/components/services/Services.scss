@@ -9,7 +9,7 @@
   place-items: center;
 
 
-  .container {
+  .services__container {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 46% 8% 46%;
@@ -23,23 +23,31 @@
     justify-content: space-between;
     color: $white-color;
 
+
+    .service__section{
+    &-content {
+      margin-top: -2rem;
+
     .section__content {
       min-height: fit-content;
 
-      h1 {
+
+      &-title {
         font-size: 3.5rem;
         line-height: 1.1;
         letter-spacing: -3px;
         font-weight: 300;
       }
 
-      p {
-        margin: 1em;
+
+      &-para {
+         margin: 1rem 0;
         color: $light-color;
         font-size: 1.1rem;
       }
     }
   }
+}
 }
 
 img {
@@ -55,7 +63,7 @@ ul li {
 @media screen and (max-width: 1024px) {
   #services {
 
-    .container {
+    .services__container {
       gap: 1rem;
 
       .section__content {
@@ -71,7 +79,7 @@ ul li {
 @media screen and (max-width: 600px) {
   #services {
 
-    .container {
+    .services__container {
       -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       text-align: center;
@@ -79,7 +87,7 @@ ul li {
       padding-bottom: 1rem;
     }
 
-    h1 {
+    .service__section-title {
       margin-top: 20px;
     }
   }
