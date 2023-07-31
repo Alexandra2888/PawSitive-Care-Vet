@@ -18,7 +18,7 @@
     .section__image {
       img {
         margin-top: 2em;
-        max-width: 100%; /* Ensure the image doesn't exceed its container */
+        max-width: 100%; 
       }
     }
 
@@ -80,7 +80,6 @@
 
     .section__image,
     .service__section-content {
-      /* Remove the negative margin and center-align content on small devices */
       margin-top: 0;
     }
   }
