@@ -17,7 +17,7 @@ function Navbar() {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/appointment" className="btn">
+            <NavLink to="/sign-up" className="btn">
               Make Appointment
             </NavLink>
           </li>
