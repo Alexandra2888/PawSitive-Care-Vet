@@ -23,10 +23,12 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
+        padding-left: 1em;
+        padding-top: 1em;
         -webkit-box-align: center;
         -ms-flex-align: center;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        align-items:left;
         gap: 1rem;
 
         .avatar {
@@ -39,6 +41,8 @@
           flex-direction: column;
           align-content: center;
           align-items:center;
+          text-align: left;
+          padding-top: 1.5em;
         }
       }
     }
