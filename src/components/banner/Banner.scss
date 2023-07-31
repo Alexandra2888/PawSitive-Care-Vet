@@ -10,7 +10,7 @@ header {
   place-items: center;
   overflow: hidden;
 
-   .container {
+  .banner__container {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 46% 8% 46%;
@@ -21,54 +21,48 @@ header {
     align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-            text-align: center;
+    -ms-flex-pack: justify;
+    justify-content: space-around;
+    text-align: center;
   }
 
-    .header__content {
-       &-title {
-        font-size: 3.5rem;
-        line-height: 1.1;
-        letter-spacing: -3px;
-        font-weight: 300;
-        padding: 1em 1.5em;
-        color: $white-color;
-      }
-
-
-      &-para {
-        margin: 1rem 0 2rem;
-        color: $light-color;
-        font-size: 1.1rem;
-      }
+  .header__content {
+    &-title {
+      font-size: 2.5rem;
+      line-height: 1.5;
+      font-weight: 300;
+      padding: 1em 1.5em;
+      color: $white-color;
     }
 
-    &__image {
-     margin-bottom: 3rem;
+    &-para {
+      margin: 1rem 0 2rem;
+      color: $light-color;
+      font-size: 1.2rem;
     }
   }
- 
+}
 
-
- 
- .btn {
+.btn {
   display: flex !important;
   justify-content: center !important;
   margin-bottom: 1em !important;
- }
-
+}
 
 /* ======================== MEDIA QUERIES (MEDIUM DEVICES) ====================== */
 @media screen and (max-width: 1024px) {
   header {
-    .container {
+    .banner__container {
       gap: 1rem;
+      padding: 1em;
 
       .header__content {
-        h1 {
-          font-size: 2.2rem;
+        &-para {
+          font-size: 1.8rem;
+        }
+
+        &-title {
+          
         }
       }
     }
@@ -78,10 +72,11 @@ header {
 /* ======================== MEDIA QUERIES (SMALL DEVICES) ====================== */
 @media screen and (max-width: 600px) {
   header {
-    .container {
+    .banner__container {
       -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       text-align: center;
+      padding: 1em;
     }
   }
 }

@@ -2,22 +2,22 @@
 @import "../../utils/scss/mixins";
 @import "../../utils/scss/general";
 
-nav {
+.nav__container {
   width: 100vw;
   height: 5rem;
   position: sticky;
   z-index: 10;
   top: 0;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em 2em;
   @include gradientBackground;
-  -webkit-box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
   box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
 
   &.window-scroll {
     background: $white-color;
-    .container {
+    &-wrapper {
       button {
         color: $black-color;
       }
@@ -36,30 +36,21 @@ nav {
     }
   }
 
-  .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
+  .nav__container-wrapper {
     display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
 
     ul {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      gap: 3rem;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
+      list-style: none; 
     }
 
-ul li:first-child {
-  padding-left: 1em;
-}
+ 
+    li {
+      margin-right: 1em; 
+    }
 
     a {
       color: $white-color;
@@ -75,15 +66,11 @@ ul li:first-child {
 
 .btn {
   color: var(--color-gray-100);
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
   padding: 0.9rem 2rem;
   background: var(--color-primary);
   border-radius: 1.5rem;
-  -webkit-transition: var(--transition);
-  -o-transition: var(--transition);
   transition: var(--transition);
 }
 
@@ -107,10 +94,9 @@ ul li:first-child {
   background: var(--color-gray-100);
 }
 
-
 /* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 1024px) {
-  .container {
+  .nav__container-wrapper {
     width: var(--container-width-md);
   }
 

@@ -3,7 +3,7 @@ import './Banner.scss';
 const Banner = () => {
     return (
       <header role="banner" id="banner">
-        <div className="container">
+        <div className="banner__container">
           <div className="header__content">
             <h1 id="banner__heading"  className="header__content-title">
               Complete Health Care Solutions For Every Pet

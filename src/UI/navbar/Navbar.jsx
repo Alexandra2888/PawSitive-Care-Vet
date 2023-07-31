@@ -6,8 +6,8 @@ import ToggleTheme from '../../dark-mode/ToggleTheme';
 
 function Navbar() {
   return (
-    <nav>
-      <div className="container">
+    <nav className="nav__container">
+      <div className="nav__container-wrapper">
         <NavLink to="/" className="nav__logo">
           <h3>PawSitive Vet Care</h3> 
         </NavLink>
@@ -17,7 +17,7 @@ function Navbar() {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/appointment" className="btn">
+            <NavLink to="/sign-up" className="btn">
               Make Appointment
             </NavLink>
           </li>

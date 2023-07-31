@@ -30,6 +30,7 @@
         justify-content: left;
         align-items:left;
         gap: 1rem;
+        text-align: left;
 
         .avatar {
           width: 6.5rem;
@@ -46,6 +47,10 @@
         }
       }
     }
+  }
+
+  small {
+    text-align: left;
   }
 
   .swiper-pagination-bullet {
