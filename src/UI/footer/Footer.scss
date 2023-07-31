@@ -2,6 +2,7 @@
 @import "../../utils/scss/mixins";
 @import "../../utils/scss/general";
 
+
 footer {
     background: $black-color;
     color: $light-color;
@@ -30,7 +31,7 @@ footer {
             & > h3 {
                 color: $white-color;
             }
-            
+
             .footer__socials {
                 gap: 1.2rem;
                 font-size: 1.1rem;
@@ -79,7 +80,6 @@ footer {
         .container {
             gap: 2.5rem;
         }
-
     }
 }
 
