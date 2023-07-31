@@ -6,7 +6,6 @@ import Testimonials from "../../components/testimonials/Testimonials";
 import Contact from "../contact/Contact";
 import Faq from '../../components/faq/Faq';
 import Appointment from "../../components/appointment/Appointment";
-import "./Home.scss";
 
 const Home = () => {
   return (
