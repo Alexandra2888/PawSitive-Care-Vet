@@ -1,4 +1,5 @@
 import './Banner.scss';
+import { NavLink } from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -9,9 +10,9 @@ const Banner = () => {
               Complete Health Care Solutions For Every Pet
             </h1>
             <p className='header__content-para'>Because your pet&apos;s health is our top priority.</p>
-            <a href="#appointment" className="btn">
+            <NavLink to="/sign-up" className="btn">
               Make Appointment
-            </a>
+            </NavLink>
           </div>
           <div className="header__image">
             <figure>
