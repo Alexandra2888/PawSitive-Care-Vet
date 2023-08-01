@@ -36,17 +36,15 @@ export default function SignIn() {
     }
   }
   return (
-    <section>
-      <h1>Sign In</h1>
-      <div >
-        <div>
-          {/* <img
-            src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80"
-            alt="key"
-          /> */}
-        </div>
-        <div>
-          <form onSubmit={onSubmit}>
+    <section id="services">
+    <div className="services__container">
+      <div className="section__image">
+        <img src="/assets/login.png" alt="Services Image" className="img" />
+      </div>
+      <div className="service__section-content">
+        <h1 className="service__section-title">Sign in</h1>
+       
+        <form onSubmit={onSubmit}>
             <input
               type="email"
               id="email"
@@ -76,21 +74,21 @@ export default function SignIn() {
               <p >
                 Don't have a account?
                 <Link
-                  to="/sign-up"
+                  to="/sign-up" className="action"
                 >
                   Register
                 </Link>
               </p>
               <p>
                 <Link
-                  to="/forgot-password"
+                  to="/forgot-password" className="action"
                 >
                   Forgot password?
                 </Link>
               </p>
             </div>
             <button
-              type="submit"
+              type="submit" className="btn"
             >
               Sign in
             </button>
@@ -99,8 +97,12 @@ export default function SignIn() {
             </div>
             <OAuth />
           </form>
-        </div>
+
+
+
       </div>
-    </section>
+    </div>
+  </section>
+ 
   );
 }

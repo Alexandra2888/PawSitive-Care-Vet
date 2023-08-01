@@ -11,8 +11,9 @@ import { db } from "../../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "./SignUp.scss";
 
-export default function SignUp() {
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -54,17 +55,14 @@ export default function SignUp() {
     }
   }
   return (
-    <section>
-      <h1 >Sign Up</h1>
-      <div>
-        <div>
-          {/* <img
-            src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80"
-            alt="key"
-          /> */}
-        </div>
-        <div>
-          <form onSubmit={onSubmit}>
+    <section id="services">
+    <div className="services__container">
+      <div className="section__image">
+        <img src="/assets/register.png" alt="Services Image" className="img" />
+      </div>
+      <div className="service__section-content">
+        <h1 className="service__section-title">Sign up</h1>
+        <form onSubmit={onSubmit}>
             <input
               type="text"
               id="name"
@@ -98,24 +96,24 @@ export default function SignUp() {
               )}
             </div>
             <div>
-              <p className="mb-6">
+              <p>
                 Have a account?
                 <Link
-                  to="/sign-in"
+                  to="/sign-in" className="action"
                 >
                   Sign in
                 </Link>
               </p>
               <p>
                 <Link
-                  to="/forgot-password"
+                  to="/forgot-password" className="action"
                 >
                   Forgot password?
                 </Link>
               </p>
             </div>
             <button
-              type="submit"
+              type="submit" className="btn"
             >
               Sign up
             </button>
@@ -124,8 +122,13 @@ export default function SignUp() {
             </div>
             <OAuth />
           </form>
-        </div>
+
+
       </div>
-    </section>
+    </div>
+  </section>
+
   );
 }
+
+export default SignUp;
