@@ -37,9 +37,11 @@ export default function SignIn() {
   return (
     <section className="container">
       <div className="card">
-        <div
-          className="card-image"
-        ></div>
+       <figure>
+        <figcaption aria-label="login-image">
+        <img src="/assets/login.png" alt="login" />
+        </figcaption>
+       </figure>
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign In</h2>
           <div className="input">

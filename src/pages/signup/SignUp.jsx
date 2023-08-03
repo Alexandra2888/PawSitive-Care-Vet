@@ -57,7 +57,11 @@ const SignUp = () => {
   return (
     <section className="container">
       <div className="card">
-        <div className="card-image"></div>
+      <figure>
+        <figcaption aria-label="register-image">
+        <img src="/assets/register.png" alt="register" />
+        </figcaption>
+      </figure>       
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign Up</h2>
           <div className="input">
