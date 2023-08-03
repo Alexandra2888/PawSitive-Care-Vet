@@ -6,7 +6,11 @@ const Services = () => {
     <section id="services">
       <div className="services__container">
         <div className="section__image">
-          <img src="/assets/services.png" alt="Services Image" className="img" />
+          <figure>
+            <figcaption aria-label="services">
+            <img src="/assets/services.png" alt="Services Image" className="img" />
+            </figcaption>
+          </figure>
         </div>
         <div className="service__section-content">
           <h1 className="service__section-title">Our services</h1>

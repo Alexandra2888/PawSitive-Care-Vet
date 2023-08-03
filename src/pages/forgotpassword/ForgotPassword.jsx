@@ -24,8 +24,11 @@ const ForgotPassword = () => {
   return (
     <section className="container">
       <div className="card">
-        <div className="card__image">
-        </div>
+        <figure>
+          <figcaption aria-label="forgot-password-image">
+          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS_KahcrRtwztWDjnrYEZJiKh_rJK3mZd037jmHqcWcoElnnBDL" alt="forgot-password"/>
+          </figcaption>
+        </figure>
         <form className="card-form" onSubmit={onSubmit} >
           <h2 className="card-form-title">Forgot password</h2>
           <div className="input">

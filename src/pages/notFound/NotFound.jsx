@@ -6,7 +6,11 @@ const NotFound = () => {
     <section className="section__container">
       <div className="container">
         <div className="section__image">
-          <img src="/assets/not-found.png" alt="Not found Image" />
+          <figcaption aria-label="not-found-image">
+            <figure>
+            <img src="/assets/not-found.png" alt="Not found Image" />
+            </figure>
+          </figcaption>
         </div>
 
         <div className="section__content">

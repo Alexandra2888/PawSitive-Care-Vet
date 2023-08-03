@@ -34,7 +34,7 @@ input {
   padding-bottom: 99%;
   width: 100%;
   height: auto;
-  background-image: url("../../../public/assets/register.png");
+  // background-image: url("/public/assets/register.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -151,22 +151,17 @@ a {
   &.hover-shadow {
     &:hover {
       $color: gradientBackground;
-      text-shadow: 1px 1px 0px $color, 2px 2px 0px $color, 3px 3px 0px $color;
+      text-shadow:
+        1px 1px 0px $color,
+        2px 2px 0px $color,
+        3px 3px 0px $color;
     }
   }
   &.hover-color {
     &:hover {
       background: --bg;
-      background: -o-linear-gradient(
-        315deg,
-        $primary-color,
-        $primary-color-variant
-      );
-      background: linear-gradient(
-        135deg,
-        $primary-color,
-        $primary-color-variant
-      );
+      background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
+      background: linear-gradient(135deg, $primary-color, $primary-color-variant);
       color: $white-color;
     }
   }
