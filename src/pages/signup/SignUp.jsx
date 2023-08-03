@@ -55,80 +55,89 @@ const SignUp = () => {
     }
   }
   return (
-    <section id="services">
-    <div className="services__container">
-      <div className="section__image">
-        <img src="/assets/register.png" alt="Services Image" className="img" />
-      </div>
-      <div className="service__section-content">
-        <h1 className="service__section-title">Sign up</h1>
-        <form onSubmit={onSubmit}>
+    <section className="container">
+      <div className="card">
+        <div className="card-image"></div>
+        <form className="card-form" onSubmit={onSubmit}>
+          <h2 className="card-form-title">Sign Up</h2>
+          <div className="input">
+            <input className="input-field" onChange={onChange} required />
+            <label className="input-label">Name:</label>
+          </div>
+          <div className="input">
             <input
               type="text"
-              id="name"
-              value={name}
+              className="input-field"
               onChange={onChange}
-              placeholder="Full name"
+              required
             />
+            <label className="input-label">Email:</label>
+          </div>
+          <div class="input">
             <input
-              type="email"
-              id="email"
-              value={email}
+              type="password"
+              className="input-field"
               onChange={onChange}
-              placeholder="Email address"
+              required
             />
-            <div className="relative mb-6">
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                value={password}
-                onChange={onChange}
-                placeholder="Password"
-              />
-              {showPassword ? (
-                <AiFillEyeInvisible
-                  onClick={() => setShowPassword((prevState) => !prevState)}
-                />
-              ) : (
-                <AiFillEye
-                  onClick={() => setShowPassword((prevState) => !prevState)}
-                />
-              )}
-            </div>
-            <div>
-              <p>
-                Have a account?
-                <Link
-                  to="/sign-in" className="action"
-                >
-                  Sign in
-                </Link>
-              </p>
-              <p>
-                <Link
-                  to="/forgot-password" className="action"
-                >
-                  Forgot password?
-                </Link>
-              </p>
-            </div>
-            <button
-              type="submit" className="btn"
-            >
-              Sign up
-            </button>
-            <div >
-              <p >OR</p>
-            </div>
+            <label className="input-label">Password:</label>
+          </div>
+          <div class="action">
+            <button className="btn">Get started</button>
+          </div>
+          <div className="action-auth">
             <OAuth />
-          </form>
-
-
+          </div>
+        </form>
+        <div className="card-info">
+          <div>
+            <p>
+              Have an account?
+              <Link to="/sign-in">
+                <div class="wrapper">
+                  <div class="inner">
+                    <a href="" class="hover-shadow hover-color">
+                      <span>L</span>
+                      <span>o</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>n</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+            <p>
+              <Link to="/forgot-password">
+                <div class="wrapper">
+                  <div class="inner">
+                    <a href="" class="hover-shadow hover-color">
+                      <span>F</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>g</span>
+                      <span>o</span>
+                      <span>t</span>
+                      <span> </span>
+                      <span>p</span>
+                      <span>a</span>
+                      <span>s</span>
+                      <span>s</span>
+                      <span>w</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>d</span>
+                      <span>?</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-
+    </section>
   );
-}
+};
 
 export default SignUp;

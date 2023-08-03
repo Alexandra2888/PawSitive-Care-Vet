@@ -22,51 +22,62 @@ const ForgotPassword = () => {
     }
   }
   return (
-    <section id="services">
-    <div className="services__container">
-      <div className="section__image">
-        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS_KahcrRtwztWDjnrYEZJiKh_rJK3mZd037jmHqcWcoElnnBDL" alt="Services Image" className="img" />
-      </div>
-      <div className="service__section-content">
-        <h1 className="service__section-title">Forgot password</h1>
-        <form onSubmit={onSubmit}>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={onChange}
-              placeholder="Email address"
-            />
-
-            <div>
-              <p >
-                Don't have a account?
-                <Link
-                  to="/sign-up" className="action"
-                >
-                  Register
-                </Link>
-              </p>
-              <p>
-                <Link
-                  to="/sign-in" className="action"
-                >
-                  Sign in instead
-                </Link>
-              </p>
-            </div>
-            <button
-              type="submit" className="btn"
-            >
-              Send reset password
-            </button>
-            <div >
-              <p >OR</p>
-            </div>
+    <section className="container">
+      <div className="card">
+        <div className="card__image">
+        </div>
+        <form className="card-form" onSubmit={onSubmit} >
+          <h2 className="card-form-title">Forgot password</h2>
+          <div className="input">
+            <input type="text" className="input-field" onChange={onChange} required />
+            <label className="input-label">Email:</label>
+          </div>
+          <div class="action">
+            <button className="btn">Recover password</button>
+          </div>
+          <div className="action-auth">
             <OAuth />
-          </form>
+          </div>
+        </form>
+        <div className="card-info">
+          <div>
+            <p>
+              <Link to="/sign-up">
+                <div className="wrapper">
+                  <div className="inner">
+                    <a href="" className="hover-shadow hover-color">
+                      <span>R</span>
+                      <span>e</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>s</span>
+                      <span>t</span>
+                      <span>e</span>
+                      <span>r</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+            <p>
+              <Link to="/sign-up">
+                <div className="wrapper">
+                  <div className="inner">
+                    <a href="" className="hover-shadow hover-color">
+                      <span>S</span>
+                      <span>i</span>
+                      <span>g</span>
+                      <span>n</span>
+                      <span>i</span>
+                      <span>n</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
     </section>
  
  );
