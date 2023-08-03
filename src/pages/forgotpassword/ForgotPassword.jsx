@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import OAuth from "../../components/auth/OAuth";
 
-export default function ForgotPassword() {
+const ForgotPassword = () => {
   const [email, setEmail] = useState("");
 
   function onChange(e) {
@@ -22,54 +22,64 @@ export default function ForgotPassword() {
     }
   }
   return (
-    <section>
-      <h1 >Forgot Password</h1>
-      <div>
-        <div>
-          {/* <img
-            src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80"
-            alt="key"
-          /> */}
+    <section className="container">
+      <div className="card">
+        <div className="card__image">
         </div>
-        <div >
-          <form onSubmit={onSubmit}>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={onChange}
-              placeholder="Email address"
-            />
-
-            <div>
-              <p >
-                Don't have a account?
-                <Link
-                  to="/sign-up"
-                >
-                  Register
-                </Link>
-              </p>
-              <p>
-                <Link
-                  to="/sign-in"
-                >
-                  Sign in instead
-                </Link>
-              </p>
-            </div>
-            <button
-              type="submit"
-            >
-              Send reset password
-            </button>
-            <div >
-              <p >OR</p>
-            </div>
+        <form className="card-form" onSubmit={onSubmit} >
+          <h2 className="card-form-title">Forgot password</h2>
+          <div className="input">
+            <input type="text" className="input-field" onChange={onChange} required />
+            <label className="input-label">Email:</label>
+          </div>
+          <div class="action">
+            <button className="btn">Recover password</button>
+          </div>
+          <div className="action-auth">
             <OAuth />
-          </form>
+          </div>
+        </form>
+        <div className="card-info">
+          <div>
+            <p>
+              <Link to="/sign-up">
+                <div className="wrapper">
+                  <div className="inner">
+                    <a href="" className="hover-shadow hover-color">
+                      <span>R</span>
+                      <span>e</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>s</span>
+                      <span>t</span>
+                      <span>e</span>
+                      <span>r</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+            <p>
+              <Link to="/sign-up">
+                <div className="wrapper">
+                  <div className="inner">
+                    <a href="" className="hover-shadow hover-color">
+                      <span>S</span>
+                      <span>i</span>
+                      <span>g</span>
+                      <span>n</span>
+                      <span>i</span>
+                      <span>n</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </section>
-  );
+ 
+ );
 }
+export default ForgotPassword;

@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../../components/auth/OAuth";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
+import login from "../../../public/assets/login.png";
 
 export default function SignIn() {
-  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -36,69 +35,86 @@ export default function SignIn() {
     }
   }
   return (
-    <section>
-      <h1>Sign In</h1>
-      <div >
-        <div>
-          {/* <img
-            src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80"
-            alt="key"
-          /> */}
-        </div>
-        <div>
-          <form onSubmit={onSubmit}>
+    <section className="container">
+      <div className="card">
+        <div
+          className="card-image"
+        ></div>
+        <form className="card-form" onSubmit={onSubmit}>
+          <h2 className="card-form-title">Sign In</h2>
+          <div className="input">
             <input
-              type="email"
-              id="email"
-              value={email}
+              type="text"
+              className="input-field"
               onChange={onChange}
-              placeholder="Email address"
+              required
             />
-            <div >
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                value={password}
-                onChange={onChange}
-                placeholder="Password"
-              />
-              {showPassword ? (
-                <AiFillEyeInvisible
-                  onClick={() => setShowPassword((prevState) => !prevState)}
-                />
-              ) : (
-                <AiFillEye
-                  onClick={() => setShowPassword((prevState) => !prevState)}
-                />
-              )}
-            </div>
-            <div>
-              <p >
-                Don't have a account?
-                <Link
-                  to="/sign-up"
-                >
-                  Register
-                </Link>
-              </p>
-              <p>
-                <Link
-                  to="/forgot-password"
-                >
-                  Forgot password?
-                </Link>
-              </p>
-            </div>
-            <button
-              type="submit"
-            >
-              Sign in
-            </button>
-            <div>
-              <p>OR</p>
-            </div>
+            <label className="input-label">Email:</label>
+          </div>
+          <div class="input">
+            <input
+              type="password"
+              className="input-field"
+              onChange={onChange}
+              required
+            />
+            <label className="input-label">Password:</label>
+          </div>
+          <div class="action">
+            <button className="btn">Get started</button>
+          </div>
+          <div className="action-auth">
             <OAuth />
-          </form>
+          </div>
+        </form>
+        <div className="card-info">
+          <div>
+            <p>
+              Don't have an account?
+              <Link to="/sign-up">
+                <div className="wrapper">
+                  <div className="inner">
+                    <a href="" className="hover-shadow hover-color">
+                      <span>R</span>
+                      <span>e</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>s</span>
+                      <span>t</span>
+                      <span>e</span>
+                      <span>r</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+            <p>
+              <Link to="/forgot-password">
+                <div className="wrapper">
+                  <div className="inner">
+                    <a href="" className="hover-shadow hover-color">
+                      <span>F</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>g</span>
+                      <span>o</span>
+                      <span>t</span>
+                      <span> </span>
+                      <span>p</span>
+                      <span>a</span>
+                      <span>s</span>
+                      <span>s</span>
+                      <span>w</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>d</span>
+                      <span>?</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </section>

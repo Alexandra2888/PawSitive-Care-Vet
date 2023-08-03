@@ -11,8 +11,9 @@ import { db } from "../../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import "./SignUp.scss";
 
-export default function SignUp() {
+const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -54,78 +55,89 @@ export default function SignUp() {
     }
   }
   return (
-    <section>
-      <h1 >Sign Up</h1>
-      <div>
-        <div>
-          {/* <img
-            src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1373&q=80"
-            alt="key"
-          /> */}
-        </div>
-        <div>
-          <form onSubmit={onSubmit}>
+    <section className="container">
+      <div className="card">
+        <div className="card-image"></div>
+        <form className="card-form" onSubmit={onSubmit}>
+          <h2 className="card-form-title">Sign Up</h2>
+          <div className="input">
+            <input className="input-field" onChange={onChange} required />
+            <label className="input-label">Name:</label>
+          </div>
+          <div className="input">
             <input
               type="text"
-              id="name"
-              value={name}
+              className="input-field"
               onChange={onChange}
-              placeholder="Full name"
+              required
             />
+            <label className="input-label">Email:</label>
+          </div>
+          <div class="input">
             <input
-              type="email"
-              id="email"
-              value={email}
+              type="password"
+              className="input-field"
               onChange={onChange}
-              placeholder="Email address"
+              required
             />
-            <div className="relative mb-6">
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                value={password}
-                onChange={onChange}
-                placeholder="Password"
-              />
-              {showPassword ? (
-                <AiFillEyeInvisible
-                  onClick={() => setShowPassword((prevState) => !prevState)}
-                />
-              ) : (
-                <AiFillEye
-                  onClick={() => setShowPassword((prevState) => !prevState)}
-                />
-              )}
-            </div>
-            <div>
-              <p className="mb-6">
-                Have a account?
-                <Link
-                  to="/sign-in"
-                >
-                  Sign in
-                </Link>
-              </p>
-              <p>
-                <Link
-                  to="/forgot-password"
-                >
-                  Forgot password?
-                </Link>
-              </p>
-            </div>
-            <button
-              type="submit"
-            >
-              Sign up
-            </button>
-            <div >
-              <p >OR</p>
-            </div>
+            <label className="input-label">Password:</label>
+          </div>
+          <div class="action">
+            <button className="btn">Get started</button>
+          </div>
+          <div className="action-auth">
             <OAuth />
-          </form>
+          </div>
+        </form>
+        <div className="card-info">
+          <div>
+            <p>
+              Have an account?
+              <Link to="/sign-in">
+                <div class="wrapper">
+                  <div class="inner">
+                    <a href="" class="hover-shadow hover-color">
+                      <span>L</span>
+                      <span>o</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>n</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+            <p>
+              <Link to="/forgot-password">
+                <div class="wrapper">
+                  <div class="inner">
+                    <a href="" class="hover-shadow hover-color">
+                      <span>F</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>g</span>
+                      <span>o</span>
+                      <span>t</span>
+                      <span> </span>
+                      <span>p</span>
+                      <span>a</span>
+                      <span>s</span>
+                      <span>s</span>
+                      <span>w</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>d</span>
+                      <span>?</span>
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default SignUp;

@@ -35,11 +35,11 @@ export default function OAuth() {
   }
   return (
     <button
-      type="button"
+      type="button" className="btn-primary"
       onClick={onGoogleClick}
     >
       <FcGoogle />
-      Continue with Google
+      Sign in with Google
     </button>
   );
 }
