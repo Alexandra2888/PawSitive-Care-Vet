@@ -26,7 +26,7 @@ const ForgotPassword = () => {
       <div className="card">
         <figure>
           <figcaption aria-label="forgot-password-image">
-          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS_KahcrRtwztWDjnrYEZJiKh_rJK3mZd037jmHqcWcoElnnBDL" alt="forgot-password"/>
+          <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS_KahcrRtwztWDjnrYEZJiKh_rJK3mZd037jmHqcWcoElnnBDL" alt="forgot-password" style={{ width: "300px", height: "auto", margin:" 2em auto" }}/>
           </figcaption>
         </figure>
         <form className="card-form" onSubmit={onSubmit} >
