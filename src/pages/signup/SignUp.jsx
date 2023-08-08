@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import OAuth from "../../components/auth/OAuth";
 import {
@@ -14,7 +13,6 @@ import { toast } from "react-toastify";
 import "./SignUp.scss";
 
 const SignUp = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,12 +20,35 @@ const SignUp = () => {
   });
   const { name, email, password } = formData;
   const navigate = useNavigate();
-  function onChange(e) {
+  // function onChange(e) {
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     [e.target.id]: e.target.value,
+  //   }));
+  // }
+
+  function onEmailChange(e) {
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.id]: e.target.value,
+      email: e.target.value,
     }));
   }
+
+  function onPasswordChange(e) {
+    setFormData((prevState) => ({
+      ...prevState,
+      password: e.target.value,
+    }));
+  }
+
+  function onNameChange(e) {
+    setFormData((prevState) => ({
+      ...prevState,
+      name: e.target.value,
+    }));
+  }
+
+
   async function onSubmit(e) {
     e.preventDefault();
 
@@ -61,33 +82,43 @@ const SignUp = () => {
         <figcaption aria-label="register-image">
         <img src="/assets/register.png" alt="register" />
         </figcaption>
-      </figure>       
+      </figure>      
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign Up</h2>
           <div className="input">
-            <input className="input-field" onChange={onChange} required />
+          <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={onNameChange}
+              className="input-field"
+              />
             <label className="input-label">Name:</label>
           </div>
+
           <div className="input">
             <input
-              type="text"
+              type="email"
+              value={email}
               className="input-field"
-              onChange={onChange}
-              required
+              onChange={onEmailChange}
             />
             <label className="input-label">Email:</label>
           </div>
+
           <div class="input">
-            <input
-              type="password"
-              className="input-field"
-              onChange={onChange}
-              required
+          <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={onPasswordChange}
+                className="input-field"
             />
             <label className="input-label">Password:</label>
           </div>
+
           <div class="action">
-            <button className="btn">Get started</button>
+            <button className="btn" type="submit">Get started</button>
           </div>
           <div className="action-auth">
             <OAuth />
@@ -98,8 +129,8 @@ const SignUp = () => {
             <p>
               Have an account?
               <Link to="/sign-in">
-                <div class="wrapper">
-                  <div class="inner">
+                <div className="wrapper">
+                  <div className="inner">
                     <a href="" class="hover-shadow hover-color">
                       <span>L</span>
                       <span>o</span>
@@ -114,8 +145,8 @@ const SignUp = () => {
             <p>
               <Link to="/forgot-password">
                 <div class="wrapper">
-                  <div class="inner">
-                    <a href="" class="hover-shadow hover-color">
+                  <div className="inner">
+                    <a href="" className="hover-shadow hover-color">
                       <span>F</span>
                       <span>o</span>
                       <span>r</span>

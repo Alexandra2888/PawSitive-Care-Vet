@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../../components/auth/OAuth";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
-import login from "../../../public/assets/login.png";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({
@@ -12,12 +11,23 @@ export default function SignIn() {
   });
   const { email, password } = formData;
   const navigate = useNavigate();
-  function onChange(e) {
+
+  
+  function onEmailChange(e) {
     setFormData((prevState) => ({
       ...prevState,
-      [e.target.id]: e.target.value,
+      email: e.target.value,
     }));
   }
+
+  function onPasswordChange(e) {
+    setFormData((prevState) => ({
+      ...prevState,
+      password: e.target.value,
+    }));
+  }
+
+
   async function onSubmit(e) {
     e.preventDefault();
     try {
@@ -37,7 +47,7 @@ export default function SignIn() {
   return (
     <section className="container">
       <div className="card">
-       <figure>
+      <figure>
         <figcaption aria-label="login-image">
         <img src="/assets/login.png" alt="login" />
         </figcaption>
@@ -46,9 +56,9 @@ export default function SignIn() {
           <h2 className="card-form-title">Sign In</h2>
           <div className="input">
             <input
-              type="text"
+              type="email"
               className="input-field"
-              onChange={onChange}
+              onChange={onEmailChange}
               required
             />
             <label className="input-label">Email:</label>
@@ -57,7 +67,7 @@ export default function SignIn() {
             <input
               type="password"
               className="input-field"
-              onChange={onChange}
+              onChange={onPasswordChange}
               required
             />
             <label className="input-label">Password:</label>
