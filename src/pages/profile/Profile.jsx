@@ -1,10 +1,9 @@
-import "./Profile.scss";
-
+// import { useEffect, useState } from 'react';
+// import { addDoc, collection, setDoc, deleteDoc, doc, query, onSnapshot } from "firebase/firestore";
 
 const Profile = () => {
-  return (
-    <div>Profile</div>
-  )
-}
+  <h2>Profile</h2>
+
+};
 
 export default Profile;
