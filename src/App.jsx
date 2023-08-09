@@ -7,8 +7,7 @@ import SignIn from "./pages/signin/SignIn";
 import SignUp from "./pages/signup/SignUp";
 import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
 import Footer from "./UI/footer/Footer";
-import Profile from "./pages/profile/Profile";
-
+import Appointments from "./pages/appointments/Apponintments";
 const App = () => {
   return (
     <BrowserRouter>
@@ -17,7 +16,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/appointments" element={<Appointments/>}/>
           <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

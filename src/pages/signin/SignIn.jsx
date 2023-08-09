@@ -38,7 +38,7 @@ export default function SignIn() {
         password
       );
       if (userCredential.user) {
-        navigate("/profile");
+        navigate("/appointments");
       }
     } catch (error) {
       toast.error("Bad user credentials");
