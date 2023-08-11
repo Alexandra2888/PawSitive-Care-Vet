@@ -1,6 +1,7 @@
 import './Banner.scss';
 import { NavLink } from "react-router-dom";
 
+
 const Banner = () => {
     return (
       <header role="banner" id="banner">

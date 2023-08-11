@@ -11,6 +11,7 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./SignUp.scss";
+import Button from "../../components/button/Button";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -112,7 +113,7 @@ const SignUp = () => {
           </div>
 
           <div class="action">
-            <button className="btn" type="submit">Get started</button>
+            <Button type="submit">Get started</Button>
           </div>
           <div className="action-auth">
             <OAuth />

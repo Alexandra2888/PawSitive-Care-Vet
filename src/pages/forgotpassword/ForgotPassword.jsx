@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import OAuth from "../../components/auth/OAuth";
+import Button from "../../components/button/Button";
+
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -36,7 +38,7 @@ const ForgotPassword = () => {
             <label className="input-label">Email:</label>
           </div>
           <div class="action">
-            <button className="btn">Recover password</button>
+            <Button>Recover password</Button>
           </div>
           <div className="action-auth">
             <OAuth />

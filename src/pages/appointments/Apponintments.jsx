@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import Button from "../../components/button/Button";
 
 const Appointments = () => {
   const [formData, setFormData] = useState({
@@ -299,9 +300,9 @@ const Appointments = () => {
           </div>
 
           <div className="action">
-            <button className="btn" type="submit">
+            <Button className="btn" type="submit">
               Add new appointment
-            </button>
+            </Button>
           </div>
         </form>
         {/* <section >

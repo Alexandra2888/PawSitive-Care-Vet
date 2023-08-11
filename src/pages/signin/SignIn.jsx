@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../../components/auth/OAuth";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
+import Button from "../../components/button/Button";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({
@@ -73,7 +74,7 @@ export default function SignIn() {
             <label className="input-label">Password:</label>
           </div>
           <div class="action">
-            <button className="btn">Get started</button>
+            <Button>Get started</Button>
           </div>
           <div className="action-auth">
             <OAuth />
