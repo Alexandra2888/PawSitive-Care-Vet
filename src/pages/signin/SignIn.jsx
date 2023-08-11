@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../../components/auth/OAuth";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 
@@ -39,16 +40,18 @@ export default function SignIn() {
           email: userCredential.user.email,
         });
         localStorage.setItem("user", userData);
-
         navigate("/appointments");
       }
     } catch (error) {
-      toast.error("Bad user credentials");
+      toast.error("Bad credentials!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   }
 
   return (
     <section className="container">
+      <ToastContainer/>
       <div className="card">
         <figure>
           <figcaption aria-label="login-image">

@@ -1,10 +1,11 @@
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../../components/auth/OAuth";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -13,19 +14,24 @@ const ForgotPassword = () => {
     setEmail(e.target.value);
   }
 
+  const navigate = useNavigate();
+
   async function onSubmit(e) {
     e.preventDefault();
     try {
       const auth = getAuth();
       await sendPasswordResetEmail(auth, email);
-      toast.success("Email was sent");
+      navigate("/");
     } catch (error) {
-      toast.error("Could not send reset password");
+        toast.error("Could not send reset password!!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   }
 
   return (
     <section className="container">
+      <ToastContainer/>
       <div className="card">
         <figure>
           <figcaption aria-label="forgot-password-image">

@@ -116,6 +116,7 @@ input {
 a {
   color: $white-color;
   text-decoration: none;
+  width: fit-content;
   span {
     font-weight: 100;
     transition: all 0.5s;
@@ -183,3 +184,4 @@ a {
     max-width: 40rem;
   }
 }
+

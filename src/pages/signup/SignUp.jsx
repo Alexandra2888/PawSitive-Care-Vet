@@ -9,7 +9,8 @@ import {
 import { db } from "../../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./SignUp.scss";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
@@ -64,15 +65,17 @@ const SignUp = () => {
       formDataCopy.timestamp = serverTimestamp();
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
-      toast.success("Sign up was successful");
       navigate("/");
     } catch (error) {
-      toast.error("Something went wrong with the registration");
+      toast.error("Something went wrong!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   }
 
   return (
     <section className="container">
+      <ToastContainer/>
       <div className="card">
         <figure>
           <figcaption aria-label="register-image">
