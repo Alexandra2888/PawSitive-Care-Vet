@@ -17,10 +17,10 @@ body {
   line-height: 1.5;
   color: $dark-color;
   background: rgba($primary-color-variant, 0.1);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  // -webkit-user-select: none;
+  // -moz-user-select: none;
+  // -ms-user-select: none;
+  // user-select: none;
 }
 
 h1,
@@ -110,10 +110,6 @@ section {
 
 /* ======================== MEDIA QUERIES (MEDIUM DEVICES) ====================== */
 @media screen and (max-width: 1024px) {
-  .container {
-    // width: $container-md;
-  }
-
   section {
     & > p {
       width: 55%;

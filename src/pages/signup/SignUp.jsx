@@ -20,12 +20,6 @@ const SignUp = () => {
   });
   const { name, email, password } = formData;
   const navigate = useNavigate();
-  // function onChange(e) {
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [e.target.id]: e.target.value,
-  //   }));
-  // }
 
   function onEmailChange(e) {
     setFormData((prevState) => ({
