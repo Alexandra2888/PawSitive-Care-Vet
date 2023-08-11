@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 
-
 export default function SignIn() {
   const [formData, setFormData] = useState({
     email: "",
@@ -15,21 +14,19 @@ export default function SignIn() {
   const { email, password } = formData;
   const navigate = useNavigate();
 
-  
-const onEmailChange = (e) => {
+  const onEmailChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       email: e.target.value,
     }));
-  }
+  };
 
   const onPasswordChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       password: e.target.value,
     }));
-  }
-
+  };
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -42,21 +39,22 @@ const onEmailChange = (e) => {
           email: userCredential.user.email,
         });
         localStorage.setItem("user", userData);
-  
+
         navigate("/appointments");
       }
     } catch (error) {
       toast.error("Bad user credentials");
     }
   }
+
   return (
     <section className="container">
       <div className="card">
-      <figure>
-        <figcaption aria-label="login-image">
-        <img src="/assets/login.png" alt="login" />
-        </figcaption>
-       </figure>
+        <figure>
+          <figcaption aria-label="login-image">
+            <img src="/assets/login.png" alt="login" />
+          </figcaption>
+        </figure>
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign In</h2>
           <div className="input">
@@ -68,7 +66,7 @@ const onEmailChange = (e) => {
             />
             <label className="input-label">Email:</label>
           </div>
-          <div class="input">
+          <div className="input">
             <Input
               type="password"
               className="input-field"
@@ -77,7 +75,7 @@ const onEmailChange = (e) => {
             />
             <label className="input-label">Password:</label>
           </div>
-          <div class="action">
+          <div className="action">
             <Button>Get started</Button>
           </div>
           <div className="action-auth">
@@ -85,53 +83,39 @@ const onEmailChange = (e) => {
           </div>
         </form>
         <div className="card-info">
-          <div>
-            <p>
-              Don't have an account?
-              <Link to="/sign-up">
-                <div className="wrapper">
-                  <div className="inner">
-                    <a href="" className="hover-shadow hover-color">
-                      <span>R</span>
-                      <span>e</span>
-                      <span>g</span>
-                      <span>i</span>
-                      <span>s</span>
-                      <span>t</span>
-                      <span>e</span>
-                      <span>r</span>
-                    </a>
-                  </div>
-                </div>
-              </Link>
-            </p>
-            <p>
-              <Link to="/forgot-password">
-                <div className="wrapper">
-                  <div className="inner">
-                    <a href="" className="hover-shadow hover-color">
-                      <span>F</span>
-                      <span>o</span>
-                      <span>r</span>
-                      <span>g</span>
-                      <span>o</span>
-                      <span>t</span>
-                      <span> </span>
-                      <span>p</span>
-                      <span>a</span>
-                      <span>s</span>
-                      <span>s</span>
-                      <span>w</span>
-                      <span>o</span>
-                      <span>r</span>
-                      <span>d</span>
-                      <span>?</span>
-                    </a>
-                  </div>
-                </div>
-              </Link>
-            </p>
-          </div>
+          <p>
+            Don't have an account?
+            <Link to="/sign-up" className="hover-shadow hover-color">
+              <span>R</span>
+              <span>e</span>
+              <span>g</span>
+              <span>i</span>
+              <span>s</span>
+              <span>t</span>
+              <span>e</span>
+              <span>r</span>
+            </Link>
+          </p>
+          <p>
+            <Link to="/forgot-password" className="hover-shadow hover-color">
+              <span>F</span>
+              <span>o</span>
+              <span>r</span>
+              <span>g</span>
+              <span>o</span>
+              <span>t</span>
+              <span> </span>
+              <span>p</span>
+              <span>a</span>
+              <span>s</span>
+              <span>s</span>
+              <span>w</span>
+              <span>o</span>
+              <span>r</span>
+              <span>d</span>
+              <span>?</span>
+            </Link>
+          </p>
         </div>
       </div>
     </section>
