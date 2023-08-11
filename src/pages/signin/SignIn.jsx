@@ -35,12 +35,14 @@ const onEmailChange = (e) => {
     e.preventDefault();
     try {
       const auth = getAuth();
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       if (userCredential.user) {
+        const userData = JSON.stringify({
+          uid: userCredential.user.uid,
+          email: userCredential.user.email,
+        });
+        localStorage.setItem("user", userData);
+  
         navigate("/appointments");
       }
     } catch (error) {
