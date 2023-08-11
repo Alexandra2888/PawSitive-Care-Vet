@@ -13,7 +13,7 @@ const Appointments = () => {
     petGender: "",
     petAge: "",
     doctor: "",
-    data: "",
+    date: "",
     time: "",
     reason: "",
   });
@@ -182,15 +182,30 @@ const Appointments = () => {
             <label className="input-label">Phone:</label>
           </div>
 
+
+          
           <div className="input">
             <label className="input-label">Select a pet:</label>
+            <select
+              value={petType}
+              onChange={onPetTypeChange}
+              className="input-field" id="select"
+            >
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+            </select>
+          </div>
+
+
+          <div className="input">
+            <label className="input-label">Your pet is:</label>
             <select
               value={petGender}
               onChange={onPetGenderChange}
               className="input-field" id="select"
             >
-              <option value="dog">Dog</option>
-              <option value="cat">Cat</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
             </select>
           </div>
 
@@ -205,13 +220,13 @@ const Appointments = () => {
             <label className="input-label">Pet Name:</label>
           </div>
 
-          {/* <div className="input">
+         {/* <div className="input">
             <input type="radio" name="petType" value={onPetTypeChange} id="dog" />
             <label htmlFor="dog">Dog</label>
             <input type="radio" name="petType" value={onPetTypeChange} id="cat" />
             <label htmlFor="cat">Cat</label>
             <label>You have a:</label>
-          </div> */}
+          </div>  */}
 
           
           {/* <div className="input">

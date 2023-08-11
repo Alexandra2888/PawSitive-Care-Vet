@@ -7,7 +7,7 @@ const Contact = () => {
       <div className="container">
         <div className="contact__section-content">
           <h1 className="contact__section-title">PawSitive Vet Care</h1>
-          <p className="className="contact__section-para>Partnering with you for your pet&apos;s health.</p>
+          <p className="contact__section-para">Partnering with you for your pet&apos;s health.</p>
           <div>
             <i className="bx bxs-phone" aria-label="phone"></i>
             <small>+2335555555</small>
