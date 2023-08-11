@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./SignUp.scss";
 import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -22,21 +23,21 @@ const SignUp = () => {
   const { name, email, password } = formData;
   const navigate = useNavigate();
 
-  function onEmailChange(e) {
+  const onEmailChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       email: e.target.value,
     }));
   }
 
-  function onPasswordChange(e) {
+  const onPasswordChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       password: e.target.value,
     }));
   }
 
-  function onNameChange(e) {
+  const onNameChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       name: e.target.value,
@@ -81,9 +82,9 @@ const SignUp = () => {
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign Up</h2>
           <div className="input">
-          <input
+          <Input
               type="text"
-              id="name"
+              id={name}
               value={name}
               onChange={onNameChange}
               className="input-field"
@@ -92,7 +93,7 @@ const SignUp = () => {
           </div>
 
           <div className="input">
-            <input
+            <Input
               type="email"
               value={email}
               className="input-field"

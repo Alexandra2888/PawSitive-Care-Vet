@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import OAuth from "../../components/auth/OAuth";
 import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
 
-  function onChange(e) {
+  const onChange = (e) => {
     setEmail(e.target.value);
   }
 
@@ -34,7 +35,7 @@ const ForgotPassword = () => {
         <form className="card-form" onSubmit={onSubmit} >
           <h2 className="card-form-title">Forgot password</h2>
           <div className="input">
-            <input type="text" className="input-field" onChange={onChange} required />
+            <Input type="text" className="input-field" onChange={onChange} required />
             <label className="input-label">Email:</label>
           </div>
           <div class="action">

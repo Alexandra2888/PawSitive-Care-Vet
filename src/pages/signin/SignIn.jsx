@@ -4,6 +4,8 @@ import OAuth from "../../components/auth/OAuth";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
 import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
+
 
 export default function SignIn() {
   const [formData, setFormData] = useState({
@@ -14,14 +16,14 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   
-  function onEmailChange(e) {
+const onEmailChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       email: e.target.value,
     }));
   }
 
-  function onPasswordChange(e) {
+  const onPasswordChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       password: e.target.value,
@@ -56,7 +58,7 @@ export default function SignIn() {
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign In</h2>
           <div className="input">
-            <input
+            <Input
               type="email"
               className="input-field"
               onChange={onEmailChange}
@@ -65,7 +67,7 @@ export default function SignIn() {
             <label className="input-label">Email:</label>
           </div>
           <div class="input">
-            <input
+            <Input
               type="password"
               className="input-field"
               onChange={onPasswordChange}
