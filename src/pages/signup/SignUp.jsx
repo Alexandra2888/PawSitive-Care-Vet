@@ -44,7 +44,6 @@ const SignUp = () => {
     }));
   }
 
-
   async function onSubmit(e) {
     e.preventDefault();
 
@@ -71,24 +70,25 @@ const SignUp = () => {
       toast.error("Something went wrong with the registration");
     }
   }
+
   return (
     <section className="container">
       <div className="card">
-      <figure>
-        <figcaption aria-label="register-image">
-        <img src="/assets/register.png" alt="register" />
-        </figcaption>
-      </figure>      
+        <figure>
+          <figcaption aria-label="register-image">
+            <img src="/assets/register.png" alt="register" />
+          </figcaption>
+        </figure>
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign Up</h2>
           <div className="input">
-          <Input
+            <Input
               type="text"
               id={name}
               value={name}
               onChange={onNameChange}
               className="input-field"
-              />
+            />
             <label className="input-label">Name:</label>
           </div>
 
@@ -102,18 +102,18 @@ const SignUp = () => {
             <label className="input-label">Email:</label>
           </div>
 
-          <div class="input">
-          <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={onPasswordChange}
-                className="input-field"
+          <div className="input">
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={onPasswordChange}
+              className="input-field"
             />
             <label className="input-label">Password:</label>
           </div>
 
-          <div class="action">
+          <div className="action">
             <Button type="submit">Get started</Button>
           </div>
           <div className="action-auth">
@@ -121,50 +121,39 @@ const SignUp = () => {
           </div>
         </form>
         <div className="card-info">
-          <div>
-            <p>
-              Have an account?
-              <Link to="/sign-in">
-                <div className="wrapper">
-                  <div className="inner">
-                    <a href="" class="hover-shadow hover-color">
-                      <span>L</span>
-                      <span>o</span>
-                      <span>g</span>
-                      <span>i</span>
-                      <span>n</span>
-                    </a>
-                  </div>
-                </div>
-              </Link>
-            </p>
-            <p>
-              <Link to="/forgot-password">
-                <div class="wrapper">
-                  <div className="inner">
-                    <a href="" className="hover-shadow hover-color">
-                      <span>F</span>
-                      <span>o</span>
-                      <span>r</span>
-                      <span>g</span>
-                      <span>o</span>
-                      <span>t</span>
-                      <span> </span>
-                      <span>p</span>
-                      <span>a</span>
-                      <span>s</span>
-                      <span>s</span>
-                      <span>w</span>
-                      <span>o</span>
-                      <span>r</span>
-                      <span>d</span>
-                      <span>?</span>
-                    </a>
-                  </div>
-                </div>
-              </Link>
-            </p>
-          </div>
+          <p>
+            Have an account?
+            <Link to="/sign-in" className="hover-shadow hover-color">
+              <span>L</span>
+              <span>o</span>
+              <span>g</span>
+              <span>i</span>
+              <span>n</span>
+            </Link>
+          </p>
+          <p>
+            <Link
+              to="/forgot-password"
+              className="hover-shadow hover-color"
+            >
+              <span>F</span>
+              <span>o</span>
+              <span>r</span>
+              <span>g</span>
+              <span>o</span>
+              <span>t</span>
+              <span> </span>
+              <span>p</span>
+              <span>a</span>
+              <span>s</span>
+              <span>s</span>
+              <span>w</span>
+              <span>o</span>
+              <span>r</span>
+              <span>d</span>
+              <span>?</span>
+            </Link>
+          </p>
         </div>
       </div>
     </section>
