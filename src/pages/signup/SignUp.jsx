@@ -124,39 +124,50 @@ const SignUp = () => {
           </div>
         </form>
         <div className="card-info">
-          <p>
-            Have an account?
-            <Link to="/sign-in" className="hover-shadow hover-color">
-              <span>L</span>
-              <span>o</span>
-              <span>g</span>
-              <span>i</span>
-              <span>n</span>
-            </Link>
-          </p>
-          <p>
-            <Link
-              to="/forgot-password"
-              className="hover-shadow hover-color"
-            >
-              <span>F</span>
-              <span>o</span>
-              <span>r</span>
-              <span>g</span>
-              <span>o</span>
-              <span>t</span>
-              <span> </span>
-              <span>p</span>
-              <span>a</span>
-              <span>s</span>
-              <span>s</span>
-              <span>w</span>
-              <span>o</span>
-              <span>r</span>
-              <span>d</span>
-              <span>?</span>
-            </Link>
-          </p>
+          <div>
+            <div>
+              Have an account?
+              <Link to="/sign-in">
+                <div className="wrapper">
+                  <div className="inner">
+                    <div  className="hover-shadow hover-color">
+                      <span>L</span>
+                      <span>o</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>n</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div>
+              <Link to="/forgot-password">
+                <div className="wrapper">
+                  <div className="inner">
+                    <div className="hover-shadow hover-color">
+                      <span>F</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>g</span>
+                      <span>o</span>
+                      <span>t</span>
+                      <span> </span>
+                      <span>p</span>
+                      <span>a</span>
+                      <span>s</span>
+                      <span>s</span>
+                      <span>w</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>d</span>
+                      <span>?</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

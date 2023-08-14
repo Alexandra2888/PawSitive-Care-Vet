@@ -86,39 +86,53 @@ export default function SignIn() {
           </div>
         </form>
         <div className="card-info">
-          <p>
-            Don't have an account?
-            <Link to="/sign-up" className="hover-shadow hover-color">
-              <span>R</span>
-              <span>e</span>
-              <span>g</span>
-              <span>i</span>
-              <span>s</span>
-              <span>t</span>
-              <span>e</span>
-              <span>r</span>
-            </Link>
-          </p>
-          <p>
-            <Link to="/forgot-password" className="hover-shadow hover-color">
-              <span>F</span>
-              <span>o</span>
-              <span>r</span>
-              <span>g</span>
-              <span>o</span>
-              <span>t</span>
-              <span> </span>
-              <span>p</span>
-              <span>a</span>
-              <span>s</span>
-              <span>s</span>
-              <span>w</span>
-              <span>o</span>
-              <span>r</span>
-              <span>d</span>
-              <span>?</span>
-            </Link>
-          </p>
+          <div>
+            <div>
+              Don't you have an account?
+              <Link to="/sign-up">
+                <div className="wrapper">
+                  <div className="inner">
+                    <div  className="hover-shadow hover-color">
+                    <span>R</span>
+                      <span>e</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>s</span>
+                      <span>t</span>
+                      <span>e</span>
+                      <span>r</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div>
+              <Link to="/forgot-password">
+                <div className="wrapper">
+                  <div className="inner">
+                    <div className="hover-shadow hover-color">
+                      <span>F</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>g</span>
+                      <span>o</span>
+                      <span>t</span>
+                      <span> </span>
+                      <span>p</span>
+                      <span>a</span>
+                      <span>s</span>
+                      <span>s</span>
+                      <span>w</span>
+                      <span>o</span>
+                      <span>r</span>
+                      <span>d</span>
+                      <span>?</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

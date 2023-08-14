@@ -61,28 +61,42 @@ const ForgotPassword = () => {
           </div>
         </form>
         <div className="card-info">
-          <p>
-            <Link to="/sign-up" className="hover-shadow hover-color">
-              <span>R</span>
-              <span>e</span>
-              <span>g</span>
-              <span>i</span>
-              <span>s</span>
-              <span>t</span>
-              <span>e</span>
-              <span>r</span>
-            </Link>
-          </p>
-          <p>
-            <Link to="/sign-in" className="hover-shadow hover-color">
-              <span>S</span>
-              <span>i</span>
-              <span>g</span>
-              <span>n</span>
-              <span>i</span>
-              <span>n</span>
-            </Link>
-          </p>
+          <div>
+            <div>
+              Have an account?
+              <Link to="/sign-in">
+                <div className="wrapper">
+                  <div className="inner">
+                    <div  className="hover-shadow hover-color">
+                      <span>L</span>
+                      <span>o</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>n</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div>
+              <Link to="/sign-up">
+                <div className="wrapper">
+                  <div className="inner">
+                    <div className="hover-shadow hover-color">
+                    <span>R</span>
+                      <span>e</span>
+                      <span>g</span>
+                      <span>i</span>
+                      <span>s</span>
+                      <span>t</span>
+                      <span>e</span>
+                      <span>r</span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

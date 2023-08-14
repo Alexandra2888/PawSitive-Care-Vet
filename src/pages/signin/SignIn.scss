@@ -78,10 +78,11 @@ input {
   align-items: center;
 }
 
-a {
+.hover-shadow {
   color: $white-color;
   text-decoration: none;
   width: fit-content;
+  padding: .1em;
   span {
     font-weight: 100;
     transition: all 0.5s;
