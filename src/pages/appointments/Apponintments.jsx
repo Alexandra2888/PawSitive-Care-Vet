@@ -98,10 +98,9 @@ const Appointments = () => {
   function onTime(e) {
     setFormData((prevState) => ({
       ...prevState,
-      time: e.target.value,
+      time: e.target.value, 
     }));
   }
-
   function onReason(e) {
     setFormData((prevState) => ({
       ...prevState,
@@ -260,7 +259,7 @@ const Appointments = () => {
             onChange={onDoctor} 
             style={{'textAlign':'center'}}
             className="input-field">
-              <option value="doe" id="input-select">John Doe (Surgery Specialist)</option>
+              <option value="doe">John Doe (Surgery Specialist)</option>
               <option value="makafui">
                 Carmen Makafui (Anaestethic Specialist)
               </option>
