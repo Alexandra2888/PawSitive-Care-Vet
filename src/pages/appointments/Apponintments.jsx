@@ -189,7 +189,8 @@ const Appointments = () => {
             <select
               value={petType}
               onChange={onPetTypeChange}
-              className="input-field" id="select"
+              style={{'textAlign':'center'}}
+              className="input-field" 
             >
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
@@ -202,7 +203,8 @@ const Appointments = () => {
             <select
               value={petGender}
               onChange={onPetGenderChange}
-              className="input-field" id="select"
+              style={{'textAlign':'center'}}
+              className="input-field" id="select" 
             >
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -219,23 +221,6 @@ const Appointments = () => {
             />
             <label className="input-label">Pet Name:</label>
           </div>
-
-         {/* <div className="input">
-            <input type="radio" name="petType" value={onPetTypeChange} id="dog" />
-            <label htmlFor="dog">Dog</label>
-            <input type="radio" name="petType" value={onPetTypeChange} id="cat" />
-            <label htmlFor="cat">Cat</label>
-            <label>You have a:</label>
-          </div>  */}
-
-          
-          {/* <div className="input">
-            <input type="radio" name="petGender" value={onPetGenderChange} id="male" />
-            <label htmlFor="male">Male</label>
-            <input type="radio" name="petGender" value={onPetGenderChange} id="female" />
-            <label htmlFor="female">Female</label>
-            <label>Your pet is:</label>
-          </div> */}
 
 
           <div className="input">
@@ -269,10 +254,13 @@ const Appointments = () => {
             <label className="input-label">Select a date:</label>
           </div>
 
-          <div className="input">
+          <div className="input" >
             <label className="input-label">Select doctor:</label>
-            <select value={doctor} onChange={onDoctor} className="input-field">
-              <option value="doe">John Doe (Surgery Specialist)</option>
+            <select value={doctor} 
+            onChange={onDoctor} 
+            style={{'textAlign':'center'}}
+            className="input-field">
+              <option value="doe" id="input-select">John Doe (Surgery Specialist)</option>
               <option value="makafui">
                 Carmen Makafui (Anaestethic Specialist)
               </option>
@@ -285,24 +273,7 @@ const Appointments = () => {
             </select>
           </div>
 
-          {/* <div className="input">
-            <input type="radio" name="doctor" id="doe" value={onDoctor} />
-            <label htmlFor="doe">John Doe (Surgery Specialist)</label>
-            <input type="radio" name="doctor" value={onDoctor} id="makafui" />
-            <label htmlFor="makafui">
-              Carmen Makafui (Anaestethic Specialist)
-            </label>
-            <input type="radio" name="doctor" value={onDoctor} id="apeledo" />
-            <label htmlFor="apeledo">
-              Liza Apeledo (Orthopedic Specialist)
-            </label>
-            <input type="radio" name="doctor" value={onDoctor} id="brownie" />
-            <label htmlFor="brownie">
-              Agigail Brownie (Cardiology Specialist)
-            </label>
-            <label>Choose doctor:</label>
-          </div> */}
-
+        
           <div className="input">
             <input
               type="text"

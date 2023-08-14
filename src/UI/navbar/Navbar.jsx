@@ -40,7 +40,7 @@ const Navbar = () => {
           </li>
           {user && (
             <li>
-              <button onClick={handleLogout} className="svg">
+              <button onClick={handleLogout} className="svg btn-primary">
                 <FiLogOut />
               </button>
             </li>

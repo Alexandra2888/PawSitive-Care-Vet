@@ -118,7 +118,6 @@
 
 
 .svg {
-  @include gradientBackground;
   color: $white-color;
   border-radius: 8px;
   width: 40px;

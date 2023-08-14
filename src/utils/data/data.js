@@ -185,16 +185,16 @@ export const faqData = [
   {
     question: "Do I need an appointment?",
     answer:
-      "Yes, appointments are recommended for most veterinary services to ensure timely and personalized care for your pet.",
+      "Yes, appointments are recommended for all veterinary services.",
   },
   {
     question: "Do you offer emergency vet services?",
     answer:
-      "Yes, we provide emergency veterinary services 24/7 to address urgent medical needs of your pets.",
+      "Yes, we provide emergency veterinary services.",
   },
   {
-    question: "I got a new pet. What do I need to do next?",
+    question: "My pet is sick",
     answer:
-      "Congratulations on your new pet! Make sure to schedule a comprehensive wellness check-up with our veterinarians to ensure your new furry friend starts off on a healthy path.",
+      "Make an appointment with one of our doctors.",
   },
 ];
