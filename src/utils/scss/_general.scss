@@ -1,7 +1,15 @@
-@import '../scss/config';
-@import './mixins';
+@import "../scss/config";
+@import "./mixins";
+
 html {
   scroll-behavior: smooth;
+}
+
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 body {
@@ -9,16 +17,61 @@ body {
   line-height: 1.5;
   color: $dark-color;
   background: rgba($primary-color-variant, 0.1);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  // -webkit-user-select: none;
+  // -moz-user-select: none;
+  // -ms-user-select: none;
+  // user-select: none;
 }
 
-.container {
-  width: $container-lg;
-  margin: 0 auto;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.he {
+  line-height: 1.2;
 }
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+@media (min-width: 40em) {
+  .split {
+    flex-direction: row;
+  }
+}
+
+
 
 img {
   display: block;
@@ -57,10 +110,6 @@ section {
 
 /* ======================== MEDIA QUERIES (MEDIUM DEVICES) ====================== */
 @media screen and (max-width: 1024px) {
-  .container {
-    width: $container-md;
-  }
-
   section {
     & > p {
       width: 55%;

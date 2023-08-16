@@ -1,0 +1,43 @@
+@import "../../utils/scss/config";
+@import "../../utils/scss/mixins";
+@import "../../utils/scss/general";
+
+
+
+.appointment__container {
+
+    font-size: 1.2em;
+
+    &--icons {
+        color: $secondary-color;
+        width: 25px;
+        height: 25px;
+    }
+}
+
+table {
+    margin: auto;
+}
+
+th, td {
+    padding: .2em;
+}
+
+th {
+    border-bottom: 1px solid $primary-color;
+}
+
+td {
+    border-bottom: 1px solid $primary-color;
+
+}
+
+.btn {
+    margin: 1.5em auto !important;
+}
+
+@media screen and (min-width: 600px) {
+    th, td {
+         padding: 1.3em;
+    }
+}

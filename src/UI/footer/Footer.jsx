@@ -33,10 +33,10 @@ const Footer = () => {
         <article>
           <h3>Permalinks</h3>
           <a href="#">Home</a>
-          <Link to="/services">Services</Link>
-          <Link to="/specialists">Specialists</Link>
-          <Link to="/testimonials">Testimonials</Link>
-          <Link to="#appointment" className="btn-primary">
+          <Link to="#services">Services</Link>
+          <Link to="#specialists">Specialists</Link>
+          <Link to="#testimonials">Testimonials</Link>
+          <Link to="sign-in" className="btn-primary">
             Get Appointment
           </Link>
         </article>

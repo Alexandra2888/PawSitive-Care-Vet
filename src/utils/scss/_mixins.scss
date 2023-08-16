@@ -11,6 +11,7 @@
   -webkit-transition: all 400ms ease;
   -o-transition: all 400ms ease;
   transition: all 400ms ease;
+  border-radius: 8px;
 
   &:hover {
     background: lighten($backgroundColor, 8%);
@@ -20,9 +21,10 @@
 }
 
 @mixin gradientBackground {
+  background: --bg; 
   background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
   background: linear-gradient(135deg, $primary-color, $primary-color-variant);
-  color: $white-color;
+  color:  $white-color;
 
   h1,
   h2,
@@ -32,3 +34,4 @@
     color: $white-color;
   }
 }
+

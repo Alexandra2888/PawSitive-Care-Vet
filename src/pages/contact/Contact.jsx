@@ -5,9 +5,9 @@ const Contact = () => {
   return (
     <section id="section">
       <div className="container">
-        <div className="section__content">
-          <h1>PawSitive Vet Care</h1>
-          <p>Partnering with you for your pet&apos;s health.</p>
+        <div className="contact__section-content">
+          <h1 className="contact__section-title">PawSitive Vet Care</h1>
+          <p className="contact__section-para">Partnering with you for your pet&apos;s health.</p>
           <div>
             <i className="bx bxs-phone" aria-label="phone"></i>
             <small>+2335555555</small>
