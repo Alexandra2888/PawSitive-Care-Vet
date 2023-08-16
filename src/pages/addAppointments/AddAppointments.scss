@@ -1,0 +1,145 @@
+@import "../../utils/scss/config";
+@import "../../utils/scss/mixins";
+@import "../../utils/scss/general";
+
+img {
+  max-width: 100%;
+  display: block;
+  background-size: cover;
+  background-position: left;
+}
+
+// iOS Reset
+input {
+  border-radius: 0;
+}
+
+.card {
+  @include gradientBackground;
+
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: fit-content;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px 0 rgba(#999, 0.25);
+  padding: 0.75rem;
+}
+
+
+.card-form {
+  padding: 2rem 1rem 0;
+}
+
+.card-form-title {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.action {
+  margin-top: 2rem;
+}
+
+.action-auth {
+  display: flex;
+  justify-content: center;
+  margin: 2em;
+}
+
+.card-info {
+  padding: 1rem 1rem;
+  text-align: center;
+  font-size: 1.3rem;
+  color: $white-color;
+  a {
+    display: block;
+    color: $white-color;
+    text-decoration: none;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: $white-color;
+  text-decoration: none;
+  span {
+    font-weight: 100;
+    transition: all 0.5s;
+    border-bottom: 1px solid;
+  }
+  span:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+  span:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+  span:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+  &:hover {
+    span {
+      font-weight: 500;
+      letter-spacing: 3px;
+    }
+    span:nth-child(4) {
+      transition-delay: 0.3s;
+    }
+    span:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+    span:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+    span:nth-child(1) {
+      transition-delay: 0s;
+    }
+  }
+
+  &.hover-shadow {
+    &:hover {
+      $color: gradientBackground;
+      text-shadow:
+        1px 1px 0px $color,
+        2px 2px 0px $color,
+        3px 3px 0px $color;
+    }
+  }
+  &.hover-color {
+    &:hover {
+      background: --bg;
+      background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
+      background: linear-gradient(135deg, $primary-color, $primary-color-variant);
+      color: $white-color;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    max-width: 30rem;
+  }
+
+  .card-image {
+    padding-bottom: 75%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    max-width: 40rem;
+  }
+}
+
+
+.btn {
+  margin: auto;
+}

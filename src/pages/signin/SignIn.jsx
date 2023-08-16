@@ -40,7 +40,7 @@ export default function SignIn() {
           email: userCredential.user.email,
         });
         localStorage.setItem("user", userData);
-        navigate("/appointments");
+        navigate("/add-appointments");
       }
     } catch (error) {
       toast.error("Bad credentials!", {

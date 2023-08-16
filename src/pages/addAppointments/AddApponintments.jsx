@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import Button from "../../components/button/Button";
+import "./AddAppointments.scss";
+import { Link } from 'react-router-dom'; 
+
 
 const Appointments = () => {
   const [formData, setFormData] = useState({
@@ -130,26 +133,12 @@ const Appointments = () => {
     }
   };
 
-//   const fetchAppointment = async () => {
-       
-//     await getDocs(collection(db, "appointments"))
-//         .then((querySnapshot)=>{              
-//             const newData = querySnapshot.docs
-//                 .map((doc) => ({...doc.data(), id:doc.id }));
-//             setTodos(newData);                
-//         })
-   
-// }
-
-// useEffect(()=>{
-//     fetchAppointment();
-// }, [])
 
   return (
     <main className="container">
       <div className="card">
         <form className="card-form" onSubmit={addAppointment}>
-          <h2 className="card-form-title">Appointments:</h2>
+          <h2 className="card-form-title">Add new appointment:</h2>
           <div className="input">
             <input
               type="text"
@@ -259,14 +248,14 @@ const Appointments = () => {
             onChange={onDoctor} 
             style={{'textAlign':'center'}}
             className="input-field">
-              <option value="doe">John Doe (Surgery Specialist)</option>
-              <option value="makafui">
+              <option value="John Doe">John Doe (Surgery Specialist)</option>
+              <option value="Carmen Makafui">
                 Carmen Makafui (Anaestethic Specialist)
               </option>
-              <option value="apeledo">
+              <option value="Liza Apeledo">
                 Liza Apeledo (Orthopedic Specialist)
               </option>
-              <option value="brownie">
+              <option value="Abigail Brownie">
                 Abigail Brownie (Cardiology Specialist)
               </option>
             </select>
@@ -290,15 +279,7 @@ const Appointments = () => {
             </Button>
           </div>
         </form>
-        {/* <section >
-                    {
-                        appointments?.map((appointment,i)=>(
-                            <p key={i}>
-                                {appointment.appointment}
-                            </p>
-                        ))
-                    }
-                </section> */}
+        <Link to="/appointments" className=" btn btn-primary">See appointments</Link>
       </div>
     </main>
   );

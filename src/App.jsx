@@ -7,7 +7,8 @@ import NotFound from "./pages/notFound/NotFound";
 import SignIn from "./pages/signin/SignIn";
 import SignUp from "./pages/signup/SignUp";
 import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
-import Appointments from "./pages/appointments/Apponintments";
+import AddAppointments from "./pages/addAppointments/AddApponintments";
+import Appointments from './pages/appointments/Appointments';
 
 
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
         path: 'forgot-password',
         element: <ForgotPassword/>
       },
+      {
+        path: 'add-appointments',
+        element: <AddAppointments/>
+      }, 
       {
         path: 'appointments',
         element: <Appointments/>
