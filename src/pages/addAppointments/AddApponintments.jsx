@@ -3,7 +3,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import Button from "../../components/button/Button";
 import "./AddAppointments.scss";
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 
 
 const Appointments = () => {
@@ -34,6 +34,10 @@ const Appointments = () => {
     time,
     reason,
   } = formData;
+
+
+  const navigate = useNavigate();
+
 
   function onEmailChange(e) {
     setFormData((prevState) => ({
@@ -124,10 +128,12 @@ const Appointments = () => {
         petGender: petGender,
         petAge: petAge,
         doctor: doctor,
+        date:date,
         time: time,
         reason: reason,
       });
       console.log("Document written with ID: ", docRef.id);
+      navigate('/appointments')
     } catch (e) {
       console.error("Error adding document: ", e);
     }
