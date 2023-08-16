@@ -2,7 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../../components/auth/OAuth";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({
@@ -12,50 +15,53 @@ export default function SignIn() {
   const { email, password } = formData;
   const navigate = useNavigate();
 
-  
-  function onEmailChange(e) {
+  const onEmailChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       email: e.target.value,
     }));
-  }
+  };
 
-  function onPasswordChange(e) {
+  const onPasswordChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       password: e.target.value,
     }));
-  }
-
+  };
 
   async function onSubmit(e) {
     e.preventDefault();
     try {
       const auth = getAuth();
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
       if (userCredential.user) {
-        navigate("/profile");
+        const userData = JSON.stringify({
+          uid: userCredential.user.uid,
+          email: userCredential.user.email,
+        });
+        localStorage.setItem("user", userData);
+        navigate("/add-appointments");
       }
     } catch (error) {
-      toast.error("Bad user credentials");
+      toast.error("Bad credentials!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   }
+
   return (
     <section className="container">
+      <ToastContainer/>
       <div className="card">
-      <figure>
-        <figcaption aria-label="login-image">
-        <img src="/assets/login.png" alt="login" />
-        </figcaption>
-       </figure>
+        <figure>
+          <figcaption aria-label="login-image">
+            <img src="/assets/login.png" alt="login" />
+          </figcaption>
+        </figure>
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign In</h2>
           <div className="input">
-            <input
+            <Input
               type="email"
               className="input-field"
               onChange={onEmailChange}
@@ -63,8 +69,8 @@ export default function SignIn() {
             />
             <label className="input-label">Email:</label>
           </div>
-          <div class="input">
-            <input
+          <div className="input">
+            <Input
               type="password"
               className="input-field"
               onChange={onPasswordChange}
@@ -72,8 +78,8 @@ export default function SignIn() {
             />
             <label className="input-label">Password:</label>
           </div>
-          <div class="action">
-            <button className="btn">Get started</button>
+          <div className="action">
+            <Button>Get started</Button>
           </div>
           <div className="action-auth">
             <OAuth />
@@ -81,13 +87,13 @@ export default function SignIn() {
         </form>
         <div className="card-info">
           <div>
-            <p>
-              Don't have an account?
+            <div>
+              Don't you have an account?
               <Link to="/sign-up">
                 <div className="wrapper">
                   <div className="inner">
-                    <a href="" className="hover-shadow hover-color">
-                      <span>R</span>
+                    <div  className="hover-shadow hover-color">
+                    <span>R</span>
                       <span>e</span>
                       <span>g</span>
                       <span>i</span>
@@ -95,16 +101,16 @@ export default function SignIn() {
                       <span>t</span>
                       <span>e</span>
                       <span>r</span>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </Link>
-            </p>
-            <p>
+            </div>
+            <div>
               <Link to="/forgot-password">
                 <div className="wrapper">
                   <div className="inner">
-                    <a href="" className="hover-shadow hover-color">
+                    <div className="hover-shadow hover-color">
                       <span>F</span>
                       <span>o</span>
                       <span>r</span>
@@ -121,11 +127,11 @@ export default function SignIn() {
                       <span>r</span>
                       <span>d</span>
                       <span>?</span>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </Link>
-            </p>
+            </div>
           </div>
         </div>
       </div>

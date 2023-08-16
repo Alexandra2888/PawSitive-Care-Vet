@@ -28,7 +28,7 @@ export default function OAuth() {
         });
       }
 
-      navigate("/");
+      navigate("/appointments");
     } catch (error) {
       toast.error("Could not authorize with Google");
     }

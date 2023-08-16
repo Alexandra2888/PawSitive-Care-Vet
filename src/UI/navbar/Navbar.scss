@@ -67,12 +67,11 @@
 .btn {
   color: var(--color-gray-100);
   width: fit-content;
-  margin: 0 auto;
   padding: 0.9rem 2rem;
   background: var(--color-primary);
   border-radius: 1.5rem;
   transition: var(--transition);
-  margin-top: 10px;
+  margin-top: 13px !important;
 }
 
 .btn:hover {
@@ -114,4 +113,12 @@
   li:nth-child(2) {
     display: none;
   }
+}
+
+
+.svg {
+  color: $white-color;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
 }

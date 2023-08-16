@@ -14,8 +14,8 @@ const NotFound = () => {
         </div>
 
         <div className="section__content">
-          <h1>404</h1>
-          <h2 className="title">This is not the page you are looking for!</h2>
+          <h2 className="section__content--title">404</h2>
+          <h3 className="title">This is not the page you are looking for!</h3>
           <Link to="/" className="btn" aria-label="Go back to the home page">
             Go Back Home
           </Link>

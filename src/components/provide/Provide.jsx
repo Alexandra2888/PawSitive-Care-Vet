@@ -1,82 +1,27 @@
-import './Provide.scss'
+import React from "react";
+import './Provide.scss';
+import { provideSectionTitle, provideSectionDescription, features } from "../../utils/data/data";
 
 const Provide = () => {
-    return (
-      <section id="provide">
-        <h2>We provide 24h of care</h2>
-        <p>
-          helping your pet live their best life.
-        </p>
-        <div className="container">
-          <article>
-            <i className="bx bx-book-content" aria-label='booking'></i>
+  return (
+    <section id="provide">
+      <h2>{provideSectionTitle}</h2>
+      <p>
+        {provideSectionDescription}
+      </p>
+      <div className="container">
+        {features.map((feature, index) => (
+          <article key={index}>
+            <i className={feature.icon} aria-label={feature.title}></i>
             <div>
-              <h4>Online Booking</h4>
-              <small>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                explicabo, laborum corporis iste earum eveniet dolorum
-                obcaecati!
-              </small>
+              <h4>{feature.title}</h4>
+              <small>{feature.description}</small>
             </div>
           </article>
-          <article>
-            <i className="bx bx-trophy" aria-label='doctors'></i>
-            <div>
-              <h4>Qualified Doctors</h4>
-              <small>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                explicabo, laborum corporis iste earum eveniet dolorum
-                obcaecati!
-              </small>
-            </div>
-          </article>
-          <article>
-            <i className="bx bx-support" aria-label='support'></i>
-            <div>
-              <h4>Private Support</h4>
-              <small>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                explicabo, laborum corporis iste earum eveniet dolorum
-                obcaecati!
-              </small>
-            </div>
-          </article>
-          <article>
-            <i className="bx bx-donate-heart" aria-label='care'></i>
-            <div>
-              <h4>Well Cared</h4>
-              <small>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                explicabo, laborum corporis iste earum eveniet dolorum
-                obcaecati!
-              </small>
-            </div>
-          </article>
-          <article>
-            <i className="bx bx-first-aid" aria-label='aid'></i>
-            <div>
-              <h4>Need Emergency</h4>
-              <small>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                explicabo, laborum corporis iste earum eveniet dolorum
-                obcaecati!
-              </small>
-            </div>
-          </article>
-          <article>
-            <i className="bx bxl-meta" aria-label='services'></i>
-            <div>
-              <h4>24 Hour Service</h4>
-              <small>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-                explicabo, laborum corporis iste earum eveniet dolorum
-                obcaecati!
-              </small>
-            </div>
-          </article>
-        </div>
-      </section>
-    );
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Provide;

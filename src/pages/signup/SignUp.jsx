@@ -9,8 +9,11 @@ import {
 import { db } from "../../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./SignUp.scss";
+import Button from "../../components/button/Button";
+import Input from "../../components/input/Input";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -20,34 +23,27 @@ const SignUp = () => {
   });
   const { name, email, password } = formData;
   const navigate = useNavigate();
-  // function onChange(e) {
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [e.target.id]: e.target.value,
-  //   }));
-  // }
 
-  function onEmailChange(e) {
+  const onEmailChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       email: e.target.value,
     }));
   }
 
-  function onPasswordChange(e) {
+  const onPasswordChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       password: e.target.value,
     }));
   }
 
-  function onNameChange(e) {
+  const onNameChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
       name: e.target.value,
     }));
   }
-
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -69,35 +65,38 @@ const SignUp = () => {
       formDataCopy.timestamp = serverTimestamp();
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
-      toast.success("Sign up was successful");
       navigate("/");
     } catch (error) {
-      toast.error("Something went wrong with the registration");
+      toast.error("Something went wrong!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   }
+
   return (
     <section className="container">
+      <ToastContainer/>
       <div className="card">
-      <figure>
-        <figcaption aria-label="register-image">
-        <img src="/assets/register.png" alt="register" />
-        </figcaption>
-      </figure>      
+        <figure>
+          <figcaption aria-label="register-image">
+            <img src="/assets/register.png" alt="register" />
+          </figcaption>
+        </figure>
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign Up</h2>
           <div className="input">
-          <input
+            <Input
               type="text"
-              id="name"
+              id={name}
               value={name}
               onChange={onNameChange}
               className="input-field"
-              />
+            />
             <label className="input-label">Name:</label>
           </div>
 
           <div className="input">
-            <input
+            <Input
               type="email"
               value={email}
               className="input-field"
@@ -106,19 +105,19 @@ const SignUp = () => {
             <label className="input-label">Email:</label>
           </div>
 
-          <div class="input">
-          <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={onPasswordChange}
-                className="input-field"
+          <div className="input">
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={onPasswordChange}
+              className="input-field"
             />
             <label className="input-label">Password:</label>
           </div>
 
-          <div class="action">
-            <button className="btn" type="submit">Get started</button>
+          <div className="action">
+            <Button type="submit">Get started</Button>
           </div>
           <div className="action-auth">
             <OAuth />
@@ -126,27 +125,27 @@ const SignUp = () => {
         </form>
         <div className="card-info">
           <div>
-            <p>
+            <div>
               Have an account?
               <Link to="/sign-in">
                 <div className="wrapper">
                   <div className="inner">
-                    <a href="" class="hover-shadow hover-color">
+                    <div  className="hover-shadow hover-color">
                       <span>L</span>
                       <span>o</span>
                       <span>g</span>
                       <span>i</span>
                       <span>n</span>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </Link>
-            </p>
-            <p>
+            </div>
+            <div>
               <Link to="/forgot-password">
-                <div class="wrapper">
+                <div className="wrapper">
                   <div className="inner">
-                    <a href="" className="hover-shadow hover-color">
+                    <div className="hover-shadow hover-color">
                       <span>F</span>
                       <span>o</span>
                       <span>r</span>
@@ -163,11 +162,11 @@ const SignUp = () => {
                       <span>r</span>
                       <span>d</span>
                       <span>?</span>
-                    </a>
+                    </div>
                   </div>
                 </div>
               </Link>
-            </p>
+            </div>
           </div>
         </div>
       </div>

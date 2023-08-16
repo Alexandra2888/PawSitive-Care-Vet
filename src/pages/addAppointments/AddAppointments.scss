@@ -11,7 +11,6 @@ img {
 
 // iOS Reset
 input {
-  appearance: none;
   border-radius: 0;
 }
 
@@ -29,6 +28,7 @@ input {
   padding: 0.75rem;
 }
 
+
 .card-form {
   padding: 2rem 1rem 0;
 }
@@ -37,6 +37,7 @@ input {
   display: flex;
   justify-content: center;
 }
+
 
 
 .action {
@@ -54,11 +55,10 @@ input {
   text-align: center;
   font-size: 1.3rem;
   color: $white-color;
-  .hover-shadow {
+  a {
     display: block;
     color: $white-color;
     text-decoration: none;
-    padding: .1em;
   }
 }
 
@@ -127,11 +127,19 @@ a {
   .card {
     max-width: 30rem;
   }
-}
 
+  .card-image {
+    padding-bottom: 75%;
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .card {
     max-width: 40rem;
   }
+}
+
+
+.btn {
+  margin: auto;
 }
