@@ -9,11 +9,9 @@ import {
 import { db } from "../../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 import "./SignUp.scss";
 import Button from "../../components/button/Button";
-import Input from "../../components/input/Input";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -24,26 +22,27 @@ const SignUp = () => {
   const { name, email, password } = formData;
   const navigate = useNavigate();
 
-  const onEmailChange = (e) => {
+  function onEmailChange(e) {
     setFormData((prevState) => ({
       ...prevState,
       email: e.target.value,
     }));
   }
 
-  const onPasswordChange = (e) => {
+  function onPasswordChange(e) {
     setFormData((prevState) => ({
       ...prevState,
       password: e.target.value,
     }));
   }
 
-  const onNameChange = (e) => {
+  function onNameChange(e) {
     setFormData((prevState) => ({
       ...prevState,
       name: e.target.value,
     }));
   }
+
 
   async function onSubmit(e) {
     e.preventDefault();
@@ -65,38 +64,35 @@ const SignUp = () => {
       formDataCopy.timestamp = serverTimestamp();
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
+      toast.success("Sign up was successful");
       navigate("/");
     } catch (error) {
-      toast.error("Something went wrong!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
+      toast.error("Something went wrong with the registration");
     }
   }
-
   return (
     <section className="container">
-      <ToastContainer/>
       <div className="card">
-        <figure>
-          <figcaption aria-label="register-image">
-            <img src="/assets/register.png" alt="register" />
-          </figcaption>
-        </figure>
+      <figure>
+        <figcaption aria-label="register-image">
+        <img src="/assets/register.png" alt="register" />
+        </figcaption>
+      </figure>      
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign Up</h2>
           <div className="input">
-            <Input
+          <input
               type="text"
-              id={name}
+              id="name"
               value={name}
               onChange={onNameChange}
               className="input-field"
-            />
+              />
             <label className="input-label">Name:</label>
           </div>
 
           <div className="input">
-            <Input
+            <input
               type="email"
               value={email}
               className="input-field"
@@ -105,18 +101,18 @@ const SignUp = () => {
             <label className="input-label">Email:</label>
           </div>
 
-          <div className="input">
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={onPasswordChange}
-              className="input-field"
+          <div class="input">
+          <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={onPasswordChange}
+                className="input-field"
             />
             <label className="input-label">Password:</label>
           </div>
 
-          <div className="action">
+          <div class="action">
             <Button type="submit">Get started</Button>
           </div>
           <div className="action-auth">
@@ -125,27 +121,27 @@ const SignUp = () => {
         </form>
         <div className="card-info">
           <div>
-            <div>
+            <p>
               Have an account?
               <Link to="/sign-in">
                 <div className="wrapper">
                   <div className="inner">
-                    <div  className="hover-shadow hover-color">
+                    <a href="" class="hover-shadow hover-color">
                       <span>L</span>
                       <span>o</span>
                       <span>g</span>
                       <span>i</span>
                       <span>n</span>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </Link>
-            </div>
-            <div>
+            </p>
+            <p>
               <Link to="/forgot-password">
-                <div className="wrapper">
+                <div class="wrapper">
                   <div className="inner">
-                    <div className="hover-shadow hover-color">
+                    <a href="" className="hover-shadow hover-color">
                       <span>F</span>
                       <span>o</span>
                       <span>r</span>
@@ -162,11 +158,11 @@ const SignUp = () => {
                       <span>r</span>
                       <span>d</span>
                       <span>?</span>
-                    </div>
+                    </a>
                   </div>
                 </div>
               </Link>
-            </div>
+            </p>
           </div>
         </div>
       </div>
