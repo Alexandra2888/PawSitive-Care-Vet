@@ -1,4 +1,4 @@
-import { useGlobalContext } from "../../context";
+import { useGlobalContext } from "../../contexts/DarkModeContext";
 import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
 import './ToggleTheme.scss';
 

@@ -12,8 +12,12 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./SignUp.scss";
 import Button from "../../components/button/Button";
+import { useUserAuth } from "../../../contexts/UserAuthContext";
 
 const SignUp = () => {
+
+  const { signUp } = useUserAuth();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,7 +52,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      const auth = getAuth();
+      await signUp(email, password);
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -64,8 +68,7 @@ const SignUp = () => {
       formDataCopy.timestamp = serverTimestamp();
 
       await setDoc(doc(db, "users", user.uid), formDataCopy);
-      toast.success("Sign up was successful");
-      navigate("/");
+      navigate("/sign-in");
     } catch (error) {
       toast.error("Something went wrong with the registration");
     }
@@ -101,7 +104,7 @@ const SignUp = () => {
             <label className="input-label">Email:</label>
           </div>
 
-          <div class="input">
+          <div className="input">
           <input
                 type="password"
                 id="password"
@@ -112,7 +115,7 @@ const SignUp = () => {
             <label className="input-label">Password:</label>
           </div>
 
-          <div class="action">
+          <div className="action">
             <Button type="submit">Get started</Button>
           </div>
           <div className="action-auth">
@@ -121,27 +124,27 @@ const SignUp = () => {
         </form>
         <div className="card-info">
           <div>
-            <p>
+            <div>
               Have an account?
               <Link to="/sign-in">
                 <div className="wrapper">
                   <div className="inner">
-                    <a href="" class="hover-shadow hover-color">
+                    <span className="hover-shadow hover-color">
                       <span>L</span>
                       <span>o</span>
                       <span>g</span>
                       <span>i</span>
                       <span>n</span>
-                    </a>
+                    </span>
                   </div>
                 </div>
               </Link>
-            </p>
-            <p>
+            </div>
+            <div>
               <Link to="/forgot-password">
-                <div class="wrapper">
+                <div className="wrapper">
                   <div className="inner">
-                    <a href="" className="hover-shadow hover-color">
+                    <span className="hover-shadow hover-color">
                       <span>F</span>
                       <span>o</span>
                       <span>r</span>
@@ -158,11 +161,11 @@ const SignUp = () => {
                       <span>r</span>
                       <span>d</span>
                       <span>?</span>
-                    </a>
+                    </span>
                   </div>
                 </div>
               </Link>
-            </p>
+            </div>
           </div>
         </div>
       </div>

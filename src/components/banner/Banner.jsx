@@ -11,7 +11,7 @@ const Banner = () => {
               Complete Health Care Solutions For Every Pet
             </h1>
             <p className='header__content-para'>Because your pet&apos;s health is our top priority.</p>
-            <NavLink to="/sign-up" className="btn">
+            <NavLink to="/add-appointments" className="btn">
               Make Appointment
             </NavLink>
           </div>
