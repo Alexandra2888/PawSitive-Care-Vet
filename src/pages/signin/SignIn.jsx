@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../../components/auth/OAuth";
-import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
 import Button from "../../components/button/Button";
+import { useUserAuth } from "../../../contexts/UserAuthContext";
 
 export default function SignIn() {
+
+  const { logIn } = useUserAuth();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -32,15 +35,8 @@ export default function SignIn() {
   async function onSubmit(e) {
     e.preventDefault();
     try {
-      const auth = getAuth();
-      const userCredential = await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      if (userCredential.user) {
-        navigate("/appointments");
-      }
+      await logIn(email, password);
+      navigate("/add-appointments");
     } catch (error) {
       toast.error("Bad user credentials");
     }
@@ -64,7 +60,7 @@ export default function SignIn() {
             />
             <label className="input-label">Email:</label>
           </div>
-          <div class="input">
+          <div className="input">
             <input
               type="password"
               className="input-field"
@@ -73,7 +69,7 @@ export default function SignIn() {
             />
             <label className="input-label">Password:</label>
           </div>
-          <div class="action">
+          <div className="action">
             <Button>Get started</Button>
           </div>
           <div className="action-auth">
@@ -82,12 +78,12 @@ export default function SignIn() {
         </form>
         <div className="card-info">
           <div>
-            <p>
+            <div>
               Don't have an account?
               <Link to="/sign-up">
                 <div className="wrapper">
                   <div className="inner">
-                    <a href="" className="hover-shadow hover-color">
+                    <span className="hover-shadow hover-color">
                       <span>R</span>
                       <span>e</span>
                       <span>g</span>
@@ -96,16 +92,16 @@ export default function SignIn() {
                       <span>t</span>
                       <span>e</span>
                       <span>r</span>
-                    </a>
+                    </span>
                   </div>
                 </div>
               </Link>
-            </p>
-            <p>
+            </div>
+            <div>
               <Link to="/forgot-password">
                 <div className="wrapper">
                   <div className="inner">
-                    <a href="" className="hover-shadow hover-color">
+                    <span className="hover-shadow hover-color">
                       <span>F</span>
                       <span>o</span>
                       <span>r</span>
@@ -122,11 +118,11 @@ export default function SignIn() {
                       <span>r</span>
                       <span>d</span>
                       <span>?</span>
-                    </a>
+                    </span>
                   </div>
                 </div>
               </Link>
-            </p>
+            </div>
           </div>
         </div>
       </div>

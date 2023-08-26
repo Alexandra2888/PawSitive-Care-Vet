@@ -9,7 +9,8 @@ import SignUp from "./pages/signup/SignUp";
 import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
 import AddAppointments from "./pages/addAppointments/AddApponintments";
 import Appointments from './pages/appointments/Appointments';
-
+import { UserAuthContextProvider } from "../contexts/UserAuthContext";
+import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 
 
 
@@ -37,18 +38,28 @@ const router = createBrowserRouter([
       },
       {
         path: 'add-appointments',
-        element: <AddAppointments/>
+        element: 
+        <ProtectedRoute>
+          <AddAppointments/>
+          </ProtectedRoute>
       }, 
       {
         path: 'appointments',
-        element: <Appointments/>
+        element: 
+        <ProtectedRoute>
+          <Appointments/>
+          </ProtectedRoute>
       }
     ]
   }
 ]);
 
 const App = () => {
-  return <RouterProvider router = {router}></RouterProvider>
+  return (  
+  <UserAuthContextProvider>
+    <RouterProvider router = {router}>
+    </RouterProvider>
+    </UserAuthContextProvider> )
 }
 
 export default App;
