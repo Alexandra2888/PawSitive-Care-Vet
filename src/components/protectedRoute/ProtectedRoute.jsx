@@ -1,52 +1,16 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { Navigate } from "react-router-dom";
+import { useUserAuth } from "../../../contexts/UserAuthContext";
 
-function ProtectedRoute({ children }) {
-  const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem("user"));
-  useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
 
-    if (!user) {
-      navigate("/login");
-    }
-  }, []);
-  return (
-    <div className="layout p-1">
-      <div className="header bg-white p-2 flex justify-between items-center">
-        <h2 className="cursor-pointer" onClick={() => navigate("/")}>
-          <strong className="text-primary">Pawsitive</strong>
-          <strong className="text-secondary"> Vet care</strong>
-        </h2>
+const ProtectedRoute = ({ children }) => {
+  const { user } = useUserAuth();
 
-        {user && (
-          <div className="flex gap-3 items-center">
-            <div className="flex gap-1 items-center">
-              <i className="ri-shield-user-line"></i>
-              <h4
-                className="uppercase cursor-pointer underline"
-                onClick={() => {
-                  if (user.role === "admin") navigate("/admin");
-                  else navigate("/profile");
-                }}
-              >
-                {user.name}
-              </h4>
-            </div>
-
-            <i
-              className="ri-logout-box-r-line"
-              onClick={() => {
-                localStorage.removeItem("user");
-                navigate("/login");
-              }}
-            ></i>
-          </div>
-        )}
-      </div>
-      <div className="content my-1">{children}</div>
-    </div>
-  );
-}
+  console.log("Check user in Private: ", user);
+  if (!user) {
+    return <Navigate to="/sign-in" />;
+  }
+  return children;
+};
 
 export default ProtectedRoute;

@@ -1,27 +1,23 @@
 import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 import ToggleTheme from '../../dark-mode/ToggleTheme';
-import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { FiLogOut } from "react-icons/fi";
+import {useUserAuth } from "../../../contexts/UserAuthContext";
+
 
 const Navbar = () => {
+  const { logOut, user } = useUserAuth();
   const navigate = useNavigate();
-  const auth = getAuth();
 
-  const handleLogout = () => {
-    signOut(auth).then(() => {
-      localStorage.removeItem("user");
-      navigate("/sign-in");
-      console.log("Signed out successfully");
-    }).catch((error) => {
+  const handleLogout = async () => {
+    try {
+      await logOut();
+      navigate("/");
+    } catch (error) {
       console.log(error);
-    });
-  }
-
-  const userData = localStorage.getItem("user");
-  const user = userData ? JSON.parse(userData) : null;
-
+    }
+  };
   return (
     <nav className="nav__container">
       <div className="nav__container-wrapper">
@@ -34,7 +30,7 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/sign-up" className="btn">
+            <NavLink to="/add-appointments" className="btn">
               Make Appointment
             </NavLink>
           </li>
