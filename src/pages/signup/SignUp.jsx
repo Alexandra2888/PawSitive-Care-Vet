@@ -115,7 +115,7 @@ const SignUp = () => {
             <label className="input-label">Password:</label>
           </div>
 
-          <div class="action">
+          <div className="action">
             <Button type="submit">Get started</Button>
           </div>
           <div className="action-auth">
@@ -124,7 +124,7 @@ const SignUp = () => {
         </form>
         <div className="card-info">
           <div>
-            <p>
+            <div>
               Have an account?
               <Link to="/sign-in">
                 <div className="wrapper">
@@ -139,10 +139,10 @@ const SignUp = () => {
                   </div>
                 </div>
               </Link>
-            </p>
-            <p>
+            </div>
+            <div>
               <Link to="/forgot-password">
-                <div class="wrapper">
+                <div className="wrapper">
                   <div className="inner">
                     <span className="hover-shadow hover-color">
                       <span>F</span>
@@ -165,7 +165,7 @@ const SignUp = () => {
                   </div>
                 </div>
               </Link>
-            </p>
+            </div>
           </div>
         </div>
       </div>
