@@ -69,7 +69,7 @@ export default function SignIn() {
             />
             <label className="input-label">Password:</label>
           </div>
-          <div class="action">
+          <div className="action">
             <Button>Get started</Button>
           </div>
           <div className="action-auth">
@@ -96,8 +96,8 @@ export default function SignIn() {
                   </div>
                 </div>
               </Link>
-            </p>
-            <p>
+            </div>
+            <div>
               <Link to="/forgot-password">
                 <div className="wrapper">
                   <div className="inner">
@@ -122,7 +122,7 @@ export default function SignIn() {
                   </div>
                 </div>
               </Link>
-            </p>
+            </div>
           </div>
         </div>
       </div>
