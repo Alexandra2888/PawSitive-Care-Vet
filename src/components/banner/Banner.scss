@@ -4,7 +4,7 @@
 
 header {
   @include gradientBackground;
-  height: calc(100vh - 80px);
+  height: 100vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -15,7 +15,6 @@ header {
     display: grid;
     -ms-grid-columns: 46% 8% 46%;
     grid-template-columns: 46% 46%;
-    gap: 8%;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -38,7 +37,6 @@ header {
       margin: 1rem 0 2rem;
       color: $light-color;
       font-size: 2rem;
-      padding: 1em 0;
     }
   }
 }
