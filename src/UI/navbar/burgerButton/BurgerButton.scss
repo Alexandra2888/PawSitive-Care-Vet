@@ -1,0 +1,70 @@
+@import "../../../utils//scss//config";
+@import "../../../utils/scss/mixins";
+@import "../../../utils/scss/general";
+
+.burger-button {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &.open .line-1 {
+    transform: rotate(-45deg) translateY(2px);
+  }
+
+  &.open .line-2 {
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  &.open .line-3 {
+    transform: rotate(45deg) translateY(-2px);
+  }
+}
+
+.burger-line {
+  width: 2rem;
+  height: 0.125rem;
+  margin: 0.2em;
+  background-color: $white-color;
+  border-radius: 0.25rem;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.line-1.rotate-up {
+  transform: rotate(-45deg) translateY(2px);
+}
+
+.line-2.fade-out {
+  opacity: 0;
+}
+
+.line-3.rotate-down {
+  transform: rotate(45deg) translateY(-2px);
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.25rem;
+  height: 100vh;
+
+  @include gradientBackground;
+  li {
+    font-size: 1.5rem;
+    padding: .5em 0;
+    color: $white-color;
+  }
+}
+
+
+.svg {
+  color: $white-color;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+}
