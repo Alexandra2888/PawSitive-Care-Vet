@@ -45,21 +45,63 @@
   transform: rotate(45deg) translateY(-2px);
 }
 
+// .menu-content {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+//   padding-top: 1.25rem;
+//   height: 100vh;
+
+//   @include gradientBackground;
+
+//   li {
+//     font-size: 1.5rem;
+//     padding: .5em 0;
+//     color: $white-color;
+//   }
+
+ 
+// }
+
 .menu-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 1.25rem;
   height: 100vh;
-
   @include gradientBackground;
-  li {
-    font-size: 1.5rem;
-    padding: .5em 0;
-    color: $white-color;
-  }
 }
+
+.menu-content li {
+  font-size: 1.5rem;
+  padding: 0.5em 0;
+  color: $white-color;
+  display: none; 
+}
+
+.menu-content li:nth-child(1), 
+.menu-content li:nth-child(2), 
+.menu-content li:nth-child(3),
+.menu-content li:nth-child(4), 
+.menu-content li:nth-child(5), 
+.menu-content li:nth-child(6) 
+{
+  display: block; 
+}
+
+.menu-content .svg {
+  color: $white-color;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.dark-toggle {
+  margin-right: 4em;
+}
+
 
 
 .svg {
@@ -67,4 +109,9 @@
   border-radius: 8px;
   width: 40px;
   height: 40px;
+}
+
+
+.dark-toggle {
+ margin-right: 4em;
 }
