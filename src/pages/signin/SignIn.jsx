@@ -36,7 +36,7 @@ export default function SignIn() {
     e.preventDefault();
     try {
       await logIn(email, password);
-      navigate("/add-appointments");
+      navigate("/");
     } catch (error) {
       toast.error("Bad user credentials");
     }
