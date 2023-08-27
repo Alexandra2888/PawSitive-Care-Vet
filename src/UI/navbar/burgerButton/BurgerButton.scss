@@ -45,24 +45,7 @@
   transform: rotate(45deg) translateY(-2px);
 }
 
-// .menu-content {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   padding-top: 1.25rem;
-//   height: 100vh;
 
-//   @include gradientBackground;
-
-//   li {
-//     font-size: 1.5rem;
-//     padding: .5em 0;
-//     color: $white-color;
-//   }
-
- 
-// }
 
 .menu-content {
   display: flex;
@@ -81,6 +64,11 @@
   display: none; 
 }
 
+.menu-content li:hover {
+  cursor: pointer;
+  color: $secondary-color;
+}
+
 .menu-content li:nth-child(1), 
 .menu-content li:nth-child(2), 
 .menu-content li:nth-child(3),
@@ -90,6 +78,14 @@
 {
   display: block; 
 }
+
+
+li a:hover {
+  background-color: $secondary-color;
+  border-radius: 8px;
+  padding: .2em;
+}
+
 
 .menu-content .svg {
   color: $white-color;
