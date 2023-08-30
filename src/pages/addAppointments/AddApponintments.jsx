@@ -4,6 +4,7 @@ import { db } from "../../firebase";
 import Button from "../../components/button/Button";
 import "./AddAppointments.scss";
 import { Link, useNavigate } from 'react-router-dom'; 
+import Input from "../../components/input/Input";
 
 
 const Appointments = () => {
@@ -146,7 +147,7 @@ const Appointments = () => {
         <form className="card-form" onSubmit={addAppointment}>
           <h2 className="card-form-title">Add new appointment:</h2>
           <div className="input">
-            <input
+            <Input
               type="text"
               id="name"
               value={name}
@@ -157,7 +158,7 @@ const Appointments = () => {
           </div>
 
           <div className="input">
-            <input
+            <Input
               type="email"
               value={email}
               className="input-field"
@@ -167,7 +168,7 @@ const Appointments = () => {
           </div>
 
           <div className="input">
-            <input
+            <Input
               type="number"
               value={phone}
               className="input-field"
@@ -206,7 +207,7 @@ const Appointments = () => {
           </div>
 
           <div className="input">
-            <input
+            <Input
               type="text"
               id="petName"
               value={petName}
@@ -218,7 +219,7 @@ const Appointments = () => {
 
 
           <div className="input">
-            <input
+            <Input
               type="number"
               value={petAge}
               className="input-field"
@@ -228,7 +229,7 @@ const Appointments = () => {
           </div>
 
           <div className="input">
-            <input
+            <Input
               type="time"
               value={time}
               className="input-field"
@@ -238,7 +239,7 @@ const Appointments = () => {
           </div>
 
           <div className="input">
-            <input
+            <Input
               type="date"
               id="date"
               value={date}
@@ -269,7 +270,7 @@ const Appointments = () => {
 
         
           <div className="input">
-            <input
+            <Input
               type="text"
               id="reason"
               value={reason}

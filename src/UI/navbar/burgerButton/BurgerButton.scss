@@ -80,10 +80,11 @@
 }
 
 
-li a:hover {
+#nav__items-link:hover {
   background-color: $secondary-color;
+  width: fit-content;
+  padding: 0 .2em;
   border-radius: 8px;
-  padding: .2em;
 }
 
 

@@ -4,6 +4,7 @@ import OAuth from "../../components/auth/OAuth";
 import { toast } from "react-toastify";
 import Button from "../../components/button/Button";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
+import Input from "../../components/input/Input";
 
 export default function SignIn() {
 
@@ -52,7 +53,7 @@ export default function SignIn() {
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign In</h2>
           <div className="input">
-            <input
+            <Input
               type="email"
               className="input-field"
               onChange={onEmailChange}
@@ -61,7 +62,7 @@ export default function SignIn() {
             <label className="input-label">Email:</label>
           </div>
           <div className="input">
-            <input
+            <Input
               type="password"
               className="input-field"
               onChange={onPasswordChange}

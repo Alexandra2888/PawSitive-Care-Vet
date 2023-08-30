@@ -49,16 +49,16 @@ const BurgerButton = () => {
       {burgerMenuIsOpen && (
         <div className="menu-content">
           <ul id="nav__items">
-            <li>
+            <li id="nav__items-link">
               <NavLink to="/">Home</NavLink>
             </li>
-            <li>
+            <li id="nav__items-link">
               <NavLink to="/profile">Profile</NavLink>
             </li>
-            <li>
+            <li id="nav__items-link">
               <NavLink to="/shop">Shop</NavLink>
             </li>
-            <li>
+            <li id="nav__items-link">
               <NavLink to="/appointments">Appointments</NavLink>
             </li>
             {user && (

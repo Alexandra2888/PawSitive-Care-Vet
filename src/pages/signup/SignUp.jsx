@@ -84,7 +84,7 @@ const SignUp = () => {
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign Up</h2>
           <div className="input">
-          <input
+          <Input
               type="text"
               id="name"
               value={name}
@@ -95,7 +95,7 @@ const SignUp = () => {
           </div>
 
           <div className="input">
-            <input
+            <Input
               type="email"
               value={email}
               className="input-field"
@@ -105,7 +105,7 @@ const SignUp = () => {
           </div>
 
           <div className="input">
-          <input
+          <Input
                 type="password"
                 id="password"
                 value={password}
