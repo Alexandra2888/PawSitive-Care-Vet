@@ -1,10 +1,10 @@
 import  { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import Button from "../../components/button/Button";
+import { Button } from "../../components/button"
 import "./AddAppointments.scss";
 import { Link, useNavigate } from 'react-router-dom'; 
-import Input from "../../components/input/Input";
+import { Input } from "../../components/input";
 import { AddAppointment } from "../../interfaces/components/AddAppontments";
 
 

@@ -4,7 +4,6 @@ import ToggleTheme from '../../../dark-mode/ToggleTheme';
 import { useNavigate } from 'react-router-dom';
 import { FiLogOut } from "react-icons/fi";
 import {useUserAuth } from "../../../../contexts/UserAuthContext";
-import React from "react";
 
 
 const BigNavbar = () => {

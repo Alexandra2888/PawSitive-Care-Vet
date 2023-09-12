@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import OAuth from "../../components/auth/OAuth";
+import { OAuth } from "../../components/auth";
 import {
  
   createUserWithEmailAndPassword,
@@ -11,10 +11,10 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./SignUp.scss";
-import Button from "../../components/button/Button";
+import { Button } from "../../components/button";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
 import React from "react";
-import Input from "../../components/input/Input";
+import { Input } from "../../components/input";
 
 const SignUp = () => {
 

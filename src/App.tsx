@@ -1,16 +1,15 @@
-import React from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import HomeLayout from "./pages/homeLayout/HomeLayout";
-import Home from "./pages/home/Home";
-import NotFound from "./pages/notFound/NotFound";
-import SignIn from "./pages/signin/SignIn";
-import SignUp from "./pages/signup/SignUp";
-import ForgotPassword from "./pages/forgotpassword/ForgotPassword";
-import AddAppointments from "./pages/addAppointments/AddApponintments";
-import Appointments from './pages/appointments/Appointments';
+import { HomeLayout } from "./pages/homeLayout";
+import { Home } from "./pages/home";
+import  { NotFound } from "./pages/notFound";
+import { SignIn } from "./pages/signin";
+import { SignUp } from "./pages/signup";
+import { ForgotPassword } from "./pages/forgotpassword";
+import  { AddAppointments } from "./pages/addAppointments";
+import  { Appointments } from './pages/appointments';
 import { UserAuthContextProvider } from "../contexts/UserAuthContext";
-import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
+import { ProtectedRoute } from "./components/protectedRoute";
 
 
 
@@ -57,8 +56,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (  
   <UserAuthContextProvider>
-    <RouterProvider router = {router}>
-    </RouterProvider>
+    <RouterProvider router = {router}/>
     </UserAuthContextProvider> )
 }
 

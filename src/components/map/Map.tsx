@@ -7,7 +7,7 @@ const Map: React.FC = () => {
   const zoomLevel: number = 13;
 
   return (
-    <MapContainer center={position} zoom={zoomLevel} scrollWheelZoom={false}>
+    <MapContainer center={position }  zoom={zoomLevel} scrollWheelZoom={false}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

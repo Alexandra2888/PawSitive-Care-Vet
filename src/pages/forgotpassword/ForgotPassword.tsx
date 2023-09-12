@@ -1,12 +1,11 @@
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import OAuth from "../../components/auth/OAuth";
-import Button from "../../components/button/Button";
-import Input from "../../components/input/Input";
+import { OAuth } from "../../components/auth";
+import { Button } from "../../components/button";
+import { Input } from "../../components/input";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import React from "react";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");

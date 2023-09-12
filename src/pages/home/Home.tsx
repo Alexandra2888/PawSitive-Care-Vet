@@ -1,11 +1,10 @@
-import Banner from "../../components/banner/Banner";
-import Provide from "../../components/provide/Provide";
-import Services from "../../components/services/Services";
-import Specialists from "../../components/specialists/Specialists";
-import Testimonials from "../../components/testimonials/Testimonials";
-import Contact from "../contact/Contact";
-import Faq from '../../components/faq/Faq';
-import React from "react";
+import { Banner } from "../../components/banner";
+import { Provide } from "../../components/provide";
+import  { Services } from "../../components/services";
+import { Specialists } from "../../components/specialists";
+import { Testimonials } from "../../components/testimonials";
+import { Contact } from "../contact";
+import { Faq } from '../../components/faq';
 
 const Home = () => {
   return (
