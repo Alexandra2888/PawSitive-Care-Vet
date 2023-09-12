@@ -1,8 +1,7 @@
 import "./Faq.scss";
-import { AiOutlinePlusSquare } from "react-icons/ai";
+import { AiOutlinePlusSquare, AiOutlineCheck } from "react-icons/ai";
 import { useState } from "react";
 import { faqSectionTitle, faqData } from '../../utils/data/data';
-import React from "react";
 
 const Faq = () => {
   const [readMore, setReadMore] = useState(new Array(faqData.length).fill(false));
@@ -18,7 +17,8 @@ const Faq = () => {
           <ul>
             {faqData.map((item, index) => (
               <li key={index}>
-                {`${index + 1}. ${item.question}`}
+                <AiOutlineCheck className="icon-check" /> 
+                {item.question}
                 <AiOutlinePlusSquare
                   className="icon"
                   onClick={() => {

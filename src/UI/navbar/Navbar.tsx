@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import BurgerButton from './burgerButton/BurgerButton';
-import BigNavbar from './bigNavbar/BigNavbar';
+import  { useState, useEffect } from 'react';
+import { BurgerButton } from './burgerButton';
+import { BigNavbar } from './bigNavbar';
 import "./Navbar.scss";
 
 const Navbar = () => {

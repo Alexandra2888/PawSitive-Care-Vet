@@ -1,7 +1,6 @@
 import {Outlet} from "react-router-dom";
-import Navbar from "../../UI/navbar/Navbar";
-import Footer from "../../UI/footer/Footer";
-import React from "react";
+import { Navbar } from "../../UI/navbar";
+import { Footer } from "../../UI/footer";
 
 
 const HomeLayout = () => {
