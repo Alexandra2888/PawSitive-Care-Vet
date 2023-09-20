@@ -180,22 +180,5 @@ export const testimonialsData = [
 
 
 //faq
-export const faqSectionTitle = "FAQ";
-
-export const faqData = [
-  {
-    question: "Do I need an appointment?",
-    answer:
-      "Yes, appointments are recommended for all veterinary services.",
-  },
-  {
-    question: "Do you offer emergency vet services?",
-    answer:
-      "Yes, we provide emergency veterinary services.",
-  },
-  {
-    question: "My pet is sick",
-    answer:
-      "Make an appointment with one of our doctors.",
-  },
-];
+export const para =
+  "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";

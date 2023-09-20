@@ -17,31 +17,31 @@ const Services = () => {
           <p className="service__section-para">Making a difference in the lives of pets and their owners.</p>
           <ul>
             <li>
-              <GiCheckMark className="icon" />
+              <GiCheckMark className="icon__service" />
               Infectious Diseases and Prevention
             </li>
             <li>
-              <GiCheckMark className="icon" />
+              <GiCheckMark className="icon__service" />
               Cardiology
             </li>
             <li>
-              <GiCheckMark className="icon" />
+              <GiCheckMark className="icon__service" />
               Dermatology
             </li>
             <li>
-              <GiCheckMark className="icon" />
+              <GiCheckMark className="icon__service" />
               Diabetes, Nutrition, and Metabolic Diseases
             </li>
             <li>
-              <GiCheckMark className="icon" />
+              <GiCheckMark className="icon__service" />
               Inhalation Anesthesia
             </li>
             <li>
-              <GiCheckMark className="icon" />
+              <GiCheckMark className="icon__service" />
               Gastroenterology
             </li>
             <li>
-              <GiCheckMark className="icon" />
+              <GiCheckMark className="icon__service" />
               Internal Medicine
             </li>
           </ul>

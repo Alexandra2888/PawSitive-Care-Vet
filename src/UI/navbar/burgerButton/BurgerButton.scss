@@ -3,38 +3,55 @@
 @import "../../../utils/scss/general";
 
 .burger-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 1rem;
   border: none;
   background: none;
   cursor: pointer;
 
   &.open .line-1 {
-    transform: rotate(-45deg) translateY(2px);
+    -webkit-transform: rotate(-45deg) translateY(2px);
+        -ms-transform: rotate(-45deg) translateY(2px);
+            transform: rotate(-45deg) translateY(2px);
   }
 
   &.open .line-2 {
     opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
     transition: opacity 0.5s;
   }
 
   &.open .line-3 {
-    transform: rotate(45deg) translateY(-2px);
+    -webkit-transform: rotate(45deg) translateY(-2px);
+        -ms-transform: rotate(45deg) translateY(-2px);
+            transform: rotate(45deg) translateY(-2px);
   }
 }
 
 .burger-line {
-  width: 2rem;
+  width: 1.5rem;
   height: 0.125rem;
   margin: 0.2em;
   background-color: $white-color;
   border-radius: 0.25rem;
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  -o-transition: transform 0.5s, opacity 0.5s;
   transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
 .line-1.rotate-up {
-  transform: rotate(-45deg) translateY(2px);
+  -webkit-transform: rotate(-45deg) translateY(2px);
+      -ms-transform: rotate(-45deg) translateY(2px);
+          transform: rotate(-45deg) translateY(2px);
 }
 
 .line-2.fade-out {
@@ -42,23 +59,34 @@
 }
 
 .line-3.rotate-down {
-  transform: rotate(45deg) translateY(-2px);
+  -webkit-transform: rotate(45deg) translateY(-2px);
+      -ms-transform: rotate(45deg) translateY(-2px);
+          transform: rotate(45deg) translateY(-2px);
 }
 
 
 
 .menu-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 1.25rem;
   height: 100vh;
   @include gradientBackground;
 }
 
 .menu-content li {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 0.5em 0;
   color: $white-color;
   display: none; 
@@ -82,6 +110,8 @@
 
 #nav__items-link:hover {
   background-color: $secondary-color;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0 .2em;
   border-radius: 8px;
@@ -94,6 +124,22 @@
   width: 40px;
   height: 40px;
 }
+
+
+.burger:hover {
+  background: -webkit-gradient(linear, left top, right top, from(rgb(173, 154, 119)),  to(lightsalmon));
+  background: -o-linear-gradient(left, rgb(173, 154, 119) 0%,  lightsalmon 100%);
+  background: linear-gradient(to right, rgb(173, 154, 119) 0%,  lightsalmon 100%);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  -webkit-transition: background-position 0.5s ease-in-out;
+  -o-transition: background-position 0.5s ease-in-out;
+  transition: background-position 0.5s ease-in-out;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
 
 .dark-toggle {
   margin-right: 4em;
@@ -108,7 +154,10 @@
   height: 40px;
 }
 
+.logout {
+  background-color: transparent;
+}
 
 .dark-toggle {
- margin-right: 4em;
+margin-right: 6em;
 }
