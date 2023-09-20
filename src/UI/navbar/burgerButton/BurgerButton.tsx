@@ -63,8 +63,8 @@ const BurgerButton = () => {
             </li>
             {user && (
               <li>
-                <button onClick={handleLogout} className="svg btn-primary">
-                  <FiLogOut />
+                <button onClick={handleLogout} className="logout">
+                  <FiLogOut className="svg" />
                 </button>
               </li>
             )}
