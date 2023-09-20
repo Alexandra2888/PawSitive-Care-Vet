@@ -31,7 +31,7 @@ const BigNavbar = () => {
             <NavLink to="/" className="nav__link">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/add-appointments" className="btn">
+            <NavLink to="/add-appointments" className="nav__link">
               Make Appointment
             </NavLink>
           </li>
