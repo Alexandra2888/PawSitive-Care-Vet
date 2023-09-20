@@ -27,8 +27,8 @@ const BigNavbar = () => {
         </NavLink>
 
         <ul id="nav__items">
-          <li>
-            <NavLink to="/">Home</NavLink>
+          <li className="nav__link">
+            <NavLink to="/" className="nav__link">Home</NavLink>
           </li>
           <li>
             <NavLink to="/add-appointments" className="btn">
@@ -38,7 +38,7 @@ const BigNavbar = () => {
           {user && (
             <li>
               <button onClick={handleLogout} className="logout">
-                <FiLogOut className="svg"/>
+                <FiLogOut className="svg nav__link"/>
               </button>
             </li>
           )}

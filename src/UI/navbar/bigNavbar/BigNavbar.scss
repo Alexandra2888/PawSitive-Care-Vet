@@ -95,7 +95,7 @@
 }
 
 
-li:first-child:hover {
+.nav__link:hover {
   background: linear-gradient(to right, rgb(173, 154, 119) 0%,  lightsalmon 100%);
   background-size: 200% 100%;
   background-position: -100% 0;
@@ -104,13 +104,6 @@ li:first-child:hover {
   border-radius: 8px;
 }
 
-li:nth-child(3):hover {
-  background: linear-gradient(to right, rgb(173, 154, 119) 0%,  lightsalmon 100%);
-  background-size: 200% 100%;
-  background-position: -100% 0;
-  transition: background-position 0.5s ease-in-out;
-  border-radius: 8px;
-}
 
 
 
