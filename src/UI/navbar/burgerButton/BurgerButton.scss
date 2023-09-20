@@ -58,7 +58,7 @@
 }
 
 .menu-content li {
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 0.5em 0;
   color: $white-color;
   display: none; 
@@ -95,6 +95,18 @@
   height: 40px;
 }
 
+
+.burger:hover {
+  background: linear-gradient(to right, rgb(173, 154, 119) 0%,  lightsalmon 100%);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  transition: background-position 0.5s ease-in-out;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+
 .dark-toggle {
   margin-right: 4em;
 }
@@ -113,5 +125,5 @@
 }
 
 .dark-toggle {
- margin-left: -10px;
+margin-right: 6em;
 }
