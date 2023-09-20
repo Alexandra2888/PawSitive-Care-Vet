@@ -2,10 +2,11 @@
 @import "../../utils/scss/mixins";
 @import "../../utils/scss/general";
 
-
 #provide {
   .container {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1.5rem 1fr 1.5rem 1fr;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     color: $white-color;
@@ -15,9 +16,15 @@
       @include gradientBackground;
       padding: 1.5rem;
       border-radius: 1rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
       gap: 1.5rem;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
       height: fit-content;
+      -webkit-transition: all 400ms ease;
+      -o-transition: all 400ms ease;
       transition: all 400ms ease;
 
       &:hover {
@@ -42,6 +49,7 @@
   #provide {
     .container {
       gap: 1rem;
+      -ms-grid-columns: 1fr 0.8rem 1fr;
       grid-template-columns: 1fr 1fr;
 
       article {
@@ -60,6 +68,7 @@
 @media screen and (max-width: 600px) {
   #provide {
     .container {
+      -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
 
       article {
@@ -72,4 +81,3 @@
     }
   }
 }
-

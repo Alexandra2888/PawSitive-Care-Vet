@@ -4,15 +4,22 @@
 
 #services {
   @include gradientBackground;
+  display: -ms-grid;
   display: grid;
   place-items: center;
 
   .services__container {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 46% 8% 46%;
     grid-template-columns: 46% 46%;
     gap: 8%;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     color: $white-color;
 
     .section__image {
@@ -23,6 +30,8 @@
     }
 
     .service__section-content {
+      min-height: -webkit-fit-content;
+      min-height: -moz-fit-content;
       min-height: fit-content;
 
       .service__section-title {
@@ -72,6 +81,7 @@
 @media screen and (max-width: 600px) {
   #services {
     .services__container {
+      -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       text-align: center;
       margin-top: -8.5rem;
