@@ -8,12 +8,20 @@
   position: sticky;
   z-index: 10;
   top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: .5em 2em;
   @include gradientBackground;
-  box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
+  -webkit-box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
+          box-shadow: 0 1rem 1rem rgba($black-color, 0.1);
 
   &.window-scroll {
     background: $white-color;
@@ -37,17 +45,27 @@
   }
 
   .nav__container-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
     ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       list-style: none; 
     }
 
- 
+  
     li {
       margin-right: 1em; 
     }
@@ -67,11 +85,12 @@
 
 .btn {
   color: var(--color-gray-100);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0.9rem 2rem;
   background: var(--color-primary);
   border-radius: 1.5rem;
-  // transition: var(--transition);
   margin-top: 13px !important;
 }
 
@@ -94,6 +113,23 @@
 .btn.sm:hover {
   background: var(--color-gray-100);
 }
+
+
+.nav__link:hover {
+  background: -webkit-gradient(linear, left top, right top, from(rgb(173, 154, 119)),  to(lightsalmon));
+  background: -o-linear-gradient(left, rgb(173, 154, 119) 0%,  lightsalmon 100%);
+  background: linear-gradient(to right, rgb(173, 154, 119) 0%,  lightsalmon 100%);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  -webkit-transition: background-position 0.5s ease-in-out;
+  -o-transition: background-position 0.5s ease-in-out;
+  transition: background-position 0.5s ease-in-out;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
+
 
 /* MEDIA QUERIES (medium screens) */
 @media screen and (max-width: 1024px) {
@@ -119,8 +155,35 @@
 
 .svg {
   color: $white-color;
-  border-radius: 8px;
-  width: 40px;
-  height: 40px;
+  margin-top: 5px;
 }
+
+.logout {
+  background-color: transparent;
+}
+
+
+.paw1 {
+
+  -webkit-transform: rotate(-45deg);
+
+      -ms-transform: rotate(-45deg);
+
+          transform: rotate(-45deg);
+  fill: orange;
+  margin: 0 5px;
+}
+
+.paw2 {
+
+  -webkit-transform: rotate(45deg);
+
+      -ms-transform: rotate(45deg);
+
+          transform: rotate(45deg);
+  fill: orange;
+  margin: 0 5px;
+}
+
+
 

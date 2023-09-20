@@ -3,8 +3,13 @@
 @import "../../utils/scss/general";
 
 .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column-reverse;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
   position: relative;
   padding-top: 1.5rem;
   & + .input {
@@ -16,6 +21,8 @@
   color: $white-color;
   position: absolute;
   top: 1.5rem;
+  -webkit-transition: 0.25s ease;
+  -o-transition: 0.25s ease;
   transition: 0.25s ease;
 }
 
@@ -33,7 +40,9 @@
     border-bottom-color: $light-color;
     & + .input-label {
       color: $light-color;
-      transform: translateY(-1.5rem);
+      -webkit-transform: translateY(-1.5rem);
+          -ms-transform: translateY(-1.5rem);
+              transform: translateY(-1.5rem);
     }
   }
 }

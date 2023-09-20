@@ -9,23 +9,27 @@ img {
   background-position: left;
 }
 
-// iOS Reset
-input {
-  appearance: none;
-  border-radius: 0;
-}
+
 
 .card {
   @include gradientBackground;
 
   margin: 2rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 10px 20px 0 rgba(#999, 0.25);
+  -webkit-box-shadow: 0 10px 20px 0 rgba(#999, 0.25);
+          box-shadow: 0 10px 20px 0 rgba(#999, 0.25);
   padding: 0.75rem;
 }
 
@@ -44,8 +48,12 @@ input {
 }
 
 .card-form-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 
@@ -55,8 +63,12 @@ input {
 }
 
 .action-auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 2em;
 }
 
@@ -73,29 +85,45 @@ input {
 }
 
 .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .hover-shadow {
   color: $white-color;
   text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: .1em;
   span {
     font-weight: 100;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
     border-bottom: 1px solid;
   }
   span:nth-child(2) {
-    transition-delay: 0.1s;
+    -webkit-transition-delay: 0.1s;
+         -o-transition-delay: 0.1s;
+            transition-delay: 0.1s;
   }
   span:nth-child(3) {
-    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+         -o-transition-delay: 0.2s;
+            transition-delay: 0.2s;
   }
   span:nth-child(4) {
-    transition-delay: 0.3s;
+    -webkit-transition-delay: 0.3s;
+         -o-transition-delay: 0.3s;
+            transition-delay: 0.3s;
   }
   &:hover {
     span {
@@ -103,16 +131,24 @@ input {
       letter-spacing: 3px;
     }
     span:nth-child(4) {
-      transition-delay: 0.3s;
+      -webkit-transition-delay: 0.3s;
+           -o-transition-delay: 0.3s;
+              transition-delay: 0.3s;
     }
     span:nth-child(3) {
-      transition-delay: 0.2s;
+      -webkit-transition-delay: 0.2s;
+           -o-transition-delay: 0.2s;
+              transition-delay: 0.2s;
     }
     span:nth-child(2) {
-      transition-delay: 0.1s;
+      -webkit-transition-delay: 0.1s;
+           -o-transition-delay: 0.1s;
+              transition-delay: 0.1s;
     }
     span:nth-child(1) {
-      transition-delay: 0s;
+      -webkit-transition-delay: 0s;
+           -o-transition-delay: 0s;
+              transition-delay: 0s;
     }
   }
 

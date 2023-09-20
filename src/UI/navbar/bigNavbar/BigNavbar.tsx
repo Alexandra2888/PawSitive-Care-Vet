@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import { FiLogOut } from "react-icons/fi";
 import {useUserAuth } from "../../../../contexts/UserAuthContext";
 
+import {FaPaw} from "react-icons/fa";
+
+
 
 const BigNavbar = () => {
   const { logOut, user } = useUserAuth();
@@ -21,13 +24,13 @@ const BigNavbar = () => {
   return (
     <nav className="nav__container">
       <div className="nav__container-wrapper">
-        <NavLink to="/" className="nav__logo">
-          <h3>PawSitive Vet Care</h3>
+        <NavLink to="/" className="nav__logo">  
+          <h3><FaPaw className="paw1"/>PawSitive Care Vet<FaPaw className="paw2"/></h3>
         </NavLink>
 
         <ul id="nav__items">
-          <li>
-            <NavLink to="/">Home</NavLink>
+          <li className="nav__link">
+            <NavLink to="/" className="nav__link">Home</NavLink>
           </li>
           <li>
             <NavLink to="/add-appointments" className="btn">
@@ -36,8 +39,8 @@ const BigNavbar = () => {
           </li>
           {user && (
             <li>
-              <button onClick={handleLogout} className="svg btn-primary">
-                <FiLogOut />
+              <button onClick={handleLogout} className="logout">
+                <FiLogOut className="svg nav__link"/>
               </button>
             </li>
           )}

@@ -49,28 +49,22 @@ const BurgerButton = () => {
       {burgerMenuIsOpen && (
         <div className="menu-content">
           <ul id="nav__items">
-            <li id="nav__items-link">
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li id="nav__items-link">
-              <NavLink to="/profile">Profile</NavLink>
-            </li>
-            <li id="nav__items-link">
-              <NavLink to="/shop">Shop</NavLink>
-            </li>
-            <li id="nav__items-link">
-              <NavLink to="/appointments">Appointments</NavLink>
+            <li id="nav__items-link" >
+              <NavLink to="/" className="burger">Home</NavLink>
+            </li>   
+          <li id="nav__items-link">
+              <NavLink to="/appointments" className="burger">Appointments</NavLink>
             </li>
             {user && (
               <li>
-                <button onClick={handleLogout} className="svg btn-primary">
-                  <FiLogOut />
+                <button onClick={handleLogout} className="logout">
+                  <FiLogOut className="svg" />
                 </button>
               </li>
             )}
-            <li>
+          
               <ToggleTheme />
-            </li>
+            
           </ul>
         </div>
       )}

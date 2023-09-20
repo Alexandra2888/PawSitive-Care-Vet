@@ -1,7 +1,6 @@
 import "./Footer.scss";
 import { Link } from "react-router-dom";
 
-
 const Footer = () => {
   return (
     <footer>
@@ -45,24 +44,27 @@ const Footer = () => {
           <h3>Contact Us</h3>
           <p>Press</p>
           <p>FAQs</p>
-          <div className="footer__socials" aria-label="social-lionks">
+          <div className="footer__socials">
             <a href="#">
-              <i className="bx bxl-linkedin" aria-label="linkedin"></i>
+              <i className="bx bxl-linkedin"></i>
             </a>
             <a href="#">
-              <i className="bx bxl-twitter" aria-label="twitter"></i>
+              <i className="bx bxl-twitter"></i>
             </a>
             <a href="#">
-              <i className="bx bxl-facebook" aria-label="facebook"></i>
+              <i className="bx bxl-facebook"></i>
             </a>
             <a href="#">
-              <i className="bx bxl-instagram" aria-label="instagram"></i>
+              <i className="bx bxl-instagram"></i>
             </a>
           </div>
         </article>
       </div>
       <div className="copyright">
         <small>&copy; All Rights Reserved 2023</small>
+      </div>
+      <div className="copyright__madeof">
+        <span> Proudly made in React by  <Link to="https://github.com/Alexandra2888" className="link" >Alexandra2888</Link></span>
       </div>
     </footer>
   );
