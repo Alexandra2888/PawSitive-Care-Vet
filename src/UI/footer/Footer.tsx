@@ -1,6 +1,5 @@
 import "./Footer.scss";
 import { Link } from "react-router-dom";
-import {AiFillGithub} from "react-icons/ai";
 
 const Footer = () => {
   return (
@@ -65,7 +64,7 @@ const Footer = () => {
         <small>&copy; All Rights Reserved 2023</small>
       </div>
       <div className="copyright__madeof">
-        <span> Proudly made in React by Alexandra <Link to="https://github.com/Alexandra2888" className="link" ><AiFillGithub className="github"/></Link></span>
+        <span> Proudly made in React by  <Link to="https://github.com/Alexandra2888" className="link" >Alexandra2888</Link></span>
       </div>
     </footer>
   );
