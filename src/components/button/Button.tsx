@@ -8,7 +8,6 @@ const Button = (props: ButtonProps): React.ReactElement => {
   return (
 
     <button className='btn' onClick={onClick}>
-className={className} onClick={onClick}>
       {children}
     </button>
   );
