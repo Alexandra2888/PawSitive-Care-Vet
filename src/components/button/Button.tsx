@@ -6,7 +6,9 @@ const Button = (props: ButtonProps): React.ReactElement => {
   const { className, children, onClick } = props;
 
   return (
+
     <button className='btn' onClick={onClick}>
+className={className} onClick={onClick}>
       {children}
     </button>
   );

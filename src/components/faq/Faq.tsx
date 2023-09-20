@@ -1,7 +1,9 @@
 import "./Faq.scss";
 import { AiOutlinePlusSquare, AiOutlineCheck } from "react-icons/ai";
 import { useState } from "react";
+
 import { para } from '../../utils/data/data';
+
 
 const Faq = () => {
   const [readMore1, setReadMore1] = useState(false);

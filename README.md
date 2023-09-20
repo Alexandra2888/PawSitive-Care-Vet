@@ -3,6 +3,8 @@
 # You can see it live here:
 https://pawsitive-care-vet.netlify.app/
 
+<img src="https://github.com/Alexandra2888/PawSitive-Care-Vet/blob/main/pawsitive.jpeg" alt="pawsitive"/>
+
 
 # Installation
 Clone the repository: git clone https://github.com/Alexandra2888/PawSitive-Care-Vet
