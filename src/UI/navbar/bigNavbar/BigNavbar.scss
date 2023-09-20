@@ -47,7 +47,7 @@
       list-style: none; 
     }
 
- 
+  
     li {
       margin-right: 1em; 
     }
@@ -123,4 +123,21 @@
   width: 40px;
   height: 40px;
 }
+
+
+.paw1 {
+
+  transform: rotate(-45deg);
+  fill: orange;
+  margin: 0 5px;
+}
+
+.paw2 {
+
+  transform: rotate(45deg);
+  fill: orange;
+  margin: 0 5px;
+}
+
+
 

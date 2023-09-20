@@ -4,6 +4,7 @@ import ToggleTheme from '../../../dark-mode/ToggleTheme';
 import { useNavigate } from 'react-router-dom';
 import { FiLogOut } from "react-icons/fi";
 import {useUserAuth } from "../../../../contexts/UserAuthContext";
+import {FaPaw} from "react-icons/fa";
 
 
 const BigNavbar = () => {
@@ -21,8 +22,8 @@ const BigNavbar = () => {
   return (
     <nav className="nav__container">
       <div className="nav__container-wrapper">
-        <NavLink to="/" className="nav__logo">
-          <h3>PawSitive Vet Care</h3>
+        <NavLink to="/" className="nav__logo">  
+          <h3><FaPaw className="paw1"/>PawSitive Care Vet<FaPaw className="paw2"/></h3>
         </NavLink>
 
         <ul id="nav__items">
