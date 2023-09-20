@@ -32,7 +32,7 @@ const Banner = () => {
 	</symbol>
 </svg>
 
-<div className="ajax-loader">
+<div className="paw__loader">
 	<div className="paw"><svg className="icon"><use xlinkHref="#paw" /></svg></div>
 	<div className="paw"><svg className="icon"><use xlinkHref="#paw" /></svg></div>
 	<div className="paw"><svg className="icon"><use xlinkHref="#paw" /></svg></div>
