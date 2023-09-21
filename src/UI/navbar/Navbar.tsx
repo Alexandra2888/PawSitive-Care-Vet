@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { BurgerButton } from "./burgerButton";
 import { BigNavbar } from "./bigNavbar";
 import "./Navbar.scss";
-import React = require("react");
+
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
