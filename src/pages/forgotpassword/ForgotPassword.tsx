@@ -6,7 +6,6 @@ import { Button } from "../../components/button";
 import { Input } from "../../components/input";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import React = require("react");
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");

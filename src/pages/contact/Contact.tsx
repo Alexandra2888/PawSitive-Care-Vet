@@ -1,4 +1,4 @@
-import React = require("react");
+
 import { Map } from "../../components/map";
 import "./Contact.scss";
 
