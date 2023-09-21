@@ -1,8 +1,8 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Protectedroute.scss";
 
-function ProtectedRoute({ children }:any) {
+function ProtectedRoute({ children }: any) {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user") as any);
   useEffect(() => {

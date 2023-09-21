@@ -1,4 +1,9 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState
+} from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -11,13 +16,11 @@ import { User } from "../src/interfaces/contexts/User.js";
 import { AuthContextType } from "../src/interfaces/contexts/AuthContextType.js";
 import { UserAuthContextProviderProps } from "../src/interfaces/contexts/UserAuthContextProviderProps.js";
 
-
-
 const userAuthContext = createContext<AuthContextType | undefined>(undefined);
 
-
-
-export const UserAuthContextProvider: React.FC<UserAuthContextProviderProps> = ({ children }) => {
+export const UserAuthContextProvider: React.FC<
+  UserAuthContextProviderProps
+> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
   const logIn = (email: string, password: string): Promise<any> => {
@@ -33,7 +36,7 @@ export const UserAuthContextProvider: React.FC<UserAuthContextProviderProps> = (
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser:any) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser: any) => {
       console.log("Auth", currentUser);
       setUser(currentUser);
     });
@@ -44,7 +47,7 @@ export const UserAuthContextProvider: React.FC<UserAuthContextProviderProps> = (
   }, []);
 
   const contextValue: AuthContextType = {
-    user: user as User, 
+    user: user as User,
     logIn,
     signUp,
     logOut,
@@ -60,7 +63,9 @@ export const UserAuthContextProvider: React.FC<UserAuthContextProviderProps> = (
 export function useUserAuth(): AuthContextType {
   const context = useContext(userAuthContext);
   if (!context) {
-    throw new Error("useUserAuth must be used within a UserAuthContextProvider");
+    throw new Error(
+      "useUserAuth must be used within a UserAuthContextProvider"
+    );
   }
   return context;
 }

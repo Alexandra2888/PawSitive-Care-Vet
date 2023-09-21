@@ -1,12 +1,11 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import { Button } from "../../components/button"
+import { Button } from "../../components/button";
 import "./AddAppointments.scss";
-import { Link, useNavigate } from 'react-router-dom'; 
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/input";
 import { AddAppointment } from "../../interfaces/components/AddAppontments";
-
 
 const Appointments = () => {
   const [formData, setFormData] = useState<AddAppointment>({
@@ -37,11 +36,9 @@ const Appointments = () => {
     reason,
   } = formData;
 
-
   const navigate = useNavigate();
 
-
-  function onEmailChange(e:any) {
+  function onEmailChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       email: e.target.value,
@@ -55,69 +52,69 @@ const Appointments = () => {
     }));
   }
 
-  function onPhoneChange(e:any) {
+  function onPhoneChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       phone: e.target.value,
     }));
   }
 
-  function onPetTypeChange(e:any) {
+  function onPetTypeChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       petType: e.target.value,
     }));
   }
 
-  function onPetNameChange(e:any) {
+  function onPetNameChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       petName: e.target.value,
     }));
   }
 
-  function onPetGenderChange(e:any) {
+  function onPetGenderChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       petGender: e.target.value,
     }));
   }
 
-  function onPetAgeChange(e:any) {
+  function onPetAgeChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       petAge: e.target.value,
     }));
   }
 
-  function onDoctor(e:any) {
+  function onDoctor(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       doctor: e.target.value,
     }));
   }
 
-  function onDate(e:any) {
+  function onDate(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       date: e.target.value,
     }));
   }
 
-  function onTime(e:any) {
+  function onTime(e: any) {
     setFormData((prevState) => ({
       ...prevState,
-      time: e.target.value, 
+      time: e.target.value,
     }));
   }
-  function onReason(e:any) {
+  function onReason(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       reason: e.target.value,
     }));
   }
 
-  const addAppointment = async (e:any) => {
+  const addAppointment = async (e: any) => {
     e.preventDefault();
 
     try {
@@ -130,17 +127,16 @@ const Appointments = () => {
         petGender: petGender,
         petAge: petAge,
         doctor: doctor,
-        date:date,
+        date: date,
         time: time,
         reason: reason,
       });
       console.log("Document written with ID: ", docRef.id);
-      navigate('/appointments')
+      navigate("/appointments");
     } catch (e) {
       console.error("Error adding document: ", e);
     }
   };
-
 
   return (
     <main className="container">
@@ -163,7 +159,9 @@ const Appointments = () => {
               type="email"
               value={email}
               className="input-field"
-              onChange={onEmailChange} id={""}            />
+              onChange={onEmailChange}
+              id={""}
+            />
             <label className="input-label">Email:</label>
           </div>
 
@@ -172,33 +170,33 @@ const Appointments = () => {
               type="number"
               value={phone}
               className="input-field"
-              onChange={onPhoneChange} id={""}            />
+              onChange={onPhoneChange}
+              id={""}
+            />
             <label className="input-label">Phone:</label>
           </div>
 
-
-          
           <div className="input">
             <label className="input-label">Select a pet:</label>
             <select
               value={petType}
               onChange={onPetTypeChange}
-              style={{'textAlign':'center'}}
-              className="input-field" 
+              style={{ textAlign: "center" }}
+              className="input-field"
             >
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
             </select>
           </div>
 
-
           <div className="input">
             <label className="input-label">Your pet is:</label>
             <select
               value={petGender}
               onChange={onPetGenderChange}
-              style={{'textAlign':'center'}}
-              className="input-field" id="select" 
+              style={{ textAlign: "center" }}
+              className="input-field"
+              id="select"
             >
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -216,13 +214,14 @@ const Appointments = () => {
             <label className="input-label">Pet Name:</label>
           </div>
 
-
           <div className="input">
             <Input
               type="number"
               value={petAge}
               className="input-field"
-              onChange={onPetAgeChange} id={""}            />
+              onChange={onPetAgeChange}
+              id={""}
+            />
             <label className="input-label">Add age:</label>
           </div>
 
@@ -231,7 +230,9 @@ const Appointments = () => {
               type="time"
               value={time}
               className="input-field"
-              onChange={onTime} id={""}            />
+              onChange={onTime}
+              id={""}
+            />
             <label className="input-label">Select a time:</label>
           </div>
 
@@ -246,12 +247,14 @@ const Appointments = () => {
             <label className="input-label">Select a date:</label>
           </div>
 
-          <div className="input" >
+          <div className="input">
             <label className="input-label">Select doctor:</label>
-            <select value={doctor} 
-            onChange={onDoctor} 
-            style={{'textAlign':'center'}}
-            className="input-field">
+            <select
+              value={doctor}
+              onChange={onDoctor}
+              style={{ textAlign: "center" }}
+              className="input-field"
+            >
               <option value="John Doe">John Doe (Surgery Specialist)</option>
               <option value="Carmen Makafui">
                 Carmen Makafui (Anaestethic Specialist)
@@ -265,7 +268,6 @@ const Appointments = () => {
             </select>
           </div>
 
-        
           <div className="input">
             <Input
               type="text"
@@ -283,7 +285,9 @@ const Appointments = () => {
             </Button>
           </div>
         </form>
-        <Link to="/appointments" className=" btn btn-primary">See appointments</Link>
+        <Link to="/appointments" className=" btn btn-primary">
+          See appointments
+        </Link>
       </div>
     </main>
   );

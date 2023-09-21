@@ -1,1 +1,1 @@
-export {default as BigNavbar} from "./BigNavbar";
+export { default as BigNavbar } from "./BigNavbar";

@@ -33,14 +33,11 @@ const OAuth = () => {
     }
   }
   return (
-    <button
-      type="button" className="btn-primary"
-      onClick={onGoogleClick}
-    >
+    <button type="button" className="btn-primary" onClick={onGoogleClick}>
       <FcGoogle />
       Sign in with Google
     </button>
   );
-}
+};
 
 export default OAuth;

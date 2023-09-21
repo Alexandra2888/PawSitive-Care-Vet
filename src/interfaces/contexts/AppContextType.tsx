@@ -1,4 +1,4 @@
 export interface AppContextType {
-    isDarkTheme: boolean;
-    toggleDarkTheme: () => void;
-  }
+  isDarkTheme: boolean;
+  toggleDarkTheme: () => void;
+}

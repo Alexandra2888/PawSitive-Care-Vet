@@ -1,6 +1,10 @@
 import React from "react";
 import "./Specialists.scss";
-import { specialistData, specialistsSectionTitle, specialistsSectionDescription } from "../../utils/data/data";
+import {
+  specialistData,
+  specialistsSectionTitle,
+  specialistsSectionDescription,
+} from "../../utils/data/data";
 
 const Specialists = () => {
   return (
@@ -35,7 +39,10 @@ const Specialists = () => {
                 <i className="bx bxl-instagram"></i>
               </a>
             </div>
-            <a href={specialist.socialLinks.whatsapp} className="specialist__whatsapp">
+            <a
+              href={specialist.socialLinks.whatsapp}
+              className="specialist__whatsapp"
+            >
               <i className="bx bxl-whatsapp"></i>
             </a>
           </article>
@@ -43,6 +50,6 @@ const Specialists = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Specialists;

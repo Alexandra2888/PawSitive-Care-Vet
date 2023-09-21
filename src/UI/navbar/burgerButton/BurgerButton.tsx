@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import "./BurgerButton.scss";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -49,11 +49,15 @@ const BurgerButton = () => {
       {burgerMenuIsOpen && (
         <div className="menu-content">
           <ul id="nav__items">
-            <li id="nav__items-link" >
-              <NavLink to="/" className="burger">Home</NavLink>
-            </li>   
-          <li id="nav__items-link">
-              <NavLink to="/appointments" className="burger">Appointments</NavLink>
+            <li id="nav__items-link">
+              <NavLink to="/" className="burger">
+                Home
+              </NavLink>
+            </li>
+            <li id="nav__items-link">
+              <NavLink to="/appointments" className="burger">
+                Appointments
+              </NavLink>
             </li>
             {user && (
               <li>
@@ -62,9 +66,8 @@ const BurgerButton = () => {
                 </button>
               </li>
             )}
-          
-              <ToggleTheme />
-            
+
+            <ToggleTheme />
           </ul>
         </div>
       )}

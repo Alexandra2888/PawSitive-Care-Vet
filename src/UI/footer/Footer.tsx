@@ -64,7 +64,13 @@ const Footer = () => {
         <small>&copy; All Rights Reserved 2023</small>
       </div>
       <div className="copyright__madeof">
-        <span> Proudly made in React by  <Link to="https://github.com/Alexandra2888" className="link" >Alexandra2888</Link></span>
+        <span>
+          {" "}
+          Proudly made in React by{" "}
+          <Link to="https://github.com/Alexandra2888" className="link">
+            Alexandra2888
+          </Link>
+        </span>
       </div>
     </footer>
   );

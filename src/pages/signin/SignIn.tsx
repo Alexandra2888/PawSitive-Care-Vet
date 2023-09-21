@@ -2,12 +2,11 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { OAuth } from "../../components/auth";
 import { toast } from "react-toastify";
-import { Button }  from "../../components/button";
+import { Button } from "../../components/button";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
 import { Input } from "../../components/input";
 
 const SignIn = () => {
-
   const { logIn } = useUserAuth();
 
   const [formData, setFormData] = useState({
@@ -17,23 +16,21 @@ const SignIn = () => {
   const { email, password } = formData;
   const navigate = useNavigate();
 
-  
-  function onEmailChange(e:any) {
+  function onEmailChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       email: e.target.value,
     }));
   }
 
-  function onPasswordChange(e:any) {
+  function onPasswordChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       password: e.target.value,
     }));
   }
 
-
-  async function onSubmit(e:any) {
+  async function onSubmit(e: any) {
     e.preventDefault();
     try {
       await logIn(email, password);
@@ -45,11 +42,11 @@ const SignIn = () => {
   return (
     <section className="container">
       <div className="card">
-      <figure>
-        <figcaption aria-label="login-image">
-        <img src="/assets/login.png" alt="login" />
-        </figcaption>
-       </figure>
+        <figure>
+          <figcaption aria-label="login-image">
+            <img src="/assets/login.png" alt="login" />
+          </figcaption>
+        </figure>
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign In</h2>
           <div className="input">
@@ -129,6 +126,6 @@ const SignIn = () => {
       </div>
     </section>
   );
-}
+};
 
 export default SignIn;

@@ -1,18 +1,23 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
 import React from "react";
 import { AppContextType } from "../src/interfaces/contexts/AppContextType";
 import { AppProviderProps } from "../src/interfaces/contexts/AppProviderProps";
 
-
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 const getInitialDarkMode = (): boolean => {
-  const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const prefersDarkMode = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
   const storedDarkMode = localStorage.getItem("darkTheme") === "true";
 
   return storedDarkMode || prefersDarkMode;
 };
-
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(getInitialDarkMode());
@@ -33,9 +38,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider value={contextValue}>
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={contextValue}>{children}</AppContext.Provider>
   );
 };
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./NotFound.scss";
+import React = require("react");
 
 const NotFound = () => {
   return (
@@ -8,7 +9,7 @@ const NotFound = () => {
         <div className="section__image">
           <figcaption aria-label="not-found-image">
             <figure>
-            <img src="/assets/not-found.png" alt="Not found Image" />
+              <img src="/assets/not-found.png" alt="Not found Image" />
             </figure>
           </figcaption>
         </div>

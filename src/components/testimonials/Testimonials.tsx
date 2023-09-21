@@ -3,7 +3,11 @@ import "./Testimonials.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Pagination, Navigation } from "swiper";
-import { testimonialsData, testimonialsSectionTitle, testimonialsSectionDescription } from "../../utils/data/data";
+import {
+  testimonialsData,
+  testimonialsSectionTitle,
+  testimonialsSectionDescription,
+} from "../../utils/data/data";
 
 const Testimonials = () => {
   return (
@@ -30,7 +34,10 @@ const Testimonials = () => {
                   <div className="avatar">
                     <figure aria-label={`patient ${index + 1}`}>
                       <figcaption>
-                        <img src={testimonial.patient.avatar} alt={`Patient ${index + 1}`} />
+                        <img
+                          src={testimonial.patient.avatar}
+                          alt={`Patient ${index + 1}`}
+                        />
                       </figcaption>
                     </figure>
                   </div>

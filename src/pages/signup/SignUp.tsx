@@ -1,11 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { OAuth } from "../../components/auth";
-import {
- 
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "../../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
@@ -17,39 +13,37 @@ import React from "react";
 import { Input } from "../../components/input";
 
 const SignUp = () => {
-
   const { signUp } = useUserAuth();
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
-    timestamp: ''
+    timestamp: "",
   });
   const { name, email, password, timestamp } = formData;
   const navigate = useNavigate();
 
-  function onEmailChange(e:any) {
+  function onEmailChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       email: e.target.value,
     }));
   }
 
-  function onPasswordChange(e:any) {
+  function onPasswordChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       password: e.target.value,
     }));
   }
 
-  function onNameChange(e:any) {
+  function onNameChange(e: any) {
     setFormData((prevState) => ({
       ...prevState,
       name: e.target.value,
     }));
   }
-
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -67,7 +61,6 @@ const SignUp = () => {
       });
       const user = userCredential.user;
 
-    
       const formDataCopy = {
         name,
         email,
@@ -83,21 +76,21 @@ const SignUp = () => {
   return (
     <section className="container">
       <div className="card">
-      <figure>
-        <figcaption aria-label="register-image">
-        <img src="/assets/register.png" alt="register" />
-        </figcaption>
-      </figure>      
+        <figure>
+          <figcaption aria-label="register-image">
+            <img src="/assets/register.png" alt="register" />
+          </figcaption>
+        </figure>
         <form className="card-form" onSubmit={onSubmit}>
           <h2 className="card-form-title">Sign Up</h2>
           <div className="input">
-          <Input
+            <Input
               type="text"
               id="name"
               value={name}
               onChange={onNameChange}
               className="input-field"
-              />
+            />
             <label className="input-label">Name:</label>
           </div>
 
@@ -112,12 +105,12 @@ const SignUp = () => {
           </div>
 
           <div className="input">
-          <Input
-                type="password"
-                id="password"
-                value={password}
-                onChange={onPasswordChange}
-                className="input-field"
+            <Input
+              type="password"
+              id="password"
+              value={password}
+              onChange={onPasswordChange}
+              className="input-field"
             />
             <label className="input-label">Password:</label>
           </div>

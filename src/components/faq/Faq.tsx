@@ -1,7 +1,7 @@
 import "./Faq.scss";
 import { AiOutlinePlusSquare, AiOutlineCheck } from "react-icons/ai";
 import { useState } from "react";
-import { para } from '../../utils/data/data';
+import { para } from "../../utils/data/data";
 
 const Faq = () => {
   const [readMore1, setReadMore1] = useState(false);
@@ -24,7 +24,7 @@ const Faq = () => {
                 onClick={() => setReadMore1(!readMore1)}
               />
               <br />
-              <span className={`answer ${readMore1 ? 'indented' : ''}`}>
+              <span className={`answer ${readMore1 ? "indented" : ""}`}>
                 {readMore1 ? para : `${para.substring(0, 0)}`}
               </span>
             </li>
@@ -37,7 +37,7 @@ const Faq = () => {
                 onClick={() => setReadMore2(!readMore2)}
               />
               <br />
-              <span className={`answer ${readMore2 ? 'indented' : ''}`}>
+              <span className={`answer ${readMore2 ? "indented" : ""}`}>
                 {readMore2 ? para : `${para.substring(0, 0)}`}
               </span>
             </li>
@@ -50,7 +50,7 @@ const Faq = () => {
                 onClick={() => setReadMore3(!readMore3)}
               />
               <br />
-              <span className={`answer ${readMore3 ? 'indented' : ''}`}>
+              <span className={`answer ${readMore3 ? "indented" : ""}`}>
                 {readMore3 ? para : `${para.substring(0, 0)}`}
               </span>
             </li>

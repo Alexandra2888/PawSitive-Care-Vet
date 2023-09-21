@@ -1,4 +1,3 @@
-
 // links
 export const links = [
   { id: 1, href: "#home", text: "Home" },
@@ -51,10 +50,10 @@ export const features = [
   },
 ];
 
-
 //specialists
 export const specialistsSectionTitle = "Our Top Specialists";
-export const specialistsSectionDescription = "A happier, healthier life starts with us.";
+export const specialistsSectionDescription =
+  "A happier, healthier life starts with us.";
 
 export const specialistData = [
   {
@@ -107,10 +106,10 @@ export const specialistData = [
   },
 ];
 
-
 //testimonials
 export const testimonialsSectionTitle = "What Our Clients Say";
-export const testimonialsSectionDescription = "Veterinary care that's rooted in compassion.";
+export const testimonialsSectionDescription =
+  "Veterinary care that's rooted in compassion.";
 
 export const testimonialsData = [
   {
@@ -178,7 +177,5 @@ export const testimonialsData = [
   },
 ];
 
-
 //faq
-export const para =
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
+export const para = "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";

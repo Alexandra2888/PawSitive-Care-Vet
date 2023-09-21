@@ -1,7 +1,8 @@
-import  { useState, useEffect } from 'react';
-import { BurgerButton } from './burgerButton';
-import { BigNavbar } from './bigNavbar';
+import { useState, useEffect } from "react";
+import { BurgerButton } from "./burgerButton";
+import { BigNavbar } from "./bigNavbar";
 import "./Navbar.scss";
+import React = require("react");
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -11,20 +12,14 @@ const Navbar = () => {
       setWindowWidth(window.innerWidth);
     };
 
-
-    window.addEventListener('resize', updateWindowWidth);
-
+    window.addEventListener("resize", updateWindowWidth);
 
     return () => {
-      window.removeEventListener('resize', updateWindowWidth);
+      window.removeEventListener("resize", updateWindowWidth);
     };
   }, []);
 
-  return (
-    <nav>
-      {windowWidth <= 768 ? <BurgerButton /> : <BigNavbar />}
-    </nav>
-  );
+  return <nav>{windowWidth <= 768 ? <BurgerButton /> : <BigNavbar />}</nav>;
 };
 
 export default Navbar;

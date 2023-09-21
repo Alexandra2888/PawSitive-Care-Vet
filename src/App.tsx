@@ -1,63 +1,63 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { HomeLayout } from "./pages/homeLayout";
 import { Home } from "./pages/home";
-import  { NotFound } from "./pages/notFound";
+import { NotFound } from "./pages/notFound";
 import { SignIn } from "./pages/signin";
 import { SignUp } from "./pages/signup";
 import { ForgotPassword } from "./pages/forgotpassword";
-import  { AddAppointments } from "./pages/addAppointments";
-import  { Appointments } from './pages/appointments';
+import { AddAppointments } from "./pages/addAppointments";
+import { Appointments } from "./pages/appointments";
 import { UserAuthContextProvider } from "../contexts/UserAuthContext";
 import { ProtectedRoute } from "./components/protectedRoute";
 
-
-
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <HomeLayout />,
     errorElement: <NotFound />,
     children: [
       {
         index: true,
-        element: <Home />
+        element: <Home />,
       },
       {
-        path: 'sign-up',
+        path: "sign-up",
         element: <SignUp />,
       },
       {
-        path: 'sign-in',
+        path: "sign-in",
         element: <SignIn />,
       },
       {
-        path: 'forgot-password',
-        element: <ForgotPassword/>
+        path: "forgot-password",
+        element: <ForgotPassword />,
       },
       {
-        path: 'add-appointments',
-        element: 
-        <ProtectedRoute>
-          <AddAppointments/>
+        path: "add-appointments",
+        element: (
+          <ProtectedRoute>
+            <AddAppointments />
           </ProtectedRoute>
-      }, 
+        ),
+      },
       {
-        path: 'appointments',
-        element: 
-        <ProtectedRoute>
-          <Appointments/>
+        path: "appointments",
+        element: (
+          <ProtectedRoute>
+            <Appointments />
           </ProtectedRoute>
-      }
-    ]
-  }
+        ),
+      },
+    ],
+  },
 ]);
 
-const App = () => {
-  return (  
-  <UserAuthContextProvider>
-    <RouterProvider router = {router}/>
-    </UserAuthContextProvider> )
-}
+export const App = () => {
+  return (
+    <UserAuthContextProvider>
+      <RouterProvider router={router} />
+    </UserAuthContextProvider>
+  );
+};
 
-export default App;
+

@@ -1,1 +1,1 @@
-export {default as AddAppointments} from "./AddApponintments";
+export { default as AddAppointments } from "./AddApponintments";

@@ -1,14 +1,16 @@
 import React from "react";
-import './Provide.scss';
-import { provideSectionTitle, provideSectionDescription, features } from "../../utils/data/data";
+import "./Provide.scss";
+import {
+  provideSectionTitle,
+  provideSectionDescription,
+  features,
+} from "../../utils/data/data";
 
 const Provide = () => {
   return (
     <section id="provide">
       <h2>{provideSectionTitle}</h2>
-      <p>
-        {provideSectionDescription}
-      </p>
+      <p>{provideSectionDescription}</p>
       <div className="container">
         {features.map((feature, index) => (
           <article key={index}>
@@ -22,6 +24,6 @@ const Provide = () => {
       </div>
     </section>
   );
-}
+};
 
 export default Provide;

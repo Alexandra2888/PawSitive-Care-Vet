@@ -8,13 +8,19 @@ const Services = () => {
         <div className="section__image">
           <figure>
             <figcaption aria-label="services">
-            <img src="/assets/services.png" alt="Services Image" className="img" />
+              <img
+                src="/assets/services.png"
+                alt="Services Image"
+                className="img"
+              />
             </figcaption>
           </figure>
         </div>
         <div className="service__section-content">
           <h1 className="service__section-title">Our services</h1>
-          <p className="service__section-para">Making a difference in the lives of pets and their owners.</p>
+          <p className="service__section-para">
+            Making a difference in the lives of pets and their owners.
+          </p>
           <ul>
             <li>
               <GiCheckMark className="icon__service" />
