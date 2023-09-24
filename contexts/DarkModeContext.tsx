@@ -5,6 +5,7 @@ import {
   useEffect,
 } from "react";
 import React from "react";
+
 import { AppContextType } from "../src/interfaces/contexts/AppContextType";
 import { AppProviderProps } from "../src/interfaces/contexts/AppProviderProps";
 

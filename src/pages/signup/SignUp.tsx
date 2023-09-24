@@ -1,16 +1,19 @@
+import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { OAuth } from "../../components/auth";
+import { useNavigate } from "react-router-dom";
+
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db } from "../../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+
 import { toast } from "react-toastify";
-import "./SignUp.scss";
+
+import { OAuth } from "../../components/auth";
 import { Button } from "../../components/button";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
-import React from "react";
 import { Input } from "../../components/input";
+import "./SignUp.scss";
 
 const SignUp = () => {
   const { signUp } = useUserAuth();

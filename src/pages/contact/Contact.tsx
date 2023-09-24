@@ -1,4 +1,3 @@
-
 import { Map } from "../../components/map";
 import "./Contact.scss";
 

@@ -1,6 +1,7 @@
-import React from "react";
-import "./Banner.scss";
 import { NavLink } from "react-router-dom";
+
+import "./Banner.scss";
+
 
 const Banner = () => {
   return (

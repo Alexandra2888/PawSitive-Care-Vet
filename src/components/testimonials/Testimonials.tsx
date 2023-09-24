@@ -1,5 +1,4 @@
-import React from "react";
-import "./Testimonials.scss";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Pagination, Navigation } from "swiper";
@@ -8,6 +7,8 @@ import {
   testimonialsSectionTitle,
   testimonialsSectionDescription,
 } from "../../utils/data/data";
+
+import "./Testimonials.scss";
 
 const Testimonials = () => {
   return (
