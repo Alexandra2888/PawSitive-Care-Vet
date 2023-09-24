@@ -10,8 +10,9 @@ import {
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import { auth } from "../src/firebase.js";
 import React from "react";
+
+import { auth } from "../src/firebase.js";
 import { User } from "../src/interfaces/contexts/User.js";
 import { AuthContextType } from "../src/interfaces/contexts/AuthContextType.js";
 import { UserAuthContextProviderProps } from "../src/interfaces/contexts/UserAuthContextProviderProps.js";

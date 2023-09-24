@@ -1,5 +1,6 @@
-import "./Services.scss";
 import { GiCheckMark } from "react-icons/gi";
+
+import "./Services.scss";
 
 const Services = () => {
   return (

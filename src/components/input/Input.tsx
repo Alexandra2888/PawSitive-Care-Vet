@@ -1,6 +1,8 @@
+import React from "react";
+
 import "./Input.scss";
 import { InputProps } from "../../interfaces/components/InputProps";
-import React from "react";
+
 
 const Input: React.FC<InputProps> = ({ type, id, value, onChange }) => {
   return (

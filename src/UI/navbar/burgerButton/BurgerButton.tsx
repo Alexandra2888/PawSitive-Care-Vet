@@ -1,10 +1,11 @@
 import { useState } from "react";
-import "./BurgerButton.scss";
-import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import ToggleTheme from "../../../dark-mode/ToggleTheme";
+import { NavLink, useNavigate } from "react-router-dom";
+
 import { FiLogOut } from "react-icons/fi";
+
+import ToggleTheme from "../../../dark-mode/ToggleTheme";
 import { useUserAuth } from "../../../../contexts/UserAuthContext";
+import "./BurgerButton.scss";
 
 const BurgerButton = () => {
   const { logOut, user } = useUserAuth();

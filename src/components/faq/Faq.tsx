@@ -1,6 +1,7 @@
+import { useState } from "react";
+
 import "./Faq.scss";
 import { AiOutlinePlusSquare, AiOutlineCheck } from "react-icons/ai";
-import { useState } from "react";
 import { para } from "../../utils/data/data";
 
 const Faq = () => {

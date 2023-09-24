@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import { BsFillClockFill, BsPersonFill } from "react-icons/bs";
 import { GiCalendar } from "react-icons/gi";
 import { MdPets } from "react-icons/md";
 import { SlNote } from "react-icons/sl";
+
 import { collection, getDocs, QuerySnapshot } from "firebase/firestore";
 import { db } from "../../firebase";
+
 import "./Appointments.scss";
-import { Link } from "react-router-dom";
 import { Appointment } from "../../interfaces/components/Appointments";
 
 const Appointments: React.FC = () => {

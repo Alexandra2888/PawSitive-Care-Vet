@@ -1,10 +1,12 @@
-import "./BigNavbar.scss";
 import { NavLink } from "react-router-dom";
-import ToggleTheme from "../../../dark-mode/ToggleTheme";
 import { useNavigate } from "react-router-dom";
+
 import { FiLogOut } from "react-icons/fi";
-import { useUserAuth } from "../../../../contexts/UserAuthContext";
 import { FaPaw } from "react-icons/fa";
+
+import ToggleTheme from "../../../dark-mode/ToggleTheme";
+import { useUserAuth } from "../../../../contexts/UserAuthContext";
+import "./BigNavbar.scss";
 
 const BigNavbar = () => {
   const { logOut, user } = useUserAuth();

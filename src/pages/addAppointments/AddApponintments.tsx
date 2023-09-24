@@ -1,10 +1,12 @@
+import { Link, useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import { Button } from "../../components/button";
+
 import "./AddAppointments.scss";
-import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../components/input";
+import { Button } from "../../components/button";
 import { AddAppointment } from "../../interfaces/components/AddAppontments";
 
 const Appointments = () => {
