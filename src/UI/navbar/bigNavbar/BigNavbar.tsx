@@ -5,7 +5,7 @@ import { FiLogOut } from "react-icons/fi";
 import { FaPaw } from "react-icons/fa";
 
 import ToggleTheme from "../../../dark-mode/ToggleTheme";
-import { useUserAuth } from "../../../../contexts/UserAuthContext";
+import { useUserAuth } from "../../../contexts/UserAuthContext";
 import "./BigNavbar.scss";
 
 const BigNavbar = () => {

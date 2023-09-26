@@ -4,7 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
 
 import ToggleTheme from "../../../dark-mode/ToggleTheme";
-import { useUserAuth } from "../../../../contexts/UserAuthContext";
+import { useUserAuth } from "../../../contexts/UserAuthContext";
 import "./BurgerButton.scss";
 
 const BurgerButton = () => {

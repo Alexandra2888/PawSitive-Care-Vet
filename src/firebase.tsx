@@ -1,14 +1,19 @@
+/* eslint-disable no-process-env */
+/*eslint no-process-env: "error"*/
+
+
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAkel-OjVnnqBAqso7bsU_jtv4jtcEI9xs",
-  authDomain: "pawsitive-1001d.firebaseapp.com",
-  projectId: "pawsitive-1001d",
-  storageBucket: "pawsitive-1001d.appspot.com",
-  messagingSenderId: "643389248154",
-  appId: "1:643389248154:web:53a7abe103327880880523",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_ID,
 };
 
 // Initialize Firebase

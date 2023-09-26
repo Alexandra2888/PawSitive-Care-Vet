@@ -1,13 +1,7 @@
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-} from "react";
-import React from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
-import { AppContextType } from "../src/interfaces/contexts/AppContextType";
-import { AppProviderProps } from "../src/interfaces/contexts/AppProviderProps";
+import { AppContextType } from "../interfaces/contexts/AppContextType";
+import { AppProviderProps } from "../interfaces/contexts/AppProviderProps";
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 

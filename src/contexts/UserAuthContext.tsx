@@ -1,21 +1,15 @@
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   signOut,
 } from "firebase/auth";
-import React from "react";
 
-import { auth } from "../src/firebase.js";
-import { User } from "../src/interfaces/contexts/User.js";
-import { AuthContextType } from "../src/interfaces/contexts/AuthContextType.js";
-import { UserAuthContextProviderProps } from "../src/interfaces/contexts/UserAuthContextProviderProps.js";
+import { auth } from "../firebase.js";
+import { User } from "../interfaces/contexts/User.js";
+import { AuthContextType } from "../interfaces/contexts/AuthContextType.js";
+import { UserAuthContextProviderProps } from "../interfaces/contexts/UserAuthContextProviderProps.js";
 
 const userAuthContext = createContext<AuthContextType | undefined>(undefined);
 

@@ -1,19 +1,19 @@
-import React from 'react'; // Import React
-import { describe, it } from 'vitest';
-import { render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-import {BigNavbar} from '../../../navbar/bigNavbar';
-import { UserAuthContextProvider } from '../../../../../contexts/UserAuthContext';
-import { AppProvider } from '../../../../../contexts/DarkModeContext';
+import React from "react"; // Import React
+import { describe, it } from "vitest";
+import { render } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
+import { BigNavbar } from "../../../navbar/bigNavbar";
+import { UserAuthContextProvider } from "../../../../contexts/UserAuthContext";
+import { AppProvider } from "../../../../contexts/DarkModeContext";
 
-describe('test Footer', () => {
-  it('test if Footer component is rendered', () => {
+describe("test Footer", () => {
+  it("test if Footer component is rendered", () => {
     render(
-        <BrowserRouter>
+      <BrowserRouter>
         <AppProvider>
-        <UserAuthContextProvider>
-          <BigNavbar />
-        </UserAuthContextProvider>
+          <UserAuthContextProvider>
+            <BigNavbar />
+          </UserAuthContextProvider>
         </AppProvider>
       </BrowserRouter>
     );

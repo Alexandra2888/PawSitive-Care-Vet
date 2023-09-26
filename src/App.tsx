@@ -7,7 +7,7 @@ import { SignUp } from "./pages/signup";
 import { ForgotPassword } from "./pages/forgotpassword";
 import { AddAppointments } from "./pages/addAppointments";
 import { Appointments } from "./pages/appointments";
-import { UserAuthContextProvider } from "../contexts/UserAuthContext";
+import { UserAuthContextProvider } from "./contexts/UserAuthContext";
 import { ProtectedRoute } from "./components/protectedRoute";
 
 const router = createBrowserRouter([
@@ -59,5 +59,3 @@ export const App = () => {
     </UserAuthContextProvider>
   );
 };
-
-

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
 
-import { useUserAuth } from "../../../contexts/UserAuthContext";
+import { useUserAuth } from "../../contexts/UserAuthContext";
 import { OAuth } from "../../components/auth";
 import { Button } from "../../components/button";
 import { Input } from "../../components/input";
