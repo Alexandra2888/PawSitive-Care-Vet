@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./NotFound.scss";
 
+// eslint-disable-next-line react/function-component-definition
 const NotFound = () => {
   return (
     <section className="section__container">
