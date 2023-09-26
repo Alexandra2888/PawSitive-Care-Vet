@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../../firebase";
 
 import "./AddAppointments.scss";
 import { Input } from "../../components/input";

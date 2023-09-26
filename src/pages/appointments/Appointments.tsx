@@ -7,7 +7,7 @@ import { MdPets } from "react-icons/md";
 import { SlNote } from "react-icons/sl";
 
 import { collection, getDocs, QuerySnapshot } from "firebase/firestore";
-import { db } from "../../firebase";
+import { db } from "../../../firebase";
 
 import "./Appointments.scss";
 import { Appointment } from "../../interfaces/components/Appointments";

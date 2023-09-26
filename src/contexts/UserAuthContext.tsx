@@ -6,7 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 
-import { auth } from "../firebase.js";
+import { auth } from "../../firebase.js";
 import { User } from "../interfaces/contexts/User.js";
 import { AuthContextType } from "../interfaces/contexts/AuthContextType.js";
 import { UserAuthContextProviderProps } from "../interfaces/contexts/UserAuthContextProviderProps.js";

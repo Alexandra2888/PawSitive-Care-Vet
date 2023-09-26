@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, db } from "../../firebase";
+import { auth, db } from "../../../firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
 import { toast } from "react-toastify";

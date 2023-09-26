@@ -16,6 +16,12 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["vite.config.ts", ".eslintrc.cjs", "src", "src/contexts"],
+  "include": [
+    "vite.config.ts",
+    ".eslintrc.cjs",
+    "src",
+    "src/contexts",
+    "firebase.tsx"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
