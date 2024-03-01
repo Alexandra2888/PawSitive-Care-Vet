@@ -2,22 +2,19 @@
 @import "../../utils/scss/mixins";
 @import "../../utils/scss/general";
 
-
-
 @mixin gradientBackground {
-  background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
-  background: linear-gradient(135deg, $primary-color, $primary-color-variant);
-  color: $white-color;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
+    background: -o-linear-gradient(315deg, $primary-color, $primary-color-variant);
+    background: linear-gradient(135deg, $primary-color, $primary-color-variant);
     color: $white-color;
-  }
-}
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        color: $white-color;
+    }
+}
 
 .section__container {
     @include gradientBackground;
@@ -37,11 +34,11 @@
         grid-template-columns: 46% 46%;
         gap: 8%;
         -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
         -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-                justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
 
         .section__content {
             h2 {
@@ -94,9 +91,8 @@
     }
 }
 
-
 .btn {
-   margin:auto;
+    margin: auto;
 }
 
 h2 {
