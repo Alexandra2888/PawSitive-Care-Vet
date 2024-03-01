@@ -1,7 +1,7 @@
 # PawSitive-Care-Vet
 
 # You can see it live here:
-https://pawsitive-care-vet.netlify.app/
+https://paw-sitive-care-vet.vercel.app/
 
 <img src="https://github.com/Alexandra2888/PawSitive-Care-Vet/blob/main/pawsitive.jpeg" alt="pawsitive"/>
 
