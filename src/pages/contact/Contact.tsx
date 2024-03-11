@@ -1,7 +1,6 @@
 import { Map } from "../../components/map";
 import "./Contact.scss";
 
-
 const Contact = () => {
   return (
     <section id="section">

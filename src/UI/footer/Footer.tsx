@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./Footer.scss";
 
-const Footer = () => {
+function Footer() {
   return (
     <footer>
       <div className="container" aria-label="Social Links">
@@ -64,17 +64,8 @@ const Footer = () => {
       <div className="copyright">
         <small>&copy; All Rights Reserved 2023</small>
       </div>
-      <div className="copyright__madeof">
-        <span>
-          {" "}
-          Proudly made in React by{" "}
-          <Link to="https://github.com/Alexandra2888" className="link">
-            Alexandra2888
-          </Link>
-        </span>
-      </div>
     </footer>
   );
-};
+}
 
 export default Footer;
