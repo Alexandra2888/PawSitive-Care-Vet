@@ -2,7 +2,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../../firebase";
+import { auth, db } from "../../../firebase";
+
 
 import "./AddAppointments.scss";
 import { Input } from "../../components/input";
@@ -121,6 +122,7 @@ const Appointments = () => {
 
     try {
       const docRef = await addDoc(collection(db, "appointments"), {
+        userId: auth.currentUser.uid,
         name: name,
         email: email,
         phone: phone,
