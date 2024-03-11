@@ -4,7 +4,6 @@ import { BurgerButton } from "./burgerButton";
 import { BigNavbar } from "./bigNavbar";
 import "./Navbar.scss";
 
-
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 

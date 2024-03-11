@@ -5,29 +5,38 @@ import { BsFillClockFill, BsPersonFill } from "react-icons/bs";
 import { GiCalendar } from "react-icons/gi";
 import { MdPets } from "react-icons/md";
 import { SlNote } from "react-icons/sl";
+import { useUserAuth } from "../../contexts/UserAuthContext";
 
-import { collection, getDocs, QuerySnapshot } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
+
 import { db } from "../../../firebase";
+
 
 import "./Appointments.scss";
 import { Appointment } from "../../interfaces/components/Appointments";
 
 const Appointments: React.FC = () => {
+  const { user } = useUserAuth();
+
   const [appointments, setAppointments] = useState<Appointment[]>([]);
 
+
   const fetchAppointment = async () => {
-    const querySnapshot: QuerySnapshot = await getDocs(
-      collection(db, "appointments")
-    );
+    if (user) { 
+      const appointmentsRef = collection(db, "appointments");
+      const q = query(appointmentsRef, where("userId", "==", user.uid));
+      const querySnapshot = await getDocs(q);
 
-    const newData: Appointment[] = querySnapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...(doc.data() as Appointment),
-    }));
+      const newData: Appointment[] = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...(doc.data() as Appointment),
+      }));
 
-    setAppointments(newData);
+      setAppointments(newData);
+    } else {
+      console.log("No user logged in");
+    }
   };
-
   useEffect(() => {
     fetchAppointment();
   }, []);

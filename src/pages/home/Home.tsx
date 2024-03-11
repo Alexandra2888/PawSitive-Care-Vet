@@ -6,7 +6,6 @@ import { Testimonials } from "../../components/testimonials";
 import { Contact } from "../contact";
 import { Faq } from "../../components/faq";
 
-
 const Home = () => {
   return (
     <>

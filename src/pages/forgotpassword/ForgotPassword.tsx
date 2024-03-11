@@ -10,7 +10,6 @@ import { OAuth } from "../../components/auth";
 import { Button } from "../../components/button";
 import { Input } from "../../components/input";
 
-
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
 

@@ -1,4 +1,3 @@
-
 import "./Provide.scss";
 import {
   provideSectionTitle,
