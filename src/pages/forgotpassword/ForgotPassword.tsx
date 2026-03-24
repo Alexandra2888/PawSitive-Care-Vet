@@ -27,7 +27,7 @@ const ForgotPassword = () => {
       navigate("/");
     } catch (error) {
       toast.error("Could not send reset password!!", {
-        position: toast.POSITION.TOP_RIGHT,
+        position: "top-right",
       });
     }
   }

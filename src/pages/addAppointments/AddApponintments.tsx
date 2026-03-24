@@ -122,7 +122,7 @@ const Appointments = () => {
 
     try {
       const docRef = await addDoc(collection(db, "appointments"), {
-        userId: auth.currentUser.uid,
+        userId: auth.currentUser?.uid,
         name: name,
         email: email,
         phone: phone,
