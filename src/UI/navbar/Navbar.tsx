@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 import { BurgerButton } from "./burgerButton";
 import { BigNavbar } from "./bigNavbar";
-import "./Navbar.scss";
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -19,7 +18,11 @@ const Navbar = () => {
     };
   }, []);
 
-  return <nav>{windowWidth <= 768 ? <BurgerButton /> : <BigNavbar />}</nav>;
+  return (
+    <nav className="gradient-bg w-screen h-20 sticky z-10 top-0">
+      {windowWidth <= 768 ? <BurgerButton /> : <BigNavbar />}
+    </nav>
+  );
 };
 
 export default Navbar;

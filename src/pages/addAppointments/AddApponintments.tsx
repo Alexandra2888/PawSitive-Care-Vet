@@ -4,7 +4,6 @@ import { useState } from "react";
 import { supabase } from "../../../supabase";
 import { useUserAuth } from "../../contexts/UserAuthContext";
 
-import "./AddAppointments.scss";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { AddAppointment } from "../../interfaces/components/AddAppontments";

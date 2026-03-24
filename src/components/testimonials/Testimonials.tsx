@@ -7,11 +7,9 @@ import {
   testimonialsSectionDescription,
 } from "../../utils/data/data";
 
-import "./Testimonials.scss";
-
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="swiper">
+    <section id="testimonials" className="w-[82%] mx-auto">
       <h2>{testimonialsSectionTitle}</h2>
       <p>{testimonialsSectionDescription}</p>
       <Swiper
@@ -25,13 +23,13 @@ const Testimonials = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
       >
-        <div className="swiper-wrapper">
+        <div className="mb-16">
           {testimonialsData.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <article className="swiper-slide">
-                <p className="swiper__slide-para">{testimonial.quote}</p>
-                <div className="patient">
-                  <div className="avatar">
+              <article className="gradient-bg p-6 px-8 rounded-2xl cursor-default text-[1.1rem] max-sm:p-6">
+                <p className="mb-6">{testimonial.quote}</p>
+                <div className="flex pl-4 pt-4 justify-start items-start gap-4 text-left">
+                  <div className="w-[6.5rem] aspect-square">
                     <figure aria-label={`patient ${index + 1}`}>
                       <figcaption>
                         <img
@@ -41,9 +39,9 @@ const Testimonials = () => {
                       </figcaption>
                     </figure>
                   </div>
-                  <div className="patient__details">
+                  <div className="flex flex-col items-center text-left pt-6">
                     <h5>{testimonial.patient.name}</h5>
-                    <small>{testimonial.patient.type}</small>
+                    <small className="text-left">{testimonial.patient.type}</small>
                   </div>
                 </div>
               </article>

@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import { OAuth } from "../../components/auth";
 import { Button } from "../../components/button";
 import { Input } from "../../components/input";
-import "./SignUp.scss";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({

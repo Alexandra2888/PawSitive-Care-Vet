@@ -5,7 +5,6 @@ import { FiLogOut } from "react-icons/fi";
 
 import ToggleTheme from "../../../dark-mode/ToggleTheme";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
-import "./BurgerButton.scss";
 
 const BurgerButton = () => {
   const { logOut, user } = useUserAuth();
@@ -29,7 +28,7 @@ const BurgerButton = () => {
   return (
     <div>
       <button
-        className={`burger-button ${burgerMenuIsOpen ? "open" : ""}`}
+        className={`burger-button flex flex-col gap-4 border-none bg-none cursor-pointer ${burgerMenuIsOpen ? "open" : ""}`}
         onClick={toggleBurgerMenu}
       >
         <div
@@ -48,22 +47,22 @@ const BurgerButton = () => {
       </button>
 
       {burgerMenuIsOpen && (
-        <div className="menu-content">
+        <div className="gradient-bg flex flex-col justify-center items-center pt-5 h-screen">
           <ul id="nav__items">
-            <li id="nav__items-link">
-              <NavLink to="/" className="burger">
+            <li id="nav__items-link" className="text-[2rem] py-2 text-white block">
+              <NavLink to="/" className="burger-menu-link text-white">
                 Home
               </NavLink>
             </li>
-            <li id="nav__items-link">
-              <NavLink to="/appointments" className="burger">
+            <li id="nav__items-link" className="text-[2rem] py-2 text-white block">
+              <NavLink to="/appointments" className="burger-menu-link text-white">
                 Appointments
               </NavLink>
             </li>
             {user && (
-              <li>
-                <button onClick={handleLogout} className="logout">
-                  <FiLogOut className="svg" />
+              <li className="text-[2rem] py-2 text-white block">
+                <button onClick={handleLogout} className="bg-transparent border-none cursor-pointer">
+                  <FiLogOut className="text-white rounded-lg w-10 h-10" />
                 </button>
               </li>
             )}

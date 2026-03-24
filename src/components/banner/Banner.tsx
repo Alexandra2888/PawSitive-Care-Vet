@@ -1,23 +1,28 @@
 import { NavLink } from "react-router-dom";
 
-import "./Banner.scss";
-
 const Banner = () => {
   return (
-    <header role="banner" id="banner">
-      <div className="banner__container">
-        <div className="header__content">
-          <h1 id="banner__heading" className="header__content-title">
+    <header
+      role="banner"
+      id="banner"
+      className="gradient-bg h-screen grid place-items-center overflow-hidden"
+    >
+      <div className="grid grid-cols-[46%_46%] items-center justify-around text-center max-lg:gap-4 max-lg:p-4 max-sm:grid-cols-1 max-sm:p-4">
+        <div>
+          <h1
+            id="banner__heading"
+            className="text-[2.5rem] leading-[1.5] font-light text-white max-lg:text-[1.8rem]"
+          >
             Complete Health Care Solutions For Every Pet
           </h1>
-          <p className="header__content-para">
+          <p className="my-4 mb-8 text-light text-[2rem] max-lg:text-[1.8rem]">
             Because your pet&apos;s health is our top priority.
           </p>
-          <NavLink to="/add-appointments" className="btn">
+          <NavLink to="/add-appointments" className="btn flex! justify-center! mb-[1em]!">
             Make Appointment
           </NavLink>
         </div>
-        <div className="header__image">
+        <div className="md:relative">
           <figure>
             <figcaption aria-label="banner">
               <img src="/assets/banner.png" alt="banner" />
