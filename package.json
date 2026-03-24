@@ -10,7 +10,8 @@
     "prettier": "prettier  --write **/*.{ts,tsx,js}",
     "lint:ts": "npm run prettier && eslint --fix 'src/**/*.{ts,tsx}'",
     "lint:types": "tsc -p . --noEmit",
-    "test": "vitest"
+    "test": "vitest",
+    "test:e2e": "npx playwright test"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.100.0",
@@ -31,6 +32,7 @@
     "swiper": "^9.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@tailwindcss/vite": "^4.2.2",
     "@testing-library/react": "^16.0.0",
     "@types/react": "^19.0.0",
