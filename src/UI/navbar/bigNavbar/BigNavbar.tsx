@@ -20,7 +20,7 @@ const BigNavbar = () => {
     }
   };
   return (
-    <nav className="gradient-bg w-screen h-20 sticky z-10 top-0 flex items-center justify-between px-8 shadow-[0_1rem_1rem_rgba(12,3,27,0.1)]">
+    <nav className="gradient-bg w-full h-20 sticky z-10 top-0 flex items-center justify-between px-8 shadow-[0_1rem_1rem_rgba(12,3,27,0.1)]">
       <NavLink to="/" className="text-white">
         <h3 className="text-white">
           <FaPaw className="-rotate-45 fill-orange-400 mx-[5px] inline" />

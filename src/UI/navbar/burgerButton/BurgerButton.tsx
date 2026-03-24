@@ -26,7 +26,7 @@ const BurgerButton = () => {
   };
 
   return (
-    <nav className="gradient-bg w-screen sticky z-10 top-0">
+    <nav className="gradient-bg w-full sticky z-10 top-0">
       <div className="h-20 flex items-center px-4">
         <button
           className={`burger-button flex flex-col gap-4 border-none bg-none cursor-pointer ${
