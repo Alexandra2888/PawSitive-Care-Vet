@@ -457,13 +457,16 @@
 }
 
 /* --- Nav Link Gradient Hover --- */
+.nav-link-hover {
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-position 0.5s ease-in-out;
+}
+
 .nav-link-hover:hover {
   background: linear-gradient(to right, rgb(173, 154, 119) 0%, lightsalmon 100%);
   background-size: 200% 100%;
   background-position: -100% 0;
-  transition: background-position 0.5s ease-in-out;
-  padding: 10px;
-  border-radius: 8px;
 }
 
 /* --- Burger Button Line Transforms --- */
@@ -502,13 +505,16 @@
 }
 
 /* --- Burger Menu Item Hover --- */
+.burger-menu-link {
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-position 0.5s ease-in-out;
+}
+
 .burger-menu-link:hover {
   background: linear-gradient(to right, rgb(173, 154, 119) 0%, lightsalmon 100%);
   background-size: 200% 100%;
   background-position: -100% 0;
-  transition: background-position 0.5s ease-in-out;
-  padding: 10px;
-  border-radius: 8px;
 }
 
 #nav__items-link:hover {
