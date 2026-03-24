@@ -1,9 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-
 import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { auth, db } from "../../../firebase";
 
+import { supabase } from "../../../supabase";
+import { useUserAuth } from "../../contexts/UserAuthContext";
 
 import "./AddAppointments.scss";
 import { Input } from "../../components/input";
@@ -11,6 +10,8 @@ import { Button } from "../../components/button";
 import { AddAppointment } from "../../interfaces/components/AddAppontments";
 
 const Appointments = () => {
+  const { user } = useUserAuth();
+
   const [formData, setFormData] = useState<AddAppointment>({
     name: "",
     email: "",
@@ -110,6 +111,7 @@ const Appointments = () => {
       time: e.target.value,
     }));
   }
+
   function onReason(e: any) {
     setFormData((prevState) => ({
       ...prevState,
@@ -121,24 +123,25 @@ const Appointments = () => {
     e.preventDefault();
 
     try {
-      const docRef = await addDoc(collection(db, "appointments"), {
-        userId: auth.currentUser?.uid,
-        name: name,
-        email: email,
-        phone: phone,
-        petType: petType,
-        petName: petName,
-        petGender: petGender,
-        petAge: petAge,
-        doctor: doctor,
-        date: date,
-        time: time,
-        reason: reason,
+      const { error } = await supabase.from("appointments").insert({
+        user_id: user?.id,
+        name,
+        email,
+        phone,
+        pet_type: petType,
+        pet_name: petName,
+        pet_gender: petGender,
+        pet_age: petAge,
+        doctor,
+        date,
+        time,
+        reason,
       });
-      console.log("Document written with ID: ", docRef.id);
+
+      if (error) throw error;
       navigate("/appointments");
     } catch (e) {
-      console.error("Error adding document: ", e);
+      console.error("Error adding appointment: ", e);
     }
   };
 

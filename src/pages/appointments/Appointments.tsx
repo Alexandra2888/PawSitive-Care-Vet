@@ -7,39 +7,45 @@ import { MdPets } from "react-icons/md";
 import { SlNote } from "react-icons/sl";
 import { useUserAuth } from "../../contexts/UserAuthContext";
 
-import { collection, getDocs, query, where } from "firebase/firestore";
-
-import { db } from "../../../firebase";
-
+import { supabase } from "../../../supabase";
 
 import "./Appointments.scss";
 import { Appointment } from "../../interfaces/components/Appointments";
 
 const Appointments: React.FC = () => {
   const { user } = useUserAuth();
-
   const [appointments, setAppointments] = useState<Appointment[]>([]);
 
-
   const fetchAppointment = async () => {
-    if (user) { 
-      const appointmentsRef = collection(db, "appointments");
-      const q = query(appointmentsRef, where("userId", "==", user.uid));
-      const querySnapshot = await getDocs(q);
+    if (user) {
+      const { data, error } = await supabase
+        .from("appointments")
+        .select("*")
+        .eq("user_id", user.id);
 
-      const newData: Appointment[] = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...(doc.data() as Appointment),
+      if (error) {
+        console.error("Error fetching appointments:", error);
+        return;
+      }
+
+      const mapped: Appointment[] = (data ?? []).map((row) => ({
+        id: row.id,
+        petName: row.pet_name,
+        date: row.date,
+        time: row.time,
+        doctor: row.doctor,
+        reason: row.reason,
       }));
 
-      setAppointments(newData);
+      setAppointments(mapped);
     } else {
       console.log("No user logged in");
     }
   };
+
   useEffect(() => {
     fetchAppointment();
-  }, []);
+  }, [user]);
 
   return (
     <section className="appointment__container">

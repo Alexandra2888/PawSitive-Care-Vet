@@ -1,30 +1,21 @@
-import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, db } from "../../../firebase";
-import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-
+import { supabase } from "../../../supabase";
 import { toast } from "react-toastify";
 
 import { OAuth } from "../../components/auth";
 import { Button } from "../../components/button";
-import { useUserAuth } from "../../contexts/UserAuthContext";
 import { Input } from "../../components/input";
 import "./SignUp.scss";
 
 const SignUp = () => {
-  const { signUp } = useUserAuth();
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
-    timestamp: "",
   });
-  const { name, email, password, timestamp } = formData;
+  const { name, email, password } = formData;
   const navigate = useNavigate();
 
   function onEmailChange(e: any) {
@@ -52,30 +43,30 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      await signUp(email, password);
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
+      const { data, error } = await supabase.auth.signUp({
         email,
-        password
-      );
-
-      updateProfile(auth.currentUser as any, {
-        displayName: name,
+        password,
+        options: {
+          data: { full_name: name },
+        },
       });
-      const user = userCredential.user;
 
-      const formDataCopy = {
-        name,
-        email,
-        timestamp: serverTimestamp() as any,
-      };
+      if (error) throw error;
 
-      await setDoc(doc(db, "users", user.uid), formDataCopy);
+      if (data.user) {
+        await supabase.from("profiles").upsert({
+          id: data.user.id,
+          name,
+          email,
+        });
+      }
+
       navigate("/sign-in");
     } catch (error) {
       toast.error("Something went wrong with the registration");
     }
   }
+
   return (
     <section className="container">
       <div className="card">

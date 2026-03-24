@@ -19,7 +19,7 @@
   "include": [
     "src",
     "src/contexts",
-    "firebase.tsx"
+    "supabase.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
