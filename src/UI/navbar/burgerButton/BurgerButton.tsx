@@ -26,42 +26,60 @@ const BurgerButton = () => {
   };
 
   return (
-    <div>
-      <button
-        className={`burger-button flex flex-col gap-4 border-none bg-none cursor-pointer ${burgerMenuIsOpen ? "open" : ""}`}
-        onClick={toggleBurgerMenu}
-      >
-        <div
-          className={`burger-line line-1 ${
-            burgerMenuIsOpen ? "rotate-up" : ""
+    <nav className="gradient-bg w-screen sticky z-10 top-0">
+      <div className="h-20 flex items-center px-4">
+        <button
+          className={`burger-button flex flex-col gap-4 border-none bg-none cursor-pointer ${
+            burgerMenuIsOpen ? "open" : ""
           }`}
-        ></div>
-        <div
-          className={`burger-line line-2 ${burgerMenuIsOpen ? "fade-out" : ""}`}
-        ></div>
-        <div
-          className={`burger-line line-3 ${
-            burgerMenuIsOpen ? "rotate-down" : ""
-          }`}
-        ></div>
-      </button>
+          onClick={toggleBurgerMenu}
+        >
+          <div
+            className={`burger-line line-1 ${
+              burgerMenuIsOpen ? "rotate-up" : ""
+            }`}
+          ></div>
+          <div
+            className={`burger-line line-2 ${
+              burgerMenuIsOpen ? "fade-out" : ""
+            }`}
+          ></div>
+          <div
+            className={`burger-line line-3 ${
+              burgerMenuIsOpen ? "rotate-down" : ""
+            }`}
+          ></div>
+        </button>
+      </div>
 
       {burgerMenuIsOpen && (
         <div className="gradient-bg flex flex-col justify-center items-center pt-5 h-screen">
           <ul id="nav__items">
-            <li id="nav__items-link" className="text-[2rem] py-2 text-white block">
+            <li
+              id="nav__items-link"
+              className="text-[2rem] py-2 text-white block"
+            >
               <NavLink to="/" className="burger-menu-link text-white">
                 Home
               </NavLink>
             </li>
-            <li id="nav__items-link" className="text-[2rem] py-2 text-white block">
-              <NavLink to="/appointments" className="burger-menu-link text-white">
+            <li
+              id="nav__items-link"
+              className="text-[2rem] py-2 text-white block"
+            >
+              <NavLink
+                to="/appointments"
+                className="burger-menu-link text-white"
+              >
                 Appointments
               </NavLink>
             </li>
             {user && (
               <li className="text-[2rem] py-2 text-white block">
-                <button onClick={handleLogout} className="bg-transparent border-none cursor-pointer">
+                <button
+                  onClick={handleLogout}
+                  className="bg-transparent border-none cursor-pointer"
+                >
                   <FiLogOut className="text-white rounded-lg w-10 h-10" />
                 </button>
               </li>
@@ -71,7 +89,7 @@ const BurgerButton = () => {
           </ul>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 

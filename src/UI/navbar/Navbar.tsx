@@ -18,11 +18,7 @@ const Navbar = () => {
     };
   }, []);
 
-  return (
-    <nav className="gradient-bg w-screen h-20 sticky z-10 top-0">
-      {windowWidth <= 768 ? <BurgerButton /> : <BigNavbar />}
-    </nav>
-  );
+  return windowWidth <= 768 ? <BurgerButton /> : <BigNavbar />;
 };
 
 export default Navbar;
