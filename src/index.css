@@ -104,6 +104,10 @@
     margin-top: 6rem;
   }
 
+  .container {
+    margin-inline: auto;
+  }
+
   section > h2 {
     text-align: center;
   }
