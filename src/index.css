@@ -101,7 +101,7 @@
   }
 
   section {
-    margin-top: 6rem;
+    margin-top: 2rem;
   }
 
   .container {
@@ -193,14 +193,14 @@
   .card {
     background: linear-gradient(135deg, var(--color-primary), var(--color-primary-variant));
     color: #ffffff;
-    margin: 2rem auto;
+    margin: 1rem auto;
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: fit-content;
     border-radius: 10px;
     box-shadow: 0 10px 20px 0 rgba(153, 153, 153, 0.25);
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
 
   .card h1,
@@ -212,7 +212,7 @@
   }
 
   .card-form {
-    padding: 2rem 1rem 0;
+    padding: 1rem 1rem 0;
   }
 
   .card-form-title {
@@ -221,7 +221,7 @@
   }
 
   .action {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 
   .action .btn {
@@ -231,13 +231,13 @@
   .action-auth {
     display: flex;
     justify-content: center;
-    margin: 2em;
+    margin: 1em;
   }
 
   .card-info {
-    padding: 1rem 1rem;
+    padding: 0.5rem 1rem;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #ffffff;
   }
 
@@ -280,7 +280,7 @@
   }
 
   .input + .input {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
   }
 
   .input-label {
