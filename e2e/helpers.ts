@@ -1,6 +1,13 @@
 import { Page, expect } from "@playwright/test";
+import dotenv from "dotenv";
+import path from "node:path";
 
-const SUPABASE_URL = "https://luryenpgsjrxskztvzdz.supabase.co";
+dotenv.config({ path: path.resolve(import.meta.dirname, "../.env.local") });
+
+const SUPABASE_URL = process.env.VITE_SUPABASE_URL;
+if (!SUPABASE_URL) {
+  throw new Error("VITE_SUPABASE_URL is not set — add it to .env.local");
+}
 
 const FAKE_USER = {
   id: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",

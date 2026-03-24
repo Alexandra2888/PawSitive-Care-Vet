@@ -49,15 +49,11 @@ const Testimonials = () => {
                   {/* Avatar + name + title */}
                   <div className="flex flex-col items-center justify-center gap-3 p-8 min-w-[180px]">
                     <div className="w-24 h-24 rounded-full overflow-hidden">
-                      <figure aria-label={`patient ${index + 1}`}>
-                        <figcaption>
-                          <img
-                            src={testimonial.patient.avatar}
-                            alt={`Patient ${index + 1}`}
-                            className="w-full h-full object-cover"
-                          />
-                        </figcaption>
-                      </figure>
+                      <img
+                        src={testimonial.patient.avatar}
+                        alt={testimonial.patient.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <h5 className="text-white font-semibold text-center">
                       {testimonial.patient.name}

@@ -16,7 +16,9 @@ test.describe("Navigation — Desktop", () => {
   test("has Home and Make Appointment nav links", async ({ page }) => {
     const nav = page.locator("nav");
     await expect(nav.getByRole("link", { name: "Home" })).toBeVisible();
-    await expect(nav.getByRole("link", { name: "Make Appointment" })).toBeVisible();
+    await expect(
+      nav.getByRole("link", { name: "Make Appointment" }),
+    ).toBeVisible();
   });
 
   test("navigating to Home link loads home page", async ({ page }) => {
@@ -25,23 +27,22 @@ test.describe("Navigation — Desktop", () => {
     await expect(page.locator("#banner__heading")).toBeVisible();
   });
 
-  test("Make Appointment link redirects unauthenticated user to sign-in", async ({ page }) => {
-    await page.locator("nav").getByRole("link", { name: "Make Appointment" }).click();
+  test("Make Appointment link redirects unauthenticated user to sign-in", async ({
+    page,
+  }) => {
+    await page
+      .locator("nav")
+      .getByRole("link", { name: "Make Appointment" })
+      .click();
     await expect(page).toHaveURL("/sign-in");
   });
 
-  test("does not show logout button when not authenticated", async ({ page }) => {
-    const logoutButtons = page.locator("nav button");
-    const count = await logoutButtons.count();
-    for (let i = 0; i < count; i++) {
-      const btn = logoutButtons.nth(i);
-      const hasLogout = await btn.locator("svg").count();
-      if (hasLogout > 0) {
-        const parentLi = btn.locator("..");
-        const text = await parentLi.textContent();
-        expect(text?.toLowerCase()).not.toContain("logout");
-      }
-    }
+  test("does not show logout button when not authenticated", async ({
+    page,
+  }) => {
+    await expect(
+      page.getByRole("button", { name: "Log out" }),
+    ).not.toBeVisible();
   });
 });
 
@@ -64,13 +65,18 @@ test.describe("Navigation — Mobile", () => {
 
     const navItems = page.locator("#nav__items");
     await expect(navItems.getByRole("link", { name: "Home" })).toBeVisible();
-    await expect(navItems.getByRole("link", { name: "Appointments" })).toBeVisible();
+    await expect(
+      navItems.getByRole("link", { name: "Appointments" }),
+    ).toBeVisible();
   });
 
   test("burger menu navigates to Home", async ({ page }) => {
     const burgerButton = page.locator("button:has(.burger-line)");
     await burgerButton.click();
-    await page.locator("#nav__items").getByRole("link", { name: "Home" }).click();
+    await page
+      .locator("#nav__items")
+      .getByRole("link", { name: "Home" })
+      .click();
     await expect(page).toHaveURL("/");
   });
 });
