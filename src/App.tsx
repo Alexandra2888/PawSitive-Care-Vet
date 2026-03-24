@@ -5,6 +5,7 @@ import { NotFound } from "./pages/notFound";
 import { SignIn } from "./pages/signin";
 import { SignUp } from "./pages/signup";
 import { ForgotPassword } from "./pages/forgotpassword";
+import { ResetPassword } from "./pages/resetPassword";
 import { AddAppointments } from "./pages/addAppointments";
 import { Appointments } from "./pages/appointments";
 import { UserAuthContextProvider } from "./contexts/UserAuthContext";
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "forgot-password",
         element: <ForgotPassword />,
+      },
+      {
+        path: "reset-password",
+        element: <ResetPassword />,
       },
       {
         path: "add-appointments",

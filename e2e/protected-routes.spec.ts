@@ -3,7 +3,7 @@ import {
   mockSupabaseUnauthenticated,
   mockSupabaseAuthenticated,
   mockAppointments,
-  injectAuthSession,
+  signInViaUI,
 } from "./helpers";
 
 test.describe("Protected Routes — Unauthenticated", () => {
@@ -26,8 +26,9 @@ test.describe("Add Appointments — Authenticated", () => {
   test.beforeEach(async ({ page }) => {
     await mockSupabaseAuthenticated(page);
     await mockAppointments(page);
-    await injectAuthSession(page);
-    await page.goto("/add-appointments");
+    await signInViaUI(page);
+    await page.locator('nav a[href="/add-appointments"]').click();
+    await expect(page).toHaveURL("/add-appointments");
   });
 
   test("renders the add appointment form", async ({ page }) => {
@@ -49,11 +50,17 @@ test.describe("Add Appointments — Authenticated", () => {
   });
 
   test("has submit button and see appointments link", async ({ page }) => {
-    await expect(page.getByRole("button", { name: "Add new appointment" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "See appointments" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Add new appointment" }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "See appointments" }),
+    ).toBeVisible();
   });
 
-  test("See appointments link navigates to appointments list", async ({ page }) => {
+  test("See appointments link navigates to appointments list", async ({
+    page,
+  }) => {
     await page.getByRole("link", { name: "See appointments" }).click();
     await expect(page).toHaveURL("/appointments");
   });
@@ -94,8 +101,10 @@ test.describe("Appointments List — Authenticated", () => {
         reason: "Vaccination",
       },
     ]);
-    await injectAuthSession(page);
-    await page.goto("/appointments");
+    await signInViaUI(page);
+    await page.locator('nav a[href="/add-appointments"]').click();
+    await page.getByRole("link", { name: "See appointments" }).click();
+    await expect(page).toHaveURL("/appointments");
 
     await expect(page.getByText("Buddy")).toBeVisible();
     await expect(page.getByText("2026-04-15")).toBeVisible();
@@ -109,8 +118,10 @@ test.describe("Appointments List — Authenticated", () => {
   test("shows empty table when no appointments", async ({ page }) => {
     await mockSupabaseAuthenticated(page);
     await mockAppointments(page, []);
-    await injectAuthSession(page);
-    await page.goto("/appointments");
+    await signInViaUI(page);
+    await page.locator('nav a[href="/add-appointments"]').click();
+    await page.getByRole("link", { name: "See appointments" }).click();
+    await expect(page).toHaveURL("/appointments");
 
     const table = page.locator("table");
     await expect(table).toBeVisible();
@@ -122,8 +133,9 @@ test.describe("Appointments List — Authenticated", () => {
   test("has link to add new appointment", async ({ page }) => {
     await mockSupabaseAuthenticated(page);
     await mockAppointments(page, []);
-    await injectAuthSession(page);
-    await page.goto("/appointments");
+    await signInViaUI(page);
+    await page.locator('nav a[href="/add-appointments"]').click();
+    await page.getByRole("link", { name: "See appointments" }).click();
 
     const addLink = page.getByRole("link", { name: "Add new appointment" });
     await expect(addLink).toBeVisible();

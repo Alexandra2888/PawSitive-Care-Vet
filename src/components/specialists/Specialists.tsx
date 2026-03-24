@@ -26,27 +26,31 @@ const Specialists = () => {
               <h4>{specialist.name}</h4>
               <small>{specialist.specialization}</small>
             </div>
-            <div className="absolute top-[1.2rem] right-[1.2rem] flex flex-col gap-4 opacity-0 invisible transition-all duration-1000 delay-400 ease-in-out group-hover:opacity-100 group-hover:visible">
+            <div className="absolute top-[1.2rem] right-[1.2rem] flex flex-col gap-4 opacity-0 invisible transition-all duration-1000 delay-400 ease-in-out group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible">
               <a
                 href={specialist.socialLinks.linkedin}
+                aria-label={`${specialist.name} on LinkedIn`}
                 className="bg-white text-primary p-[0.4rem] flex text-[0.8rem] rounded-full transition-all duration-400 ease-in-out hover:bg-primary hover:text-white"
               >
                 <i className="bx bxl-linkedin"></i>
               </a>
               <a
                 href={specialist.socialLinks.twitter}
+                aria-label={`${specialist.name} on Twitter`}
                 className="bg-white text-primary p-[0.4rem] flex text-[0.8rem] rounded-full transition-all duration-400 ease-in-out hover:bg-primary hover:text-white"
               >
                 <i className="bx bxl-twitter"></i>
               </a>
               <a
                 href={specialist.socialLinks.facebook}
+                aria-label={`${specialist.name} on Facebook`}
                 className="bg-white text-primary p-[0.4rem] flex text-[0.8rem] rounded-full transition-all duration-400 ease-in-out hover:bg-primary hover:text-white"
               >
                 <i className="bx bxl-facebook"></i>
               </a>
               <a
                 href={specialist.socialLinks.instagram}
+                aria-label={`${specialist.name} on Instagram`}
                 className="bg-white text-primary p-[0.4rem] flex text-[0.8rem] rounded-full transition-all duration-400 ease-in-out hover:bg-primary hover:text-white"
               >
                 <i className="bx bxl-instagram"></i>
@@ -54,7 +58,8 @@ const Specialists = () => {
             </div>
             <a
               href={specialist.socialLinks.whatsapp}
-              className="bg-success text-white absolute left-1/2 -translate-x-1/2 bottom-[30%] p-4 rounded-full flex opacity-0 invisible transition-all duration-1000 delay-400 ease-in-out group-hover:opacity-100 group-hover:visible"
+              aria-label={`Message ${specialist.name} on WhatsApp`}
+              className="bg-success text-white absolute left-1/2 -translate-x-1/2 bottom-[30%] p-4 rounded-full flex opacity-0 invisible transition-all duration-1000 delay-400 ease-in-out group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible"
             >
               <i className="bx bxl-whatsapp"></i>
             </a>

@@ -49,7 +49,9 @@ const BigNavbar = () => {
         {user && (
           <li>
             <button
+              type="button"
               onClick={handleLogout}
+              aria-label="Log out"
               className="bg-transparent border-none cursor-pointer flex items-center"
             >
               <FiLogOut className="text-white w-[25px] h-auto" />

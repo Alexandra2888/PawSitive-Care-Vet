@@ -358,11 +358,81 @@ src/
 ├── dark-mode/             ← Theme toggle component
 ├── interfaces/            ← TypeScript type definitions
 └── utils/data/            ← Static content and copy
+
+e2e/
+├── helpers.ts             ← Shared Supabase mocks, auth session injection, test fixtures
+├── home.spec.ts           ← Home page sections (banner, services, specialists, FAQ, map)
+├── auth.spec.ts           ← Sign In, Sign Up, Forgot Password flows
+├── navigation.spec.ts     ← Desktop and mobile navbar navigation
+├── dark-mode.spec.ts      ← Theme toggle and localStorage persistence
+├── not-found.spec.ts      ← 404 page rendering and navigation
+└── protected-routes.spec.ts ← Auth guards, appointment form, appointments list
 ```
 
 ---
 
-## 11. Future Recommendations
+## 11. End-to-End Testing
+
+### 11.1 Stack
+
+| Tool                                | Role                                                        |
+| ----------------------------------- | ----------------------------------------------------------- |
+| **Playwright** (`@playwright/test`) | Browser automation and assertions                           |
+| **Chromium**                        | Default test browser (configured in `playwright.config.ts`) |
+| **Vite dev server**                 | Automatically started by Playwright's `webServer` option    |
+
+### 11.2 Architecture
+
+All Supabase network calls are intercepted via Playwright's `page.route()` API, so tests run entirely offline with no external dependencies. Shared mock utilities live in `e2e/helpers.ts`:
+
+- `mockSupabaseUnauthenticated` — stubs auth endpoints to return 401/null sessions.
+- `mockSupabaseAuthenticated` — stubs auth endpoints to return a valid fake session/user.
+- `mockAppointments` — stubs the REST appointments endpoint for GET and POST.
+- `mockProfiles` — stubs the REST profiles endpoint.
+- `injectAuthSession` — writes a fake Supabase session into localStorage so the React auth context hydrates as authenticated.
+- `signInViaUI` — performs a full sign-in flow through the UI as an integration-level helper.
+
+### 11.3 Test Suites
+
+| Spec File                  | Coverage                                                                                                                                                                                                      |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `home.spec.ts`             | Banner headline and CTA, Provide section feature cards, Services list, Specialists, Testimonials, Contact map, FAQ accordion expand/collapse                                                                  |
+| `auth.spec.ts`             | Sign In form rendering, login flow and redirect, Sign Up form and registration flow, Forgot Password form and reset trigger, cross-page navigation between auth routes, Google OAuth button                   |
+| `navigation.spec.ts`       | Desktop navbar (logo, Home link, Make Appointment link, unauthenticated redirect, logout absence), Mobile burger menu (open, link display, navigation)                                                        |
+| `dark-mode.spec.ts`        | Theme toggle adds/removes `dark-theme` class on `<body>`, `localStorage` persistence across toggles                                                                                                           |
+| `not-found.spec.ts`        | 404 page renders for unknown routes, "Go Back Home" link navigates to `/`                                                                                                                                     |
+| `protected-routes.spec.ts` | Unauthenticated redirects for `/add-appointments` and `/appointments`, appointment form field rendering, form submission with redirect, appointments table with data, empty state, "Add new appointment" link |
+
+### 11.4 Running Tests
+
+```bash
+# Run all e2e tests (starts dev server automatically)
+npm run test:e2e
+
+# Run a specific spec file
+npx playwright test e2e/home.spec.ts
+
+# Run in headed mode (visible browser)
+npx playwright test --headed
+
+# View the HTML report after a run
+npx playwright show-report
+```
+
+### 11.5 Configuration
+
+Defined in `playwright.config.ts`:
+
+- **Test directory:** `./e2e`
+- **Parallelism:** Fully parallel locally; single worker in CI
+- **Retries:** 0 (fail fast)
+- **Base URL:** `http://localhost:5173`
+- **Trace:** Captured on first retry for debugging
+- **Web server:** Vite dev server started automatically; reuses an existing server if already running
+
+---
+
+## 12. Future Recommendations
 
 ### Short-Term
 
@@ -381,12 +451,12 @@ src/
 ### Long-Term
 
 9. **Design token pipeline** — Adopt a tool like Style Dictionary to generate tokens for CSS, TypeScript, and potential native apps.
-10. **Component testing** — Add visual regression tests via Storybook + Chromatic or Playwright screenshots.
+10. **Visual regression testing** — Add screenshot comparison tests via Playwright or Storybook + Chromatic to catch unintended visual changes.
 11. **Theming system** — Support multiple themes beyond light/dark (e.g., high-contrast mode) via CSS custom property layers.
 
 ---
 
-## 12. Glossary
+## 13. Glossary
 
 | Term                    | Definition                                                                                                 |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------- |

@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { supabase } from "../../../supabase";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 import { OAuth } from "../../components/auth";
 import { Button } from "../../components/button";
@@ -21,7 +20,9 @@ const ForgotPassword = () => {
   async function onSubmit(e: any) {
     e.preventDefault();
     try {
-      const { error } = await supabase.auth.resetPasswordForEmail(email);
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
       if (error) throw error;
       toast.success("Password reset email sent!");
       navigate("/");

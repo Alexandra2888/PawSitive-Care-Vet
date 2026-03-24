@@ -5,6 +5,7 @@ export interface InputProps {
   id?: string;
   value?: string;
   className?: string;
-  required?: any;
+  required?: boolean;
+  placeholder?: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }

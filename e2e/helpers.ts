@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Page, expect } from "@playwright/test";
 
 const SUPABASE_URL = "https://luryenpgsjrxskztvzdz.supabase.co";
 
@@ -111,7 +111,9 @@ export async function mockAppointments(page: Page, appointments: any[] = []) {
       return route.fulfill({
         status: 201,
         contentType: "application/json",
-        body: JSON.stringify([{ id: 1, ...JSON.parse(route.request().postData() ?? "{}") }]),
+        body: JSON.stringify([
+          { id: 1, ...JSON.parse(route.request().postData() ?? "{}") },
+        ]),
       });
     }
     return route.continue();
@@ -128,12 +130,17 @@ export async function mockProfiles(page: Page) {
   );
 }
 
-export async function injectAuthSession(page: Page) {
-  const sessionData = JSON.stringify(FAKE_SESSION);
-  await page.addInitScript((session) => {
-    const storageKey = "sb-luryenpgsjrxskztvzdz-auth-token";
-    localStorage.setItem(storageKey, session);
-  }, sessionData);
+/**
+ * Authenticate by going through the sign-in UI.
+ * After this call the React auth context has a user and client-side
+ * navigation to protected routes will succeed.
+ */
+export async function signInViaUI(page: Page) {
+  await page.goto("/sign-in");
+  await page.locator('input[type="email"]').fill("test@example.com");
+  await page.locator('input[type="password"]').fill("password123");
+  await page.getByRole("button", { name: "Get started" }).click();
+  await expect(page).toHaveURL("/");
 }
 
 export { FAKE_USER, FAKE_SESSION, SUPABASE_URL };

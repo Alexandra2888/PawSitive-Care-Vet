@@ -8,7 +8,11 @@ function Footer() {
         aria-label="Social Links"
       >
         <article className="flex flex-col gap-4">
-          <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white" aria-label="logo">
+          <a
+            href="#"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+            aria-label="logo"
+          >
             <h3 className="text-white">PawSitive Vet Care</h3>
           </a>
           <p>Caring for your furry family members like they are our own</p>
@@ -24,19 +28,64 @@ function Footer() {
 
         <article className="flex flex-col gap-4">
           <h3 className="text-white">Support</h3>
-          <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">Privacy Policy</a>
-          <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">Cookie Policy</a>
-          <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">Purchasing Policy</a>
-          <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">Terms & Conditions</a>
-          <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">Career</a>
+          <a
+            href="#"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="#"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+          >
+            Cookie Policy
+          </a>
+          <a
+            href="#"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+          >
+            Purchasing Policy
+          </a>
+          <a
+            href="#"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+          >
+            Terms & Conditions
+          </a>
+          <a
+            href="#"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+          >
+            Career
+          </a>
         </article>
 
         <article className="flex flex-col gap-4">
           <h3 className="text-white">Permalinks</h3>
-          <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">Home</a>
-          <Link to="#services" className="text-light transition-all duration-400 ease-in-out hover:text-white">Services</Link>
-          <Link to="#specialists" className="text-light transition-all duration-400 ease-in-out hover:text-white">Specialists</Link>
-          <Link to="#testimonials" className="text-light transition-all duration-400 ease-in-out hover:text-white">Testimonials</Link>
+          <a
+            href="#"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+          >
+            Home
+          </a>
+          <Link
+            to="/#services"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+          >
+            Services
+          </Link>
+          <Link
+            to="/#specialists"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+          >
+            Specialists
+          </Link>
+          <Link
+            to="/#testimonials"
+            className="text-light transition-all duration-400 ease-in-out hover:text-white"
+          >
+            Testimonials
+          </Link>
           <Link to="/add-appointments" className="btn-primary max-sm:mx-auto">
             Get Appointment
           </Link>
@@ -47,16 +96,32 @@ function Footer() {
           <p>Press</p>
           <p>FAQs</p>
           <div className="flex gap-4 text-[1.1rem] max-sm:mx-auto">
-            <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">
+            <a
+              href="#"
+              aria-label="LinkedIn"
+              className="text-light transition-all duration-400 ease-in-out hover:text-white"
+            >
               <i className="bx bxl-linkedin"></i>
             </a>
-            <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">
+            <a
+              href="#"
+              aria-label="Twitter"
+              className="text-light transition-all duration-400 ease-in-out hover:text-white"
+            >
               <i className="bx bxl-twitter"></i>
             </a>
-            <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">
+            <a
+              href="#"
+              aria-label="Facebook"
+              className="text-light transition-all duration-400 ease-in-out hover:text-white"
+            >
               <i className="bx bxl-facebook"></i>
             </a>
-            <a href="#" className="text-light transition-all duration-400 ease-in-out hover:text-white">
+            <a
+              href="#"
+              aria-label="Instagram"
+              className="text-light transition-all duration-400 ease-in-out hover:text-white"
+            >
               <i className="bx bxl-instagram"></i>
             </a>
           </div>

@@ -18,6 +18,7 @@ A modern veterinary clinic web application for appointment booking, specialist b
 - **Maps:** Leaflet + react-leaflet
 - **Carousel:** Swiper
 - **Icons:** react-icons + Boxicons (CDN)
+- **E2E Testing:** Playwright
 
 ## Features
 
@@ -67,6 +68,37 @@ npm run build
 
 Outputs optimized files to `dist/`.
 
+## Testing
+
+### E2E Tests (Playwright)
+
+The project includes a comprehensive Playwright end-to-end test suite that runs against the Vite dev server with all Supabase calls mocked at the network level — no external services required.
+
+```bash
+# Run all e2e tests
+npm run test:e2e
+
+# Run a specific spec
+npx playwright test e2e/home.spec.ts
+
+# Run in headed mode (visible browser)
+npx playwright test --headed
+
+# View the HTML report
+npx playwright show-report
+```
+
+**Test suites:**
+
+| Spec                       | Coverage                                                        |
+| -------------------------- | --------------------------------------------------------------- |
+| `home.spec.ts`             | Banner, services, specialists, testimonials, map, FAQ accordion |
+| `auth.spec.ts`             | Sign in, sign up, forgot password, OAuth button                 |
+| `navigation.spec.ts`       | Desktop navbar, mobile burger menu                              |
+| `dark-mode.spec.ts`        | Theme toggle and localStorage persistence                       |
+| `not-found.spec.ts`        | 404 page and navigation back to home                            |
+| `protected-routes.spec.ts` | Auth guards, appointment form, appointments list                |
+
 ## Project Structure
 
 ```
@@ -79,6 +111,15 @@ src/
 ├── interfaces/        # TypeScript type definitions
 ├── utils/data/        # Static content and copy
 └── index.css          # Design tokens, base styles, component classes
+
+e2e/
+├── helpers.ts         # Shared Supabase mocks and auth fixtures
+├── home.spec.ts       # Home page sections
+├── auth.spec.ts       # Authentication flows
+├── navigation.spec.ts # Desktop and mobile navigation
+├── dark-mode.spec.ts  # Theme toggle
+├── not-found.spec.ts  # 404 page
+└── protected-routes.spec.ts  # Auth guards and appointments
 ```
 
 ## Design System

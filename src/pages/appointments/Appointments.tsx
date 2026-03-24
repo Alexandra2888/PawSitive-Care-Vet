@@ -15,8 +15,13 @@ const Appointments: React.FC = () => {
   const { user } = useUserAuth();
   const [appointments, setAppointments] = useState<Appointment[]>([]);
 
-  const fetchAppointment = async () => {
-    if (user) {
+  useEffect(() => {
+    if (!user) {
+      setAppointments([]);
+      return;
+    }
+
+    const fetchAppointments = async () => {
       const { data, error } = await supabase
         .from("appointments")
         .select("*")
@@ -24,26 +29,23 @@ const Appointments: React.FC = () => {
 
       if (error) {
         console.error("Error fetching appointments:", error);
+        setAppointments([]);
         return;
       }
 
-      const mapped: Appointment[] = (data ?? []).map((row) => ({
-        id: row.id,
-        petName: row.pet_name,
-        date: row.date,
-        time: row.time,
-        doctor: row.doctor,
-        reason: row.reason,
-      }));
+      setAppointments(
+        (data ?? []).map((row) => ({
+          id: row.id,
+          petName: row.pet_name,
+          date: row.date,
+          time: row.time,
+          doctor: row.doctor,
+          reason: row.reason,
+        })),
+      );
+    };
 
-      setAppointments(mapped);
-    } else {
-      console.log("No user logged in");
-    }
-  };
-
-  useEffect(() => {
-    fetchAppointment();
+    fetchAppointments();
   }, [user]);
 
   return (
@@ -71,16 +73,29 @@ const Appointments: React.FC = () => {
         <tbody>
           {appointments?.map((appointment) => (
             <tr key={appointment.id}>
-              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">{appointment.petName}</td>
-              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">{appointment.date}</td>
-              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">{appointment.time}</td>
-              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">{appointment.doctor}</td>
-              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">{appointment.reason}</td>
+              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">
+                {appointment.petName}
+              </td>
+              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">
+                {appointment.date}
+              </td>
+              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">
+                {appointment.time}
+              </td>
+              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">
+                {appointment.doctor}
+              </td>
+              <td className="p-[0.2em] sm:p-[1.3em] border-b border-primary">
+                {appointment.reason}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Link to="/add-appointments" className="btn btn-primary mx-auto! mt-6! block">
+      <Link
+        to="/add-appointments"
+        className="btn btn-primary mx-auto! mt-6! block"
+      >
         Add new appointment
       </Link>
     </section>

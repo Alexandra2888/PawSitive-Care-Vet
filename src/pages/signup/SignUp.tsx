@@ -53,11 +53,16 @@ const SignUp = () => {
       if (error) throw error;
 
       if (data.user) {
-        await supabase.from("profiles").upsert({
-          id: data.user.id,
-          name,
-          email,
-        });
+        const { error: profileError } = await supabase
+          .from("profiles")
+          .upsert({ id: data.user.id, name, email });
+
+        if (profileError) {
+          console.error("Failed to save profile:", profileError);
+          toast.error(
+            "Account created but profile save failed. Please update your profile later.",
+          );
+        }
       }
 
       navigate("/sign-in");

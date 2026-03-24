@@ -29,7 +29,9 @@ const BurgerButton = () => {
     <nav className="gradient-bg w-full sticky z-10 top-0">
       <div className="h-20 flex items-center px-4">
         <button
-          className={`burger-button flex flex-col gap-4 border-none bg-none cursor-pointer ${
+          aria-label="Toggle menu"
+          aria-expanded={burgerMenuIsOpen}
+          className={`burger-button flex flex-col gap-4 border-none bg-transparent cursor-pointer ${
             burgerMenuIsOpen ? "open" : ""
           }`}
           onClick={toggleBurgerMenu}
@@ -55,18 +57,12 @@ const BurgerButton = () => {
       {burgerMenuIsOpen && (
         <div className="gradient-bg flex flex-col justify-center items-center pt-5 h-screen">
           <ul id="nav__items">
-            <li
-              id="nav__items-link"
-              className="text-[2rem] py-2 text-white block"
-            >
+            <li className="nav-item-link text-[2rem] py-2 text-white block">
               <NavLink to="/" className="burger-menu-link text-white">
                 Home
               </NavLink>
             </li>
-            <li
-              id="nav__items-link"
-              className="text-[2rem] py-2 text-white block"
-            >
+            <li className="nav-item-link text-[2rem] py-2 text-white block">
               <NavLink
                 to="/appointments"
                 className="burger-menu-link text-white"
@@ -77,7 +73,9 @@ const BurgerButton = () => {
             {user && (
               <li className="text-[2rem] py-2 text-white block">
                 <button
+                  type="button"
                   onClick={handleLogout}
+                  aria-label="Log out"
                   className="bg-transparent border-none cursor-pointer"
                 >
                   <FiLogOut className="text-white rounded-lg w-10 h-10" />

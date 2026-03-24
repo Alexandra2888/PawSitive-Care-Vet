@@ -37,10 +37,14 @@
     margin: 0;
     padding: 0;
     border: 0;
-    outline: 0;
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary-variant);
+    outline-offset: 2px;
   }
 
   html {
@@ -128,7 +132,7 @@
   }
 
   a.link {
-    outline: none;
+    outline: revert;
   }
 }
 
@@ -292,14 +296,13 @@
     padding: 0.25rem 0;
   }
 
-  .input-field:focus,
-  .input-field:valid {
+  .input-field:focus {
     outline: 0;
     border-bottom-color: rgba(255, 255, 255, 0.7);
   }
 
   .input-field:focus + .input-label,
-  .input-field:valid + .input-label {
+  .input-field:not(:placeholder-shown) + .input-label {
     color: rgba(255, 255, 255, 0.7);
     transform: translateY(-1.5rem);
   }
@@ -517,7 +520,7 @@
   background-position: -100% 0;
 }
 
-#nav__items-link:hover {
+.nav-item-link:hover {
   background-color: var(--color-secondary);
   width: fit-content;
   padding: 0 0.2em;
