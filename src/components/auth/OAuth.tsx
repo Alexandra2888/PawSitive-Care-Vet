@@ -19,7 +19,12 @@ const OAuth = () => {
   }
 
   return (
-    <button type="button" className="btn-primary" onClick={onGoogleClick}>
+    <button
+      type="button"
+      className="btn-primary"
+      onClick={onGoogleClick}
+      style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+    >
       <FcGoogle />
       Sign in with Google
     </button>
