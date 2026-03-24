@@ -18,7 +18,10 @@ const Banner = () => {
           <p className="my-4 mb-8 text-light text-[2rem] max-lg:text-[1.8rem]">
             Because your pet&apos;s health is our top priority.
           </p>
-          <NavLink to="/add-appointments" className="btn flex! justify-center! mb-[1em]!">
+          <NavLink
+            to="/add-appointments"
+            className="btn flex! justify-center! mx-auto mb-[1em]!"
+          >
             Make Appointment
           </NavLink>
         </div>
