@@ -1,16 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
-
 import { useState } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { auth, db } from "../../../firebase";
 
+import { supabase } from "../../../supabase";
+import { useUserAuth } from "../../contexts/UserAuthContext";
 
-import "./AddAppointments.scss";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { AddAppointment } from "../../interfaces/components/AddAppontments";
 
 const Appointments = () => {
+  const { user } = useUserAuth();
+
   const [formData, setFormData] = useState<AddAppointment>({
     name: "",
     email: "",
@@ -110,6 +110,7 @@ const Appointments = () => {
       time: e.target.value,
     }));
   }
+
   function onReason(e: any) {
     setFormData((prevState) => ({
       ...prevState,
@@ -121,24 +122,25 @@ const Appointments = () => {
     e.preventDefault();
 
     try {
-      const docRef = await addDoc(collection(db, "appointments"), {
-        userId: auth.currentUser.uid,
-        name: name,
-        email: email,
-        phone: phone,
-        petType: petType,
-        petName: petName,
-        petGender: petGender,
-        petAge: petAge,
-        doctor: doctor,
-        date: date,
-        time: time,
-        reason: reason,
+      const { error } = await supabase.from("appointments").insert({
+        user_id: user?.id,
+        name,
+        email,
+        phone,
+        pet_type: petType,
+        pet_name: petName,
+        pet_gender: petGender,
+        pet_age: petAge,
+        doctor,
+        date,
+        time,
+        reason,
       });
-      console.log("Document written with ID: ", docRef.id);
+
+      if (error) throw error;
       navigate("/appointments");
     } catch (e) {
-      console.error("Error adding document: ", e);
+      console.error("Error adding appointment: ", e);
     }
   };
 
@@ -181,30 +183,28 @@ const Appointments = () => {
           </div>
 
           <div className="input">
-            <label className="input-label">Select a pet:</label>
             <select
               value={petType}
               onChange={onPetTypeChange}
-              style={{ textAlign: "center" }}
-              className="input-field"
+              className="input-field text-center"
             >
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
             </select>
+            <label className="input-label">Select a pet:</label>
           </div>
 
           <div className="input">
-            <label className="input-label">Your pet is:</label>
             <select
               value={petGender}
               onChange={onPetGenderChange}
-              style={{ textAlign: "center" }}
-              className="input-field"
+              className="input-field text-center"
               id="select"
             >
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
+            <label className="input-label">Your pet is:</label>
           </div>
 
           <div className="input">
@@ -252,12 +252,10 @@ const Appointments = () => {
           </div>
 
           <div className="input">
-            <label className="input-label">Select doctor:</label>
             <select
               value={doctor}
               onChange={onDoctor}
-              style={{ textAlign: "center" }}
-              className="input-field"
+              className="input-field text-center"
             >
               <option value="John Doe">John Doe (Surgery Specialist)</option>
               <option value="Carmen Makafui">
@@ -270,6 +268,7 @@ const Appointments = () => {
                 Abigail Brownie (Cardiology Specialist)
               </option>
             </select>
+            <label className="input-label">Select doctor:</label>
           </div>
 
           <div className="input">
@@ -283,15 +282,15 @@ const Appointments = () => {
             <label className="input-label">Reason:</label>
           </div>
 
-          <div className="action">
+          <div className="action flex gap-2">
             <Button className="btn" type="submit">
               Add new appointment
             </Button>
+            <Link to="/appointments" className="btn btn-primary">
+              See appointments
+            </Link>
           </div>
         </form>
-        <Link to="/appointments" className=" btn btn-primary">
-          See appointments
-        </Link>
       </div>
     </main>
   );

@@ -1,5 +1,9 @@
 export interface User {
-  uid: string;
+  id: string;
   email: string;
-  password?: any;
+  user_metadata?: {
+    full_name?: string;
+    name?: string;
+    avatar_url?: string;
+  };
 }

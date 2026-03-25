@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 
 import { BurgerButton } from "./burgerButton";
 import { BigNavbar } from "./bigNavbar";
-import "./Navbar.scss";
 
 const Navbar = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -19,7 +18,7 @@ const Navbar = () => {
     };
   }, []);
 
-  return <nav>{windowWidth <= 768 ? <BurgerButton /> : <BigNavbar />}</nav>;
+  return windowWidth <= 768 ? <BurgerButton /> : <BigNavbar />;
 };
 
 export default Navbar;

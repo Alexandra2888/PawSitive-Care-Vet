@@ -1,6 +1,5 @@
 import React from "react";
 
-import "./Button.scss";
 import { ButtonProps } from "../../interfaces/components/ButtonProps";
 
 const Button = (props: ButtonProps): React.ReactElement => {

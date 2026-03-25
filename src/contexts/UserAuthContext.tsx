@@ -1,15 +1,9 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
 
-import { auth } from "../../firebase.js";
-import { User } from "../interfaces/contexts/User.js";
-import { AuthContextType } from "../interfaces/contexts/AuthContextType.js";
-import { UserAuthContextProviderProps } from "../interfaces/contexts/UserAuthContextProviderProps.js";
+import { supabase } from "../../supabase";
+import { User } from "../interfaces/contexts/User";
+import { AuthContextType } from "../interfaces/contexts/AuthContextType";
+import { UserAuthContextProviderProps } from "../interfaces/contexts/UserAuthContextProviderProps";
 
 const userAuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -17,32 +11,47 @@ export const UserAuthContextProvider: React.FC<
   UserAuthContextProviderProps
 > = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  const logIn = (email: string, password: string): Promise<any> => {
-    return signInWithEmailAndPassword(auth, email, password);
+  const logIn = async (email: string, password: string): Promise<void> => {
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+    if (error) throw error;
   };
 
-  const signUp = (email: string, password: string): Promise<any> => {
-    return createUserWithEmailAndPassword(auth, email, password);
+  const signUp = async (email: string, password: string): Promise<void> => {
+    const { error } = await supabase.auth.signUp({ email, password });
+    if (error) throw error;
   };
 
-  const logOut = (): Promise<void> => {
-    return signOut(auth);
+  const logOut = async (): Promise<void> => {
+    const { error } = await supabase.auth.signOut();
+    if (error) throw error;
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser: any) => {
-      console.log("Auth", currentUser);
-      setUser(currentUser);
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser((session?.user as User | null) ?? null);
+      setLoading(false);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser((session?.user as User | null) ?? null);
+      setLoading(false);
     });
 
     return () => {
-      unsubscribe();
+      subscription.unsubscribe();
     };
   }, []);
 
   const contextValue: AuthContextType = {
-    user: user as User,
+    user,
+    loading,
     logIn,
     signUp,
     logOut,
@@ -59,7 +68,7 @@ export function useUserAuth(): AuthContextType {
   const context = useContext(userAuthContext);
   if (!context) {
     throw new Error(
-      "useUserAuth must be used within a UserAuthContextProvider"
+      "useUserAuth must be used within a UserAuthContextProvider",
     );
   }
   return context;

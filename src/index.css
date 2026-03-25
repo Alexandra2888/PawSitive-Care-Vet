@@ -1,0 +1,553 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #480ca8;
+  --color-primary-variant: #4cc9f0;
+  --color-secondary: #d68a38;
+  --color-light: rgba(255, 255, 255, 0.7);
+  --color-black: #0c031b;
+  --color-dark: rgba(12, 3, 27, 0.7);
+  --color-success: #54eb72;
+
+  --font-sans: "Montserrat", sans-serif;
+
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+
+  --animate-paw: paw 2050ms ease-in-out infinite;
+
+  @keyframes paw {
+    0% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+/* ===== BASE LAYER ===== */
+@layer base {
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary-variant);
+    outline-offset: 2px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.5;
+    color: rgba(12, 3, 27, 0.7);
+    background: rgba(76, 201, 240, 0.1);
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  h5 {
+    line-height: 1.2;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  p,
+  dl,
+  dd,
+  figure {
+    margin: 0;
+  }
+
+  ul[class],
+  ol[class] {
+    list-style: none;
+    padding: 0;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    width: 100%;
+  }
+
+  section {
+    margin-top: 2rem;
+  }
+
+  .container {
+    margin-inline: auto;
+  }
+
+  section > h2 {
+    text-align: center;
+  }
+
+  section > p {
+    text-align: center;
+    width: 42%;
+    margin: 0.6rem auto 2.5rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    section > p {
+      width: 55%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    section > p {
+      width: 90%;
+    }
+  }
+
+  .dark-theme {
+    background-color: black;
+    color: white;
+  }
+
+  a.link {
+    outline: revert;
+  }
+}
+
+/* ===== COMPONENTS LAYER ===== */
+@layer components {
+  /* --- Buttons --- */
+  .btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: var(--color-secondary);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 400ms ease;
+  }
+
+  .btn:hover {
+    background: #e09a4e;
+    box-shadow: 0 1rem 1.6rem rgba(12, 3, 27, 0.15);
+  }
+
+  .btn-primary {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: var(--color-primary);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 400ms ease;
+  }
+
+  .btn-primary:hover {
+    background: #5a1ec0;
+    box-shadow: 0 1rem 1.6rem rgba(12, 3, 27, 0.15);
+  }
+
+  /* --- Gradient Background (replaces @mixin gradientBackground) --- */
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-variant));
+    color: #ffffff;
+  }
+
+  .gradient-bg h1,
+  .gradient-bg h2,
+  .gradient-bg h3,
+  .gradient-bg h4,
+  .gradient-bg h5 {
+    color: #ffffff;
+  }
+
+  /* --- Card (shared auth pages) --- */
+  .card {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-variant));
+    color: #ffffff;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 rgba(153, 153, 153, 0.25);
+    padding: 0.5rem;
+  }
+
+  .card h1,
+  .card h2,
+  .card h3,
+  .card h4,
+  .card h5 {
+    color: #ffffff;
+  }
+
+  .card-form {
+    padding: 1rem 1rem 0;
+  }
+
+  .card-form-title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .action {
+    margin-top: 1rem;
+  }
+
+  .action .btn {
+    margin: auto;
+  }
+
+  .action-auth {
+    display: flex;
+    justify-content: center;
+    margin: 1em;
+  }
+
+  .card-info {
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #ffffff;
+  }
+
+  .card-info a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .card-info span {
+    display: inline;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 600px) {
+    .card {
+      max-width: 30rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .card {
+      max-width: 40rem;
+    }
+  }
+
+  /* --- Floating Input --- */
+  .input {
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    padding-top: 1.5rem;
+  }
+
+  .input + .input {
+    margin-top: 1rem;
+  }
+
+  .input-label {
+    color: #ffffff;
+    position: absolute;
+    top: 1.5rem;
+    transition: 0.25s ease;
+  }
+
+  .input-field {
+    border: 0;
+    z-index: 1;
+    background-color: transparent;
+    border-bottom: 2px solid #eee;
+    font: inherit;
+    font-size: 1.125rem;
+    padding: 0.25rem 0;
+  }
+
+  .input-field:focus {
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+  }
+
+  .input-field:focus + .input-label,
+  .input-field:not(:placeholder-shown) + .input-label {
+    color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-1.5rem);
+  }
+
+  /* --- Hover Shadow Link Animation (auth pages) --- */
+  .hover-shadow {
+    color: #ffffff;
+    text-decoration: none;
+    width: fit-content;
+    padding: 0.1em;
+  }
+
+  .hover-shadow span {
+    font-weight: 100;
+    transition: all 0.5s;
+    border-bottom: 1px solid;
+  }
+
+  .hover-shadow span:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .hover-shadow span:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .hover-shadow span:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+
+  .hover-shadow:hover span {
+    font-weight: 500;
+    letter-spacing: 3px;
+  }
+
+  .hover-shadow:hover span:nth-child(4) {
+    transition-delay: 0.3s;
+  }
+
+  .hover-shadow:hover span:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .hover-shadow:hover span:nth-child(2) {
+    transition-delay: 0.1s;
+  }
+
+  .hover-shadow:hover span:nth-child(1) {
+    transition-delay: 0s;
+  }
+
+  .hover-color:hover {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-variant));
+    color: #ffffff;
+  }
+}
+
+/* ===== CUSTOM CSS (cannot be expressed as Tailwind utilities) ===== */
+
+/* --- Paw Animation (Banner) --- */
+.paw__loader {
+  position: absolute;
+  top: 45%;
+  left: 70%;
+  transform-origin: 50% 50%;
+  transform: rotate(90deg) translate(-50%, 0%);
+  font-size: 50px;
+  width: 1em;
+  height: 3em;
+  color: red;
+}
+
+.paw {
+  width: 1em;
+  height: 1em;
+  animation: paw 2050ms ease-in-out infinite;
+  opacity: 0;
+}
+
+.paw svg {
+  width: 100%;
+  height: 100%;
+}
+
+.paw .icon {
+  fill: whitesmoke;
+  opacity: 0.4;
+}
+
+.paw:nth-child(odd) {
+  transform: rotate(-10deg);
+}
+
+.paw:nth-child(even) {
+  transform: rotate(10deg) translate(125%, 0);
+}
+
+.paw:nth-child(1) {
+  animation-delay: 1.25s;
+}
+.paw:nth-child(2) {
+  animation-delay: 1s;
+}
+.paw:nth-child(3) {
+  animation-delay: 0.75s;
+}
+.paw:nth-child(4) {
+  animation-delay: 0.5s;
+}
+.paw:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.paw:nth-child(6) {
+  animation-delay: 0s;
+}
+
+.no-cssanimations .paw {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .paw {
+    display: none;
+  }
+}
+
+/* --- Specialist Card ::before Overlay --- */
+.specialist-image {
+  height: 20rem;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.specialist-image::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(
+    135deg,
+    rgba(72, 12, 168, 0.8),
+    rgba(76, 201, 240, 0.8)
+  );
+  border-radius: 50%;
+  transition: all 1s ease;
+}
+
+.group:hover .specialist-image::before {
+  left: 0;
+  border-radius: 1rem;
+}
+
+/* --- Nav Link Gradient Hover --- */
+.nav-link-hover {
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.nav-link-hover:hover {
+  background: linear-gradient(to right, rgb(173, 154, 119) 0%, lightsalmon 100%);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+}
+
+/* --- Burger Button Line Transforms --- */
+.burger-line {
+  width: 1.5rem;
+  height: 0.125rem;
+  margin: 0.2em;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.burger-button.open .line-1 {
+  transform: rotate(-45deg) translateY(2px);
+}
+
+.burger-button.open .line-2 {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.burger-button.open .line-3 {
+  transform: rotate(45deg) translateY(-2px);
+}
+
+.line-1.rotate-up {
+  transform: rotate(-45deg) translateY(2px);
+}
+
+.line-2.fade-out {
+  opacity: 0;
+}
+
+.line-3.rotate-down {
+  transform: rotate(45deg) translateY(-2px);
+}
+
+/* --- Burger Menu Item Hover --- */
+.burger-menu-link {
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-position 0.5s ease-in-out;
+}
+
+.burger-menu-link:hover {
+  background: linear-gradient(to right, rgb(173, 154, 119) 0%, lightsalmon 100%);
+  background-size: 200% 100%;
+  background-position: -100% 0;
+}
+
+.nav-item-link:hover {
+  background-color: var(--color-secondary);
+  width: fit-content;
+  padding: 0 0.2em;
+  border-radius: 8px;
+}
+
+/* --- Swiper Overrides --- */
+.swiper-pagination-bullet {
+  background: var(--color-primary) !important;
+}
+
+/* --- Leaflet Container --- */
+.leaflet-container {
+  width: 100%;
+  height: 50vh;
+  z-index: 2;
+  margin: 2rem auto;
+}
+
+@media screen and (max-width: 1100px) {
+  .leaflet-container {
+    width: 90%;
+    max-width: 500px;
+    height: 50vh;
+    padding: 1em;
+  }
+}

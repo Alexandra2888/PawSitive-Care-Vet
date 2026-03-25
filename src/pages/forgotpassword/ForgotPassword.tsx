@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-
+import { supabase } from "../../../supabase";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 import { OAuth } from "../../components/auth";
 import { Button } from "../../components/button";
@@ -22,12 +20,15 @@ const ForgotPassword = () => {
   async function onSubmit(e: any) {
     e.preventDefault();
     try {
-      const auth = getAuth();
-      await sendPasswordResetEmail(auth, email);
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/reset-password`,
+      });
+      if (error) throw error;
+      toast.success("Password reset email sent!");
       navigate("/");
     } catch (error) {
       toast.error("Could not send reset password!!", {
-        position: toast.POSITION.TOP_RIGHT,
+        position: "top-right",
       });
     }
   }
@@ -41,7 +42,7 @@ const ForgotPassword = () => {
             <img
               src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS_KahcrRtwztWDjnrYEZJiKh_rJK3mZd037jmHqcWcoElnnBDL"
               alt="forgot-password"
-              style={{ width: "300px", height: "auto", margin: "2em auto" }}
+              className="w-[300px] h-auto mx-auto my-8"
             />
           </figcaption>
         </figure>

@@ -17,11 +17,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "vite.config.ts",
-    ".eslintrc.cjs",
     "src",
     "src/contexts",
-    "firebase.tsx"
+    "supabase.ts"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
