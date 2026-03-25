@@ -183,30 +183,28 @@ const Appointments = () => {
           </div>
 
           <div className="input">
-            <label className="input-label">Select a pet:</label>
             <select
               value={petType}
               onChange={onPetTypeChange}
-              style={{ textAlign: "center" }}
-              className="input-field"
+              className="input-field text-center"
             >
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
             </select>
+            <label className="input-label">Select a pet:</label>
           </div>
 
           <div className="input">
-            <label className="input-label">Your pet is:</label>
             <select
               value={petGender}
               onChange={onPetGenderChange}
-              style={{ textAlign: "center" }}
-              className="input-field"
+              className="input-field text-center"
               id="select"
             >
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
+            <label className="input-label">Your pet is:</label>
           </div>
 
           <div className="input">
@@ -254,12 +252,10 @@ const Appointments = () => {
           </div>
 
           <div className="input">
-            <label className="input-label">Select doctor:</label>
             <select
               value={doctor}
               onChange={onDoctor}
-              style={{ textAlign: "center" }}
-              className="input-field"
+              className="input-field text-center"
             >
               <option value="John Doe">John Doe (Surgery Specialist)</option>
               <option value="Carmen Makafui">
@@ -272,6 +268,7 @@ const Appointments = () => {
                 Abigail Brownie (Cardiology Specialist)
               </option>
             </select>
+            <label className="input-label">Select doctor:</label>
           </div>
 
           <div className="input">
@@ -285,15 +282,15 @@ const Appointments = () => {
             <label className="input-label">Reason:</label>
           </div>
 
-          <div className="action">
+          <div className="action flex gap-2">
             <Button className="btn" type="submit">
               Add new appointment
             </Button>
+            <Link to="/appointments" className="btn btn-primary">
+              See appointments
+            </Link>
           </div>
         </form>
-        <Link to="/appointments" className=" btn btn-primary">
-          See appointments
-        </Link>
       </div>
     </main>
   );

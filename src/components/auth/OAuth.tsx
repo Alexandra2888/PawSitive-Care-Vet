@@ -21,9 +21,8 @@ const OAuth = () => {
   return (
     <button
       type="button"
-      className="btn-primary"
+      className="btn-primary flex items-center gap-2"
       onClick={onGoogleClick}
-      style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
     >
       <FcGoogle />
       Sign in with Google

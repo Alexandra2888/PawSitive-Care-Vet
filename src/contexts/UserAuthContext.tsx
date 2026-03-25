@@ -11,6 +11,7 @@ export const UserAuthContextProvider: React.FC<
   UserAuthContextProviderProps
 > = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const logIn = async (email: string, password: string): Promise<void> => {
     const { error } = await supabase.auth.signInWithPassword({
@@ -33,12 +34,14 @@ export const UserAuthContextProvider: React.FC<
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser((session?.user as User | null) ?? null);
+      setLoading(false);
     });
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser((session?.user as User | null) ?? null);
+      setLoading(false);
     });
 
     return () => {
@@ -48,6 +51,7 @@ export const UserAuthContextProvider: React.FC<
 
   const contextValue: AuthContextType = {
     user,
+    loading,
     logIn,
     signUp,
     logOut,
