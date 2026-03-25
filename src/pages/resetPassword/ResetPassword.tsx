@@ -76,6 +76,7 @@ const ResetPassword = () => {
 
           <div className="input">
             <Input
+              id="new-password"
               type="password"
               className="input-field"
               value={password}
@@ -84,11 +85,12 @@ const ResetPassword = () => {
               }
               required
             />
-            <label className="input-label">New Password:</label>
+            <label htmlFor="new-password" className="input-label">New Password:</label>
           </div>
 
           <div className="input">
             <Input
+              id="confirm-password"
               type="password"
               className="input-field"
               value={confirmPassword}
@@ -97,7 +99,7 @@ const ResetPassword = () => {
               }
               required
             />
-            <label className="input-label">Confirm Password:</label>
+            <label htmlFor="confirm-password" className="input-label">Confirm Password:</label>
           </div>
 
           <div className="action">

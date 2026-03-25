@@ -32,7 +32,7 @@ A modern veterinary clinic web application for appointment booking, specialist b
 
 ### Prerequisites
 
-- Node.js >= 24.0.0
+- Node.js >= 20.0.0
 - A Supabase project (for auth and data)
 
 ### Installation

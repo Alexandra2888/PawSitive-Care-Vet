@@ -8,13 +8,12 @@ function Footer() {
         aria-label="Social Links"
       >
         <article className="flex flex-col gap-4">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="text-light transition-all duration-400 ease-in-out hover:text-white"
-            aria-label="logo"
           >
             <h3 className="text-white">PawSitive Vet Care</h3>
-          </a>
+          </Link>
           <p>Caring for your furry family members like they are our own</p>
           <div className="flex items-center gap-2.5 max-sm:justify-center">
             <i className="bx bxs-phone" aria-label="phone"></i>
@@ -62,12 +61,12 @@ function Footer() {
 
         <article className="flex flex-col gap-4">
           <h3 className="text-white">Permalinks</h3>
-          <a
-            href="#"
+          <Link
+            to="/"
             className="text-light transition-all duration-400 ease-in-out hover:text-white"
           >
             Home
-          </a>
+          </Link>
           <Link
             to="/#services"
             className="text-light transition-all duration-400 ease-in-out hover:text-white"

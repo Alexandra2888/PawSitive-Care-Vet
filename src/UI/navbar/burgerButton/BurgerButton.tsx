@@ -64,7 +64,7 @@ const BurgerButton = () => {
             </li>
             <li className="nav-item-link text-[2rem] py-2 text-white block">
               <NavLink
-                to="/appointments"
+                to="/add-appointments"
                 className="burger-menu-link text-white"
               >
                 Appointments
